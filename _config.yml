@@ -30,8 +30,7 @@ twitter_username: jekyllrb
 github_username:  jekyll
 
 # Build settings
-# nhatcomnhom remove minama theme for customize
-# theme: minima
+theme: minima
 plugins:
   - jekyll-feed
 
