@@ -1,0 +1,20 @@
+.logo_img {
+    width: 400px;
+    max-height: 100px;
+    margin-top: 10px; 
+    margin-bottom: 10px; 
+    border-radius: 20px;
+}
+
+.logo_text {
+    font-size: 72px;
+    font-weight: 500;
+    background: -webkit-linear-gradient(#EDD1EC,crimson,cyan,#945D87);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular';
+    font-size: 2em;
+    letter-spacing: 1px;
+    margin-left: 20px;
+    margin-top: 10px; 
+}
