@@ -7,7 +7,7 @@ categories: jekyll update
 <iframe
   width="640"
   height="390"
-  src="https://www.youtube.com/watch?v=ipo90Je8Fkg"
+  src="https://www.youtube.com/embed/ipo90Je8Fkg"
   frameborder="0"
   allow="autoplay; encrypted-media"
   allowfullscreen
