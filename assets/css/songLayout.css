@@ -1,0 +1,39 @@
+.intonation {
+    border: 1px groove red;
+    padding: 2px;
+    position: relative;
+    display: inline-block;
+    text-align: center; /* Center text for better alignment */
+}
+.chord {
+    border: 1px groove rgb(128, 15, 49);
+    font-weight: bold;
+    position: absolute;
+    width: max-content;
+    top: -1.5em; /* Adjust as needed */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%);
+}
+.lyricLine {
+    margin-bottom: 20px; /* Example styling for separating lines */
+    border: 1px groove rgb(89, 197, 89);    
+}
+
+.video iframe {
+    padding: 10px;
+    max-width: 100%; /* Ensures the container and iframe are responsive */
+    width: 100%; /* Adjust as needed */
+    max-height: 100%;
+    height: 336px;
+    display: block; /* Center align the div */
+}
+
+.lyrics {
+    padding: 10px;
+    background: rgb(131,58,180);
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%); 
+    border: 1px solid #cfdd4c;
+    max-width: 100%; /* Ensures the container and iframe are responsive */
+    width: 600px; /* Adjust as needed */
+    display: block; /* Center align the div */
+}
