@@ -1,4 +1,3 @@
-// songLayout.js
 function createLyricLinesFromInput(input) {
     const lyricsContainer = document.getElementById('lyricsContainer');
     lyricsContainer.innerHTML = ''; // Clear existing content
@@ -48,8 +47,3 @@ function createLyricLinesFromInput(input) {
         lyricsContainer.appendChild(lineDiv);
     });
 }
-
-document.addEventListener('DOMContentLoaded', function() {
-    const inputString = `{{ song.lyrics | escape }}`;
-    createLyricLinesFromInput(inputString);
-});
