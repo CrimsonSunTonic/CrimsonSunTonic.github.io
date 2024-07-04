@@ -1,49 +1,85 @@
-function createLyricLinesFromInput(input) {
-    const lyricsContainer = document.getElementById('lyricsContainer');
-    lyricsContainer.innerHTML = ''; // Clear existing content
+function renderLyrics(line) {
+    let parts = line.split(/(\[[^\]]+\])/).filter(Boolean); // Split parts and filter out empty strings
 
-    const lines = input.split('\n'); // Split by newline character
-    lines.forEach(line => {
-        const lineDiv = document.createElement('div');
-        lineDiv.classList.add('lyricLine');
+    let lyricsLineDiv = document.createElement('div');
+    lyricsLineDiv.className = 'lyrics-line';
 
-        const pElement = document.createElement('p');
+    for (let i = 0; i < parts.length; i++) {
+        if (parts[i].startsWith('[')) {
+            // Chord
+            let chord = parts[i].substring(1, parts[i].length - 1); // Remove []
 
-        let match;
-        const regex = /\{(\[[^}]+\])([^}]+)\}/g; // Regex to match {chord}word pattern
-
-        let lastIndex = 0;
-        while ((match = regex.exec(line)) !== null) {
-            const chord = match[1].replace(/[\[\]]/g, ''); // Remove parentheses
-            const lyric = match[2];
-
-            // Add any text before the current match as plain text
-            if (match.index > lastIndex) {
-                pElement.appendChild(document.createTextNode(line.substring(lastIndex, match.index)));
+            // Lyrics part should follow the chord (if exists)
+            let lyrics = '';
+            if (i + 1 < parts.length) {
+                lyrics = parts[i + 1].trim(); // Trim whitespace
+                i++; // Move to the next part (lyrics)
             }
 
-            // Create and append the intonation span
-            const intonationSpan = document.createElement('span');
-            intonationSpan.classList.add('intonation');
+            // Create part div
+            let partDiv = document.createElement('div');
+            partDiv.className = 'part';
 
-            const chordSpan = document.createElement('span');
-            chordSpan.classList.add('chord');
-            chordSpan.textContent = chord;
+            // Create chord div
+            let chordDiv = document.createElement('div');
+            chordDiv.className = 'chord';
+            chordDiv.textContent = chord;
+            partDiv.appendChild(chordDiv);
 
-            intonationSpan.appendChild(document.createTextNode(lyric)); // Add intonation text first
-            intonationSpan.appendChild(chordSpan); // Then add chord
+            // Create lyric div and append
+            let lyricDiv = document.createElement('div');
+            lyricDiv.className = 'lyric';
+            lyricDiv.textContent = lyrics;
+            partDiv.appendChild(lyricDiv);
 
-            pElement.appendChild(intonationSpan);
+            // Append part div to lyricsLineDiv
+            lyricsLineDiv.appendChild(partDiv);
+        } else {
+            // No chord specified, treat entire part as lyrics
+            let lyrics = parts[i].trim();
 
-            lastIndex = regex.lastIndex;
+            // Create part div
+            let partDiv = document.createElement('div');
+            partDiv.className = 'part';
+
+            // Create empty chord div
+            // let chordDiv = document.createElement('div');
+            // chordDiv.className = 'chord';
+            // chordDiv.textContent = '\u00A0'; // Use &nbsp; for empty chord
+            // partDiv.appendChild(chordDiv);
+
+            // Create lyric div and append
+            let lyricDiv = document.createElement('div');
+            lyricDiv.className = 'lyric';
+            lyricDiv.textContent = lyrics;
+            partDiv.appendChild(lyricDiv);
+
+            // Append part div to lyricsLineDiv
+            lyricsLineDiv.appendChild(partDiv);
         }
+    }
 
-        // Add any remaining text after the last match
-        if (lastIndex < line.length) {
-            pElement.appendChild(document.createTextNode(line.substring(lastIndex)));
-        }
+    return lyricsLineDiv;
+}
 
-        lineDiv.appendChild(pElement);
-        lyricsContainer.appendChild(lineDiv);
+function renderSong(input) {
+    let lines = input.split('\n').map(line => line.trim()).filter(line => line !== ''); // Split by lines, trim whitespace, and filter out empty lines
+
+    let songsDiv = document.getElementById('songs');
+    songsDiv.innerHTML = ''; // Clear any existing content
+
+    lines.forEach(line => {
+        let lyricsLineDiv = renderLyrics(line);
+        songsDiv.appendChild(lyricsLineDiv);
     });
+}
+
+function htmlEntityDecode(html) {
+    var txt = document.createElement('textarea');
+    txt.innerHTML = html;
+    return txt.value;
+}
+
+function stripPTagsAndBrTags(html) {
+    return html.replace(/<\/?p>/g, '').replace(/<br\s*\/?>/g, '');
 }

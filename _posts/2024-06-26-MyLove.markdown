@@ -3,6 +3,15 @@ layout: songs
 title: "My Love by Westlife"
 date: 2024-06-26
 song_name: "My Love"
+artist: "Westlife"
+tuning: "Standard EADGBE"
+youtube: "https://www.youtube.com/embed/YGin8rAZ3Mw"
 ---
+An [C]empty street, an [G]empty house<br>
+A [Em]hole inside my [Am]heart<br>
+Im [F]all alone, the rooms are getting [G]smaller.
 
->*I'm cooking this stuff...*
+I [C]wonder how, I [G]wonder why,<br>
+I [Em]wonder where they [Am]are<br>
+The [F]days we had, the [D/F#]songs we sang [G]together, oh, yeah.<br>
+[D | Bm7b13 | Em7 | Am7 | D9sus4 | Gsus4 → G]

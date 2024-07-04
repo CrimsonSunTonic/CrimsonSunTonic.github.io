@@ -1,38 +1,38 @@
-.intonation {
-    border: 1px groove red;
-    padding: 2px;
-    position: relative;
-    display: inline-block;
-    text-align: center; /* Center text for better alignment */
+div.part {
+    display: flex;
+    flex-direction: column;
+    float  : left;
+    justify-content: flex-end;
+    margin : .3em;
+    border: 1px solid red;
 }
-.chord {
-    border: 1px groove rgb(128, 15, 49);
-    font-weight: bold;
-    position: absolute;
-    width: max-content;
-    top: -1.5em; /* Adjust as needed */
-    left: 50%; /* Center horizontally */
-    transform: translateX(-50%);
+div.chord {
+    text-align  : left;
+    font-weight : bolder;
+    font-style  : italic;
+    margin : .3em;
+    border: 1px solid green;
 }
-.lyricLine {
-    margin-bottom: 20px; /* Example styling for separating lines */
-    border: 1px groove rgb(89, 197, 89);    
-}
-
-.iframe {
-    padding: 10px;
-    max-width: 100%; /* Ensures the container and iframe are responsive */
-    width: 100%; /* Adjust as needed */
-    max-height: 100%;
-    display: block; /* Center align the div */
+div.lyric {
+    text-align  : left;
+    margin : .3em;
+    border: 1px solid blue;
 }
 
-.lyrics {
-    padding: 10px;
-    //background: rgb(131,58,180);
-    //background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%); 
-    border: 1px solid #cfdd4c;
-    max-width: 100%; /* Ensures the container and iframe are responsive */
-    width: 600px; /* Adjust as needed */
-    display: block; /* Center align the div */
+div.lyrics-line {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin : .3em;
+    border: 1px solid goldenrod;
+}
+
+div.songs {
+    display: inline-flex;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    margin : .3em;
+    border: 1px solid cyan;
 }
