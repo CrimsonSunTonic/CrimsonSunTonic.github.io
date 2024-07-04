@@ -54,17 +54,16 @@
           style="display: none;">
           {{ content }}
         </div>
-        {% assign song = site.data.songs | where: "name", page.song_name | first %}
 
         <div class="video">
-          <iframe src="{{ song.youtube }}" frameborder="0"
+          <iframe src="{{ page.youtube }}" frameborder="0"
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen></iframe>
         </div>
 
         <h2>{{ song.name }}</h2>
-        <p>Artist: {{ song.artist }}</p>
-        <p>Tuning: {{ song.tuning }}</p>
+        <p>Artist: {{ page.artist }}</p>
+        <p>Tuning: {{ page.tuning }}</p>
 
         <div class="songs" id="songs">
           <!-- The lyrics will be populated by the JavaScript function -->
