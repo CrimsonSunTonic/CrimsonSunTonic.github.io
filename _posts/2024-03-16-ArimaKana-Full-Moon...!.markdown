@@ -1,25 +1,18 @@
 ---
-layout: post
+layout: songs
 title:  "「Full Moon...!」 – Arima Kana (有馬かな)(CV.潘めぐみ)"
 date:   2024-03-16 21:57:52 +0900
-categories: jekyll update
+song_name: "Full Moon...!"
+artist: "Arima Kana (有馬かな)(CV.潘めぐみ)"
+tuning: "Standard EADGBE - Capo 1"
+youtube: "https://www.youtube.com/embed/YGin8rAZ3Mw"
 ---
-<iframe
-  width="640"
-  height="390"
-  src="https://www.youtube.com/embed/YGin8rAZ3Mw"
-  frameborder="0"
-  allow="autoplay; encrypted-media"
-  allowfullscreen
->
-</iframe>
-<div class>
 [Intro]<br>
 白く[Cadd9]眩[Dsus4]しく <br>
 あなた[Bm7b13]の心[Em7]を奪う <br>
 [Am7]光[D9sus4]になり[Cadd9]たい <br><br>
 
-[D | |Bm7b13 | Em7 | Am7 | D9sus4 | Gsus4 → G] <br><br>
+[D Bm7b13 Em7 Am7 D9sus4 Gsus4 → G]
 
 [Verse]<br>
 [G/B]思い切[Cadd9]り腕[D]広げれ[G]ば <br>
@@ -44,4 +37,3 @@ categories: jekyll update
 [Outro]
 [D | Bm7 | Em7 | Am7 | D9sus4 | Gsus4 → G] <br>
 (La La La……)<br>
-</div>

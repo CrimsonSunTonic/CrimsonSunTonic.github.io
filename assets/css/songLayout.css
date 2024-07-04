@@ -4,19 +4,19 @@ div.part {
     float  : left;
     justify-content: flex-end;
     margin : .3em;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 div.chord {
     text-align  : left;
     font-weight : bolder;
     font-style  : italic;
     margin : .3em;
-    border: 1px solid green;
+    /* border: 1px solid green; */
 }
 div.lyric {
     text-align  : left;
     margin : .3em;
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
 }
 
 div.lyrics-line {
@@ -25,7 +25,7 @@ div.lyrics-line {
     flex-direction: row;
     justify-content: flex-start;
     margin : .3em;
-    border: 1px solid goldenrod;
+    /* border: 1px solid goldenrod; */
 }
 
 div.songs {
@@ -34,5 +34,5 @@ div.songs {
     flex-wrap: nowrap;
     flex-direction: column;
     margin : .3em;
-    border: 1px solid cyan;
+    /* border: 1px solid cyan; */
 }
