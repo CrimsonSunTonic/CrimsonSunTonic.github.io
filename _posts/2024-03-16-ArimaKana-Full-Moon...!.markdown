@@ -1,12 +1,13 @@
 ---
 layout: songs
-title:  "「Full Moon...!」 – Arima Kana (有馬かな)(CV.潘めぐみ)"
-date:   2024-03-16 21:57:52 +0900
+title: "「Full Moon...!」 – Arima Kana (有馬かな)(CV.潘めぐみ)"
+date: 2024-03-16 21:57:52 +0900
 song_name: "Full Moon...!"
 artist: "Arima Kana (有馬かな)(CV.潘めぐみ)"
 tuning: "Standard EADGBE - Capo 1"
 youtube: "https://www.youtube.com/embed/YGin8rAZ3Mw"
 ---
+
 [Intro]<br>
 白く[Cadd9]眩[Dsus4]しく <br>
 あなた[Bm7b13]の心[Em7]を奪う <br>
