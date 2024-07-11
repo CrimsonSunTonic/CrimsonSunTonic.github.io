@@ -18,3 +18,10 @@
     margin-left: 10px;
     margin-top: 10px;
 }
+
+body {
+    background-image: url('/images/back-ground.jpg');
+    background-repeat: no-repeat;
+    background-size: cover; /* Cover the entire background */
+    background-attachment: fixed; /* Make the background fixed */
+}
