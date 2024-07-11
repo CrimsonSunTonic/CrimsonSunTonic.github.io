@@ -25,3 +25,7 @@ body {
     background-size: cover; /* Cover the entire background */
     background-attachment: fixed; /* Make the background fixed */
 }
+
+.page-content {
+    background-color: rgba(230, 255, 118, 0.5); /* antiquewhite with 50% transparency */
+}
