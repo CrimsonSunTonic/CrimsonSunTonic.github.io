@@ -10,6 +10,7 @@ div.chord {
   text-align  : left;
   font-weight : bolder;
   font-style  : italic;
+  color: rgb(170, 14, 14);
   /* margin : .3em; */
   /* border: 1px solid green; */
 }
