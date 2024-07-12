@@ -24,6 +24,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover; /* Cover the entire background */
     background-attachment: fixed; /* Make the background fixed */
+    background-position: center;
 }
 
 .page-content {
