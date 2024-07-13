@@ -1,22 +1,13 @@
 ---
-layout: post
+layout: songs
 title:  "Kessoku Band/Shine as Usual 結束バンド「月並みに輝け」"
 date:   2024-06-23 21:57:52 +0900
-categories: jekyll update
+song_name: "Full Moon...!"
+artist: "Arima Kana (有馬かな)(CV.潘めぐみ)"
+tuning: "Tuning: Half Step down"
+youtube: "https://www.youtube.com/embed/ipo90Je8Fkg"
 ---
 
-# *Tuning: Half Step down*
-
-<iframe
-  width="640"
-  height="390"
-  src="https://www.youtube.com/embed/ipo90Je8Fkg"
-  frameborder="0"
-  allow="autoplay; encrypted-media"
-  allowfullscreen
->
-</iframe>
-<div class>
 [Verse 1] <br>
 [Asus2]天才だって信じてた バ[Bsus4]カみたいだ <br>
 [G#m7]小さな自信 溢れ落[C#m7]ちて割れた <br>
@@ -78,8 +69,7 @@ categories: jekyll update
 革[CM7]命寸前の未[D7]来だなんて<br>
 [CM7]紛れもなく確か[D7]な希望[※]だ<br>
 [Outro]<br>
-[※][Gsus4][G][Gsus2][Gsus4]<br>
-[Gsus4][G][Gsus2][Bsus4]<br><br>
+[Gsus4 G Gsus2 Gsus4]<br>
+[Gsus4 G Gsus2 Bsus4]<br><br>
 
 [Asus2]天才だって信じてた そ[Bsus4]れでもま[Asus2]だ<br>
-</div>

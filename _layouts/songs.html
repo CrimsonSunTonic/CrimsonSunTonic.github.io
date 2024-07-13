@@ -22,13 +22,16 @@
             allowfullscreen></iframe>
         </div>
 
-        <h2>{{ page.song_name }}</h2>
-        <p>Artist: {{ page.artist }}</p>
-        <p>Tuning: {{ page.tuning }}</p>
-
-        <div class="songs" id="songs">
-          <!-- The lyrics will be populated by the JavaScript function -->
+        <div class="song-container">
+          <h2>{{ page.song_name }}</h2>
+          <p>Artist: {{ page.artist }}</p>
+          <p>Tuning: {{ page.tuning }}</p>
+  
+          <div class="songs" id="songs">
+            <!-- The lyrics will be populated by the JavaScript function -->
+          </div>
         </div>
+
       </div>
     </main>
 

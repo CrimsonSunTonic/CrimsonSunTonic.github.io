@@ -30,3 +30,11 @@ body {
 .page-content {
     background-color: rgba(230, 255, 118, 0.5); /* antiquewhite with 50% transparency */
 }
+
+.social-media-list{
+    font-size: x-large;
+}
+
+.svg-icon {
+    vertical-align: middle;
+}
