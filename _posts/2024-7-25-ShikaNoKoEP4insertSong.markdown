@@ -8,8 +8,8 @@ tuning: "Standard EADGBE - Capo 1"
 youtube: "https://www.youtube.com/embed/_IlO7xuwalg"
 ---
 
-群れからはぐれたシカせんべい
-路頭に迷ったシカせんべい
+群[F#m]れからは[E]ぐれたシ[D]カせ[E]んべ[A]い
+路[G#m7b5]頭に[C#7]迷ったシカせんべい
 一人こごえるきみを
 抱きしめて帰った
 あの夜
@@ -17,7 +17,7 @@ youtube: "https://www.youtube.com/embed/_IlO7xuwalg"
 一匹と一枚、シカとシカせんべい
 肩を寄せ合い確かな傷が
 そこにあった
-家族になれた気がした
+家族になれた気[C#7]がした
 
 でもどこが寂しそうな瞳
 本当は気付いてる
