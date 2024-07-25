@@ -5,7 +5,7 @@ date: 2024-07-25 1:28:52 +0900
 song_name: "家族になろうよ、日野で"
 artist: "羊文学"
 tuning: "Standard EADGBE - Capo 1"
-youtube: "https://www.youtube.com/embed/_IlO7xuwalg"
+youtube: "https://www.youtube.com/embed/vc2Qp0-Nats?si=dsbdpDx1xm3Ut-Yw"
 ---
 
 群[F#m]れからは[E]ぐれたシ[D]カせ[E]んべ[A]い
