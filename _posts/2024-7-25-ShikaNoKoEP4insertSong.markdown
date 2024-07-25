@@ -9,8 +9,8 @@ youtube: "https://www.youtube.com/embed/_IlO7xuwalg"
 ---
 
 群[F#m]れからは[E]ぐれたシ[D]カせ[E]んべ[A]い
-路[G#m7b5]頭に[C#7]迷ったシカせんべい
-一人こごえるきみを
+路[G#m7b5]頭に[C#7]迷ったシ[F#m7]カ[F#mM7]せん[E]べい
+一[Bm7]人こごえ[G#m7b5]るきみ[E?]を
 抱きしめて帰った
 あの夜
 
