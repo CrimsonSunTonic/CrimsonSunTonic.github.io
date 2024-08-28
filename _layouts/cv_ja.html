@@ -6,47 +6,116 @@
     <title>Huỳnh Trần Hồng Nhật - 履歴書</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
             margin: 0;
             padding: 20px;
-            background-color: #f4f4f4;
+            background-color: #f0f0f0;
+            color: #333;
         }
         .container {
             max-width: 800px;
             margin: 0 auto;
             background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
-        h1, h2 {
-            color: #333;
+        .profile {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .profile img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #2c3e50;
+            text-align: center;
+            margin-top: 15px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            font-size: 1.8em;
+            color: #34495e;
+            border-bottom: 2px solid #e74c3c;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
         }
         p {
-            line-height: 1.6;
+            line-height: 1.8;
             color: #555;
+            font-size: 1.1em;
         }
         ul {
             list-style-type: none;
             padding: 0;
         }
         li {
-            margin-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.1em;
         }
         .section-title {
-            margin-top: 20px;
-            margin-bottom: 10px;
-            font-size: 1.2em;
+            margin-top: 40px;
+            margin-bottom: 15px;
+            font-size: 1.4em;
             font-weight: bold;
-            color: #444;
+            color: #e74c3c;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
         }
         .skills, .experience, .projects {
-            margin-bottom: 20px;
+            margin-bottom: 40px;
+        }
+        .skills ul, .experience ul, .projects ul {
+            margin-left: 20px;
+        }
+        .skills ul li, .projects ul li {
+            margin-bottom: 10px;
+            padding-left: 10px;
+            position: relative;
+        }
+        .skills ul li::before, .projects ul li::before {
+            content: '•';
+            color: #e74c3c;
+            position: absolute;
+            left: 0;
+            font-size: 1.2em;
+        }
+        .experience ul li {
+            border-left: 4px solid #e74c3c;
+            padding-left: 15px;
+            margin-bottom: 25px;
+            position: relative;
+        }
+        .experience ul li::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -9px;
+            background-color: #e74c3c;
+            height: 15px;
+            width: 15px;
+            border-radius: 50%;
+        }
+        a {
+            color: #e74c3c;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
     <div class="container">
+        <div class="profile">
+            <img src="path/to/your/profile-picture.jpg" alt="Huỳnh Trần Hồng Nhậtのプロフィール写真">
+        </div>
+        
         <h1>Huỳnh Trần Hồng Nhật</h1>
         
         <h2>学歴</h2>
@@ -56,47 +125,47 @@
             <div class="section-title">スキル</div>
             <ul>
                 <li>C、C++、Java、Objective-C</li>
-                <li>PHP、JavaScript、HTML、CSSの基本知識</li>
-                <li>日本語能力: N3</li>
+                <li>基本的な知識: PHP、JavaScript、HTML、CSS</li>
+                <li>日本語能力試験N3レベル</li>
             </ul>
         </div>
         
         <div class="experience">
-            <div class="section-title">職務経験とプロジェクト</div>
+            <div class="section-title">職務経験＆プロジェクト</div>
             <ul>
                 <li>
                     <strong>2020年1月 - 2021年1月:</strong> 自動車エンジニア テスター<br>
-                    VモデルのSIフェーズに取り組み、メディアモジュール（ラジオとFMテスト）を担当しました。DAB、XM、TVなど、日本、EU、米国モデルに対応するメディアモジュールをテストしました。<br>
-                    <em>スキル:</em> DAB、C、日本語、無線周波数 (RF)
+                    VモデルのSIフェーズに関与し、メディアモジュールのテスト（ラジオおよびFMテスト）に焦点を当てる。日本、EU、米国モデル全体でDAB、XM、およびTVテストを管理。<br>
+                    <em>スキル:</em> DAB、C、Japanese、Radio Frequency (RF)
                 </li>
                 <li>
-                    <strong>2021年2月 - 2021年9月:</strong> SHARPスマートフォン用Android開発者<br>
-                    ロックスクリーンのカスタマイズを行い、シャープの要求に基づいてコードを読み、修正しました。<br>
+                    <strong>2021年2月 - 2021年9月:</strong> SHARPスマートフォン向けAndroid開発者<br>
+                    シャープの要件に基づいてロックスクリーンをカスタマイズ。コードを読み、必要に応じて修正。<br>
                     <em>スキル:</em> Android開発、Java、テスト、Git
                 </li>
                 <li>
-                    <strong>2021年10月 - 2022年10月:</strong> SHARPスマートフォン用NFCモジュール開発者<br>
-                    NFCモジュールの開発を担当しました。<br>
-                    <em>スキル:</em> Android開発、Java、Git、近距離無線通信 (NFC)
+                    <strong>2021年10月 - 2022年10月:</strong> SHARPスマートフォンのNFCモジュール開発者<br>
+                    SHARPスマートフォンのNFCモジュールの開発に従事。<br>
+                    <em>スキル:</em> Android開発、Java、Git、NFC（近距離無線通信）
                 </li>
                 <li>
-                    <strong>2022年11月 - 2022年12月:</strong> モバイルアプリ テスター<br>
-                    NTT-Dataのデータクラウドアプリ「T 1BOX」のテストを行いました。<br>
+                    <strong>2022年11月 - 2022年12月:</strong> モバイルアプリテスター<br>
+                    NTTデータのデータクラウドアプリ[T 1BOX]をテスト。<br>
                     <em>スキル:</em> Java、PHP、iPhoneおよびAndroidでのテスト
                 </li>
                 <li>
                     <strong>2023年1月 - 2023年3月:</strong> 5Gアーキテクチャ設計<br>
-                    既存の5Gアーキテクチャをアップグレードし、マルチモジュールサポートの機能を追加しました。<br>
+                    既存の5Gアーキテクチャのアップグレードに従事し、マルチモジュールサポートの機能を追加。<br>
                     <em>スキル:</em> WSL、バックエンド、Ubuntu、Kafka、Docker
                 </li>
                 <li>
-                    <strong>2023年4月 - 2023年5月:</strong> 5G Open Air Interfaceデモとカスタマイズ<br>
-                    WSL上で5G Open Air Interfaceのデモとカスタマイズを行いました。<br>
+                    <strong>2023年4月 - 2023年5月:</strong> 5Gオープンエアインターフェースのデモ＆カスタマイズ<br>
+                    WSLで5Gオープンエアインターフェースのデモを実行し、カスタマイズを実施。<br>
                     <em>スキル:</em> C、WSL、Docker
                 </li>
                 <li>
                     <strong>2023年6月 - 現在:</strong> iOSアプリ開発者<br>
-                    [データ保管BOX] アプリの開発を担当しました。<br>
+                    [データ保管BOX]アプリ開発に従事。<br>
                     <em>スキル:</em> Objective-C
                 </li>
             </ul>
@@ -104,12 +173,12 @@
 
         <div class="projects">
             <div class="section-title">自己プロジェクト</div>
-            <p>STM32F4 Discoveryを使用してエレキ用のペダルを作成しました。ディストーション、オーバードライブ、フェイザー、エコーなどのエフェクトがあります。</p>
+            <p>STM32F4 Discoveryを使用して、エレキギター用のペダルを開発。ディストーション、オーバードライブ、フェイザー、エコーなどのエフェクトを含む。</p>
             <p>デモ: <a href="https://www.youtube.com/watch?v=TNyuyjZQtww" target="_blank">https://www.youtube.com/watch?v=TNyuyjZQtww</a></p>
         </div>
 
         <div class="section-title">自己紹介</div>
-        <p>音楽に対する情熱があり、テクノロジーとの組み合わせを楽しんでいます。</p>
+        <p>音楽に情熱を持ち、それを技術と統合することを楽しんでいます。</p>
     </div>
 </body>
 </html>
