@@ -1,7 +1,5 @@
 ---
-layout: page
+layout: cv_en
 title: My CV
 permalink: /cv/
 ---
-
-This is the base CV test
