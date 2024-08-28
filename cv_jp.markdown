@@ -1,5 +1,5 @@
 ---
-layout: cv_jp
-title: My CV_JP
-permalink: /cv_jp/
+layout: cv_ja
+title: My CV_Ja
+permalink: /cv_ja/
 ---
