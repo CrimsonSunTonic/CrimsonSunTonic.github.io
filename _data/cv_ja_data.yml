@@ -1,0 +1,83 @@
+information:
+  name: "Huynh Tran Hong Nhat"
+  furigana: "フィン　チャン　フォン　ニャト"
+  email: "nhatcomnhom@gmail.com"
+  address: |
+    739-0142  
+    広島県, 東広島市八本松東3丁目7-12  
+    ほんどう企画AP1 - 103号室
+  phone: "080 7801 0339"
+  education: "ホーチミン市科学大学 コンピュータ及び組み込みシステム専攻 2019年 卒業"
+  skills:
+    - "C、C++、Java、Objective-C"
+    - "基本的な知識: PHP、JavaScript、HTML、CSS"
+    - "日本語能力試験N3レベル"
+
+experience:
+  - title: "自動車エンジニア テスター"
+    company: "パナソニック（派遣者）"
+    description: |
+      VモデルのSIフェーズに関与し、メディアモジュールのテスト（ラジオおよびFMテスト）に焦点を当てる。  
+      日本、EU、米国モデル全体でDAB、XM、およびTVテストを管理。
+    start_date: "2020年1月"
+    end_date: "2021年1月"
+    skills: "DAB、C、Japanese、Radio Frequency (RF)"
+
+  - title: "Android開発者"
+    company: "シャープ（派遣者）"
+    description: |
+      シャープの要件に基づいてロックスクリーンをカスタマイズ。  
+      コードを読み、必要に応じて修正。
+    start_date: "2021年2月"
+    end_date: "2021年9月"
+    skills: "Android開発、Java、テスト、Git"
+
+  - title: "NFCモジュール開発者"
+    company: "シャープ（派遣者）"
+    description: |
+      SHARPスマートフォンのNFCモジュールの開発に従事。
+    start_date: "2021年10月"
+    end_date: "2022年10月"
+    skills: "Android開発、Java、Git、NFC（近距離無線通信）"
+
+  - title: "モバイルアプリテスター"
+    company: "NTTデータ（派遣者）"
+    description: |
+      NTTデータのデータクラウドアプリ[T 1BOX]をテスト。
+    start_date: "2022年11月"
+    end_date: "2022年12月"
+    skills: "Java、PHP、iPhoneおよびAndroidでのテスト"
+
+  - title: "5Gアーキテクチャ設計"
+    company: "NTTデータ（派遣者）"
+    description: |
+      既存の5Gアーキテクチャのアップグレードに従事し、  
+      マルチモジュールサポートの機能を追加。
+    start_date: "2023年1月"
+    end_date: "2023年3月"
+    skills: "WSL、バックエンド、Ubuntu、Kafka、Docker"
+
+  - title: "5Gオープンエアインターフェース デモ＆カスタマイズ"
+    company: "NTTデータ（派遣者）"
+    description: |
+      WSLで5Gオープンエアインターフェースのデモを実行し、  
+      カスタマイズを実施。
+    start_date: "2023年4月"
+    end_date: "2023年5月"
+    skills: "C、WSL、Docker"
+
+  - title: "iOSアプリ開発者"
+    company: "NTTデータ（派遣者）"
+    description: |
+      データ保管BOXアプリ開発、メンテナンス、機能追加とかに従事。
+    start_date: "2023年6月"
+    end_date: "現在"
+    skills: "Objective-C"
+
+projects:
+  title: "自己プロジェクト"
+  description: "STM32F4 Discoveryを使用して、エレキギター用のペダルを開発。ディストーション、オーバードライブ、フェイザー、エコーなどのエフェクトを含む。"
+  demo_link: "https://www.youtube.com/watch?v=TNyuyjZQtww"
+
+about_me:
+  description: "音楽に情熱を持ち、それを技術と統合することを楽しんでいます。"

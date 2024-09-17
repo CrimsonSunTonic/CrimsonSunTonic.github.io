@@ -1,0 +1,63 @@
+infomation:
+  name: "Huynh Tran Hong Nhat"
+  email: "nhatcomnhom@gmail.com"
+  address: |
+    739-0142
+    広島県, 東広島市八本松東3丁目7-12
+    ほんどう企画AP1 - 103号室
+  phone: "080 7801 0339"
+  education: "Bachelor's Degree in Computer and Embedded Systems in 2019, Ho Chi Minh University of Science"
+  skills:
+    - "C, C++, Java, Objective-C"
+    - "Basic knowledge of PHP, JavaScript, HTML, CSS"
+    - "Japanese Language Proficiency: N3"
+
+experience:
+  - title: "Automotive Engineer Tester"
+    company: "Panasonic(a dispatch worker)"
+    description: "Involved in the SI phase of the V model, focusing on media module testing (radio and FM tests). Managed DAB, XM, and TV testing across Japanese, EU, and US models."
+    skills: "DAB, C, Japanese, Radio Frequency (RF)"
+    start_date: "Jan 2020"
+    end_date: "Jan 2021"
+  - title: "Android Developer"
+    company: "SHARP(a dispatch worker)"
+    description: "Customized the lock screen based on Sharp's requirements. Read and modified code accordingly."
+    skills: "Android Development, Java, Testing, Git"
+    start_date: "Feb 2021"
+    end_date: "Sep 2021"
+  - title: "NFC Module Developer for SHARP Smartphones"
+    company: "SHARP(a dispatch worker)"
+    description: "Worked on NFC module development for SHARP smartphones."
+    skills: "Android Development, Java, Git, Near-field Communication (NFC)"
+    start_date: "Oct 2021"
+    end_date: "Oct 2022"
+  - title: "Mobile App Tester"
+    company: "NTT Data(a dispatch worker)"
+    description: "Tested NTT-Data's Data Cloud App called [T 1BOX]."
+    skills: "Java, PHP, Testing on iPhone and Android"
+    start_date: "Nov 2022"
+    end_date: "Dec 2022"
+  - title: "5G Architecture Design"
+    company: "NTT Data(a dispatch worker)"
+    description: "Worked on upgrading the existing 5G architecture, adding features for multi-module support."
+    skills: "WSL, Back-end, Ubuntu, Kafka, Docker"
+    start_date: "Jan 2023"
+    end_date: "Mar 2023"
+  - title: "5G Open Air Interface Demo & Customization"
+    company: "NTT Data(a dispatch worker)"
+    description: "Researched, ran demos, and customized the 5G Open Air Interface on WSL."
+    skills: "C, WSL, Docker"
+    start_date: "Apr 2023"
+    end_date: "May 2023"
+  - title: "iOS App Developer"
+    company: "NTT Data(a dispatch worker)"
+    description: "Developing the [データ保管BOX] app."
+    skills: "Objective-C"
+    start_date: "Jun 2023"
+    end_date: "Present"
+
+projects:
+  - description: "Developed a pedal for my electric guitar using STM32F4 Discovery. It includes effects like Distortion, Overdrive, Phaser, and Echo."
+    demo: "https://www.youtube.com/watch?v=TNyuyjZQtww"
+
+about_me: "Passionate about music and enjoy integrating it with technology."
