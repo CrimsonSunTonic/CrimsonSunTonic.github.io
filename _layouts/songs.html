@@ -11,10 +11,10 @@
 
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <div class="post-content e-content" itemprop="articleBody"
+        <!-- <div class="post-content e-content" itemprop="articleBody"
           style="display: none;">
           {{ content }}
-        </div>
+        </div> -->
 
         <div class="video-container">
           <iframe src="{{ page.youtube }}" frameborder="0"
@@ -40,7 +40,7 @@
     <script src="{{ "/assets/js/songLayout.js" | relative_url }}"></script>
     <script>
       document.addEventListener('DOMContentLoaded', function() {
-          const rawContent = document.querySelector('.post-content').innerHTML.trim();
+          const rawContent = `{{ content }}`.trim();
           const decodedContent = htmlEntityDecode(rawContent);
           const strippedContent = stripPTagsAndBrTags(decodedContent);
           console.log(strippedContent);
