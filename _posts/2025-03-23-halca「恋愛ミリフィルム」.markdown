@@ -1,0 +1,43 @@
+---
+layout: songs
+title: "halca「恋愛ミリフィルム」(TV size)"
+date: 2025-03-23 22:31:52 +0900
+song_name: "恋愛ミリフィルム"
+artist: "halca"
+tuning: "Standard EADGBE"
+youtube: "https://www.youtube.com/embed/7Ca6V5P11ZE"
+---
+Intro:
+[C]君がいい
+もう[Caug]君じゃなきゃ
+[Am]今はただ君を[C7]焼き付け[F]たい
+[E7]瞼の[Am]スクリーン[D7]に映[F]し出すのは [Fm]
+恋愛ミリフィルム
+
+[F] [C/E] [C/G] [C]
+[F] [C/E] [Fm] [G7b9]
+
+Ver:
+あとほんの[C]ちょっとだけ、近付いて[E7]良いですか？
+頼りな[Am7]い僕だけ[Am7/G]ど笑[C9sus4]って欲しく[F]て
+[E7]君の為[Am7]だけ[C7]のカッ[F]コいいヒーローに[F/G]なれたらなぁ
+
+Bridge:
+[Em]そん[Am]な目[F]で見[Fm]ないで
+[Em]も[Am]う止[F]められ[G9sus4]ないよ！
+
+[G7↓↓↓]「あのね…」
+
+Chorus:
+[C]君がいい
+もう[Caug]君じゃなきゃ
+い[Am]つかはさ、隣[C7]で歩きた[F]い
+[E7]隠さない[Am7]でいいか[D7]ら
+全[F]部受け止める[G9sus4]から
+
+借[Am]り物の[AnM7/G#]恋だとしても
+[Am7/G]今はただ君を[C7]焼き付けた[F]い
+[E7]瞼の[Am]スクリーン[D7]に映[F]し出すのは[Fm]
+恋愛ミリフィル[F]ム[C/E] [G] [Fm]
+恋愛ミリフィル[F]ム[C/E] [G] [C]
+[<12><12><12>xxx(do harmonic)] [C↓↓↓]
