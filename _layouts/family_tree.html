@@ -1,0 +1,48 @@
+<!-- <!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+  {%- include head.html -%}
+  <head>
+    <link rel="stylesheet" href="{{ "/assets/css/familyTree.css" | relative_url }}">
+  </head>
+  <body>
+  <div class="container">
+    <div class="row">
+      <div id="family-tree" class="tree"></div>
+    </div>
+  </div>
+
+  <script>
+    window.familyData = {{ site.data[page.data_file] | jsonify }};
+  </script>
+  <script src="{{ "/assets/js/familyTree.js" | relative_url }}"></script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ page.title }}</title>
+  <link rel="stylesheet" href="{{ '/assets/css/familyTree.css' | relative_url }}">
+  <script src="https://balkan.app/js/FamilyTree.js"></script>
+</head>
+<body>
+  <div id="tree"></div>
+
+  <script>
+    const data = {{ site.data[page.data_file | default: "family_tree_mother"] | jsonify }};
+
+    const chart = new FamilyTree(document.getElementById("tree"), {
+      nodeBinding: {
+        field_0: "name",
+        field_1: "title",
+        img_0: "img"
+      }
+    });
+
+    chart.load(data);
+  </script>
+</body>
+</html>

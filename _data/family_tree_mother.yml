@@ -1,0 +1,143 @@
+- id: 1
+  name: King George VI
+  role: father
+  born: null
+  died: null
+  img: https://cdn.balkan.app/shared/f1.png
+  parent_id: null   # top ancestor
+
+- id: 2
+  name: Queen Elizabeth (The Queen Mother)
+  role: mother
+  born: null
+  died: null
+  img: https://cdn.balkan.app/shared/f2.png
+  parent_id: null   # spouse of id 1
+
+- id: 3
+  name: Queen Elizabeth II
+  role: daughter
+  born: null
+  died: null
+  img: https://cdn.balkan.app/shared/f5.png
+  parent_id: 1      # child of King George VI & Queen Elizabeth
+
+- id: 4
+  name: Prince Philip (Duke of Edinburgh)
+  role: father
+  born: null
+  died: null
+  img: https://cdn.balkan.app/shared/f3.png
+  parent_id: null   # spouse of id 3
+
+- id: 5
+  name: Princess Margaret
+  role: daughter
+  born: null
+  died: null
+  img: https://cdn.balkan.app/shared/f6.png
+  parent_id: 1
+
+- id: 6
+  name: Charles (Prince of Wales)
+  role: son
+  born: null
+  died: null
+  img: https://cdn.balkan.app/shared/f8.png
+  parent_id: 3
+
+- id: 7
+  name: Diana (Princess of Wales)
+  role: mother
+  born: null
+  died: null
+  img: https://cdn.balkan.app/shared/f9.png
+  parent_id: null   # spouse of id 6
+
+- id: 8
+  name: Camila (Duchess of Cornwall)
+  role: mother
+  born: null
+  died: null
+  img: https://cdn.balkan.app/shared/f7.png
+  parent_id: null   # spouse of id 6
+
+- id: 9
+  name: Anne (Princess Royal)
+  role: daughter
+  born: null
+  died: null
+  img: https://cdn.balkan.app/shared/f10.png
+  parent_id: 3
+
+- id: 10
+  name: Prince Andrew (Duke of York)
+  role: son
+  born: null
+  died: null
+  img: https://cdn.balkan.app/shared/f11.png
+  parent_id: 3
+
+- id: 11
+  name: Prince Edward (Earl of Wessex)
+  role: son
+  born: null
+  died: null
+  img: https://cdn.balkan.app/shared/f12.png
+  parent_id: 3
+
+- id: 12
+  name: Prince William (Duke of Cambridge)
+  role: son
+  born: null
+  died: null
+  img: https://cdn.balkan.app/shared/f14.png
+  parent_id: 6
+
+- id: 13
+  name: Prince Harry
+  role: son
+  born: null
+  died: null
+  img: https://cdn.balkan.app/shared/f15.png
+  parent_id: 6
+
+- id: 14
+  name: Catherine (Duchess of Cambridge)
+  role: mother
+  born: null
+  died: null
+  img: https://cdn.balkan.app/shared/f13.png
+  parent_id: null   # spouse of id 12
+
+- id: 15
+  name: Meghan Markle
+  role: mother
+  born: null
+  died: null
+  img: https://cdn.balkan.app/shared/f16.png
+  parent_id: null   # spouse of id 13
+
+- id: 16
+  name: Prince George
+  role: son
+  born: null
+  died: null
+  img: https://cdn.balkan.app/shared/f17.png
+  parent_id: 12
+
+- id: 17
+  name: Prince Charlotte
+  role: daughter
+  born: null
+  died: null
+  img: https://cdn.balkan.app/shared/f18.png
+  parent_id: 12
+
+- id: 18
+  name: Prince Louis
+  role: son
+  born: null
+  died: null
+  img: https://cdn.balkan.app/shared/f19.png
+  parent_id: 12
