@@ -16,6 +16,7 @@ div.chord {
 }
 div.lyric {
   text-align  : left;
+  height: 50%;
   /* margin : .3em; */
   /* border: 1px solid blue; */
 }
