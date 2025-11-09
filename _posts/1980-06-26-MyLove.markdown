@@ -23,7 +23,7 @@ chords:
       [3, 3]
     ]
     barres: []
-    title: "MyCustomChord"
+    title: "ChordTitle"
     position: 2
 ---
 # This is for development!!!
