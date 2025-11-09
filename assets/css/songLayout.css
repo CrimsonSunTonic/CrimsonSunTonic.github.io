@@ -1,23 +1,24 @@
 div.part {
-display: flex;
-flex-direction: column;
-float  : left;
-justify-content: flex-end;
-margin : .3em;
-/* border: 1px solid red; */
+  display: flex;
+  flex-direction: column;
+  float: left;
+  justify-content: flex-end;
+  margin: .3em;
+  /* border: 1px solid red; */
 }
+
 div.chord {
-  text-align  : left;
-  font-weight : bolder;
-  font-style  : italic;
+  text-align: left;
+  font-weight: bolder;
+  font-style: italic;
   color: rgb(170, 14, 14);
-  /* margin : .3em; */
+  /* margin: .3em; */
   /* border: 1px solid green; */
 }
+
 div.lyric {
-  text-align  : left;
-  height: 50%;
-  /* margin : .3em; */
+  text-align: left;
+  /* margin: .3em; */
   /* border: 1px solid blue; */
 }
 
@@ -26,7 +27,7 @@ div.lyrics-line {
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: flex-start;
-  margin : .3em;
+  margin: .3em;
   /* border: 1px solid goldenrod; */
 }
 
@@ -35,7 +36,7 @@ div.songs {
   justify-content: flex-start;
   flex-wrap: nowrap;
   flex-direction: column;
-  /* margin : .3em; */
+  /* margin: .3em; */
   /* border: 1px solid cyan; */
 }
 
@@ -55,4 +56,61 @@ div.video-container {
 
 .song-container {
   font-size: x-large;
+}
+
+/* Styles for chord diagrams */
+.chord-diagram {
+  width: 80px;
+  height: 100px;
+  margin-right: 10px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.chord-diagram svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Empty chord placeholder - much smaller */
+.empty-chord {
+  width: 20px; /* Much smaller width */
+  height: 20px; /* Much smaller height */
+  margin-right: 10px;
+  visibility: hidden;
+}
+
+/* Compact part for no-chord sections */
+.part.no-chord {
+  min-height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+/* Ensure lyric divs in no-chord parts take full width */
+.part.no-chord .lyric {
+  margin-left: -30px; /* Compensate for the small placeholder */
+  padding-left: 30px; /* Add padding to maintain text alignment */
+}
+
+/* Special styling for parts with chord but no lyrics */
+.part.no-lyrics {
+  min-height: 100px; /* Same height as chord diagram */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Align chord to top */
+}
+
+.part.no-lyrics .lyric {
+  height: 20px; /* Small fixed height for empty lyric */
+  visibility: hidden; /* Hide but maintain space */
+}
+
+/* For parts with both chord and lyrics */
+.part.with-chord {
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }

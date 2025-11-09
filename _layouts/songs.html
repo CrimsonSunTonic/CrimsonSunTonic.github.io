@@ -11,11 +11,6 @@
 
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <!-- <div class="post-content e-content" itemprop="articleBody"
-          style="display: none;">
-          {{ content }}
-        </div> -->
-
         <div class="video-container">
           <iframe src="{{ page.youtube }}" frameborder="0"
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
@@ -37,9 +32,24 @@
 
     {%- include footer.html -%}
 
+    <!-- Load SVGuitar library -->
+    <script src="{{ "/assets/js/svguitar.js" | relative_url }}"></script>
+    <!-- Load chord database first -->
+    <script src="{{ "/assets/js/chord-database.js" | relative_url }}"></script>
+    <!-- Then load song layout -->
     <script src="{{ "/assets/js/songLayout.js" | relative_url }}"></script>
     <script>
       document.addEventListener('DOMContentLoaded', function() {
+          // Parse chords from front matter
+          const frontMatterChords = {{ page.chords | jsonify }};
+          
+          // Add chords from front matter to database
+          if (frontMatterChords) {
+            Object.keys(frontMatterChords).forEach(chordName => {
+              addChordToDatabase(chordName, frontMatterChords[chordName]);
+            });
+          }
+          
           const rawContent = `{{ content }}`.trim();
           const decodedContent = htmlEntityDecode(rawContent);
           const strippedContent = stripPTagsAndBrTags(decodedContent);
