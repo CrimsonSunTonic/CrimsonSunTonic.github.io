@@ -32,7 +32,8 @@
   <div id="tree"></div>
 
   <script>
-    const data = {{ site.data[page.data_file | default: "family_tree_mother"] | jsonify }};
+    {% assign data_file = page.data_file | default: "family_tree_mother" %}
+    const data = {{ site.data[data_file] | jsonify }};
 
     const chart = new FamilyTree(document.getElementById("tree"), {
       nodeBinding: {
