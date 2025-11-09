@@ -1,1 +1,8 @@
- 
+- name: "Em"
+  fingers: [
+    [4, 2],
+    [5, 2]
+  ]
+  barres: []
+  title: "Em"
+  position: 1

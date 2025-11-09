@@ -25,6 +25,18 @@ chords:
     barres: []
     title: "ChordTitle"
     position: 2
+  D/F#:
+    fingers: [
+      [1, 4],
+      [2, 3],
+      [3, 2],
+      [4, 'x'],
+      [5, 'x'],
+      [6, 2]
+    ]
+    barres: []
+    title: "D/F# override"
+    position: 1
 ---
 # This is for development!!!
 An [C]empty street, an [G]empty house<br>

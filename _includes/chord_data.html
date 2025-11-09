@@ -1,0 +1,23 @@
+<script>
+// Chord data loaded from Jekyll data files
+window.chordData = {
+  {% comment %} Load all chords from YAML files {% endcomment %}
+  {% for note in site.data.chordsdb %}
+    {% for suffix in note[1] %}
+      {% for chord in suffix[1] %}
+        "{{ chord.name }}": {
+          fingers: {{ chord.fingers | jsonify }},
+          barres: {{ chord.barres | jsonify }},
+          title: "{{ chord.title }}",
+          position: {{ chord.position }}
+        },
+      {% endfor %}
+    {% endfor %}
+  {% endfor %}
+  
+  // Remove trailing comma
+  "_dummy": null
+};
+// Remove dummy entry
+delete window.chordData._dummy;
+</script>

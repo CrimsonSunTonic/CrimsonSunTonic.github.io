@@ -1,1 +1,27 @@
- 
+- name: "C"
+  fingers: [
+    [2, 1],
+    [4, 2],
+    [5, 3]
+  ]
+  barres: []
+  title: "C"
+  position: 1
+
+- name: "C2"
+  fingers: [
+    [1, 3],
+    [2, 3],
+    [3, 3],
+    [4, 3],
+    [5, 3]
+  ]
+  barres: [
+    {
+      fromString: 5,
+      toString: 1,
+      fret: 3
+    }
+  ]
+  title: "C"
+  position: 3

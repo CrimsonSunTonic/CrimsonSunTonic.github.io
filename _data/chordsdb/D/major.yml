@@ -1,1 +1,25 @@
- 
+- name: "D"
+  fingers: [
+    [1, 2],
+    [2, 3],
+    [3, 2],
+    [4, 0],
+    [5, 'x'],
+    [6, 'x']
+  ]
+  barres: []
+  title: "D"
+  position: 1
+
+- name: "D/F#"
+  fingers: [
+    [1, 2],
+    [2, 3],
+    [3, 2],
+    [4, 'x'],
+    [5, 'x'],
+    [6, 2]
+  ]
+  barres: []
+  title: "D/F#"
+  position: 1
