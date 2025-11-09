@@ -1,1 +1,17 @@
- 
+- name: "B7"
+  fingers: "20212x"
+  barres: []
+  title: "B7"
+  position: 1
+
+- name: "B7(v2)"
+  fingers: "24242x"
+  barres: [
+    {
+      "fret": 2,
+      "fromString": 5,
+      "toString": 1
+    }
+  ]
+  title: "B7"
+  position: 1

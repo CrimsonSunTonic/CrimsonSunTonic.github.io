@@ -7,3 +7,15 @@
   barres: []
   title: "G"
   position: 1
+
+- name: "G(v2)"
+  fingers: "330023"
+  barres: []
+  title: "G"
+  position: 1
+
+- name: "G/B"
+  fingers: "33002x"
+  barres: []
+  title: "G/B"
+  position: 1

@@ -8,32 +8,28 @@ tuning: "Standard EADGBE"
 youtube: "https://www.youtube.com/embed/YGin8rAZ3Mw"
 chords:
   Esus4:
-    fingers: [
-      [2, 2],
-      [3, 2],
-      [4, 2]
-    ]
+    fingers: "022200"
     barres: []
     title: "Esus4"
     position: 1
   MyCustomChord:
-    fingers: [
-      [1, 1],
-      [2, 3],
-      [3, 3]
+    fingers: "133111"
+    barres: [
+      {
+        fromString: 3,
+        toString: 1,
+        fret: 1
+      },
+      {
+        fromString: 5,
+        toString: 6,
+        fret: 3
+      }
     ]
-    barres: []
     title: "ChordTitle"
     position: 2
   D/F#:
-    fingers: [
-      [1, 4],
-      [2, 3],
-      [3, 2],
-      [4, 'x'],
-      [5, 'x'],
-      [6, 2]
-    ]
+    fingers: "232xx2"
     barres: []
     title: "D/F# override"
     position: 1

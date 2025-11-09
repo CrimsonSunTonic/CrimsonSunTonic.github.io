@@ -1,1 +1,11 @@
- 
+- name: "Bm7"
+  fingers: "23242x"
+  barres: [
+    {
+      "fret": 2,
+      "fromString": 5,
+      "toString": 1
+    }
+  ]
+  title: "Bm7"
+  position: 1

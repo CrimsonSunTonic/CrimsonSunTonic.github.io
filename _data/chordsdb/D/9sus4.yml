@@ -1,0 +1,17 @@
+- name: "D9sus4"
+  fingers: "0100XX"
+  barres: []
+  title: "D9sus4"
+  position: 1
+
+- name: "D9sus4(v2)"
+  fingers: "x1111x"
+  barres: [
+    {
+      fret: 1,
+      fromString: 5,
+      toString: 2
+    }
+  ]
+  title: "D9sus4"
+  position: 5

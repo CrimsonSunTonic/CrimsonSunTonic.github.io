@@ -1,1 +1,11 @@
- 
+- name: "CM7(v2)"
+  fingers: "13231x"
+  barres: [
+    {
+      fret: 1,
+      fromString: 5,
+      toString: 1
+    }
+  ]
+  title: "CM7"
+  position: 3
