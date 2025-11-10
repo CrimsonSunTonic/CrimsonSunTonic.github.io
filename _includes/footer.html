@@ -2,11 +2,17 @@
   <data class="u-url" href="{{ "/" | relative_url }}"></data>
 
   <div class="wrapper">
-    <div class="footer-col-wrapper">
-      <div class="footer-col footer-col-4">
-        {%- include social.html -%}
+    <!-- Centered Social Media -->
+    <div class="footer-social-center">
+      {%- include social.html -%}
+    </div>
+
+    <!-- Centered Copyright -->
+    <div class="footer-copyright">
+      <div class="copyright">
+        © {{ 'now' | date: "%Y" }} Crimson Sun. All rights reserved.
+        <span class="footer-text">Created with ♥ beneath a twilight sky.</span>
       </div>
     </div>
   </div>
-
 </footer>

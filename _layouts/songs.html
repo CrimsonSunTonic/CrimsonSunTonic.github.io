@@ -8,26 +8,79 @@
   <body>
 
     {%- include header.html -%}
-    {%- include chord_data.html -%} <!-- Thêm dòng này -->
+    {%- include chord_data.html -%}
 
     <main class="page-content" aria-label="Content">
-      <div class="wrapper">
-        <div class="video-container">
-          <iframe src="{{ page.youtube }}" frameborder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
+      <div class="song-page-wrapper">
+        <!-- Split Header: Left Video + Right Song Info -->
+        <div class="song-header">
+          <!-- Left Half - YouTube Video -->
+          <div class="video-hero">
+            <iframe src="{{ page.youtube }}" frameborder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+          </div>
+
+          <!-- Right Half - Song Information -->
+          <div class="song-info-panel">
+            <h1 class="song-title">{{ page.song_name }}</h1>
+            
+            <div class="song-meta">
+              <div class="meta-item">
+                <div class="meta-icon">🎵</div>
+                <div class="meta-content">
+                  <div class="meta-label">Artist</div>
+                  <div class="meta-value">{{ page.artist }}</div>
+                </div>
+              </div>
+              
+              <div class="meta-item">
+                <div class="meta-icon">🎸</div>
+                <div class="meta-content">
+                  <div class="meta-label">Tuning</div>
+                  <div class="meta-value">{{ page.tuning }}</div>
+                </div>
+              </div>
+              
+              {% if page.capo %}
+              <div class="meta-item">
+                <div class="meta-icon">📍</div>
+                <div class="meta-content">
+                  <div class="meta-label">Capo</div>
+                  <div class="meta-value">{{ page.capo }}</div>
+                </div>
+              </div>
+              {% endif %}
+              
+              {% if page.key %}
+              <div class="meta-item">
+                <div class="meta-icon">🎹</div>
+                <div class="meta-content">
+                  <div class="meta-label">Key</div>
+                  <div class="meta-value">{{ page.key }}</div>
+                </div>
+              </div>
+              {% endif %}
+              
+              {% if page.tempo %}
+              <div class="meta-item">
+                <div class="meta-icon">⏱️</div>
+                <div class="meta-content">
+                  <div class="meta-label">Tempo</div>
+                  <div class="meta-value">{{ page.tempo }} BPM</div>
+                </div>
+              </div>
+              {% endif %}
+            </div>
+          </div>
         </div>
 
-        <div class="song-container">
-          <h2>{{ page.song_name }}</h2>
-          <p>Artist: {{ page.artist }}</p>
-          <p>Tuning: {{ page.tuning }}</p>
-  
+        <!-- Lyrics Container -->
+        <div class="lyrics-container">
           <div class="songs" id="songs">
             <!-- The lyrics will be populated by the JavaScript function -->
           </div>
         </div>
-
       </div>
     </main>
 
@@ -41,21 +94,28 @@
     <script src="{{ "/assets/js/songLayout.js" | relative_url }}"></script>
     <script>
       document.addEventListener('DOMContentLoaded', function() {
-          // Parse chords from front matter
-          const frontMatterChords = {{ page.chords | jsonify }};
-          
-          // Add chords from front matter to database
-          if (frontMatterChords) {
-            Object.keys(frontMatterChords).forEach(chordName => {
-              addChordToDatabase(chordName, frontMatterChords[chordName]);
-            });
-          }
-          
-          const rawContent = `{{ content }}`.trim();
-          const decodedContent = htmlEntityDecode(rawContent);
-          const strippedContent = stripPTagsAndBrTags(decodedContent);
-          console.log(strippedContent);
-          renderSong(strippedContent);
+        // Parse chords from front matter
+        const frontMatterChords = {{ page.chords | jsonify }};
+
+        // Add chords from front matter to database
+        if (frontMatterChords) {
+          Object.keys(frontMatterChords).forEach(chordName => {
+            addChordToDatabase(chordName, frontMatterChords[chordName]);
+          });
+        }
+
+        // Pass content and chords to the initializer
+        const rawContent = `{{ content }}`.trim();
+        if(window.initSongPage) {
+          initSongPage(frontMatterChords, rawContent);
+        } else {
+          // Fallback: try to render using existing helpers
+          try{
+            const decodedContent = htmlEntityDecode(rawContent);
+            const strippedContent = stripPTagsAndBrTags(decodedContent);
+            renderSong(strippedContent);
+          }catch(e){ console.warn(e); }
+        }
       });
     </script>
 

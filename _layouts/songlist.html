@@ -1,0 +1,25 @@
+---
+layout: default
+---
+
+<header class="post-header">
+  <h1 class="post-title">Songlist</h1>
+  <p class="post-meta">A curated list of chord posts and songs.</p>
+</header>
+
+<section class="song-list">
+  {%- for post in site.posts -%}
+    <article class="song-card">
+      {%- if post.youtube -%}
+        {%- assign youtube_id = post.youtube | split: "/" | last -%}
+        <a href="{{ post.url | relative_url }}" class="song-thumb">
+          <img src="https://img.youtube.com/vi/{{ youtube_id }}/mqdefault.jpg" alt="Thumbnail for {{ post.title | escape }}" loading="lazy">
+        </a>
+      {%- endif -%}
+      <div class="song-info">
+        <h3><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h3>
+        <p class="post-meta">{%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}{{ post.date | date: date_format }}</p>
+      </div>
+    </article>
+  {%- endfor -%}
+</section>
