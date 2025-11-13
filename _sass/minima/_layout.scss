@@ -108,43 +108,11 @@
 .site-footer {
   border-top: 1px solid $grey-color-light;
   padding: $spacing-unit 0;
-  text-align: center;
 }
 
-.footer-social-center {
+.footer-heading {
+  @include relative-font-size(1.125);
   margin-bottom: $spacing-unit / 2;
-  
-  .social-media-list {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin: 0;
-    padding: 0;
-    
-    li {
-      padding: 0;
-    }
-  }
-}
-
-.footer-copyright {
-  .copyright {
-    font-size: $small-font-size;
-    color: $grey-color;
-    line-height: 1.6;
-  }
-  
-  .footer-text {
-    display: block;
-    margin-top: 5px;
-    font-style: italic;
-  }
-}
-
-@include media-query($on-palm) {
-  .footer-social-center .social-media-list {
-    gap: 15px;
-  }
 }
 
 .contact-list,
@@ -252,7 +220,6 @@
   @include relative-font-size(2.625);
   letter-spacing: -1px;
   line-height: 1;
-  color: crimson;
 
   @include media-query($on-laptop) {
     @include relative-font-size(2.25);
