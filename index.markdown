@@ -1,6 +1,6 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
-layout: home
+layout: welcome
+title: "Crimson Sun"
+description: "Explore guitar chords, songs, and musical insights. A comprehensive resource for musicians and music enthusiasts."
 ---
+

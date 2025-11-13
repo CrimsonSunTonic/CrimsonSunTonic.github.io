@@ -1,0 +1,25 @@
+---
+layout: default
+---
+
+<section class="about-section">
+  <div class="container">
+    <div class="main-card">
+      <article class="about-content">
+        <header class="about-header">
+          <h1 class="page-title">{{ page.title }}</h1>
+        </header>
+
+        <div class="about-body">
+          {{ content }}
+        </div>
+
+        <footer class="about-footer">
+          <div class="last-updated">
+            <strong>Last updated:</strong> {{ site.time | date: "%B %d, %Y" }}
+          </div>
+        </footer>
+      </article>
+    </div>
+  </div>
+</section>

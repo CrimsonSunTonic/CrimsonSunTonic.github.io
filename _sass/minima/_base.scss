@@ -112,15 +112,10 @@ a {
 
   &:hover {
     color: $text-color;
-    text-decoration: underline;
   }
 
   .social-media-list &:hover {
     text-decoration: none;
-
-    .username {
-      text-decoration: underline;
-    }
   }
 }
 
@@ -175,8 +170,7 @@ pre {
  * Wrapper
  */
 .wrapper {
-  max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
-  max-width:         calc(#{$content-width} - (#{$spacing-unit} * 2));
+  max-width: 100%;
   margin-right: auto;
   margin-left: auto;
   padding-right: $spacing-unit;
@@ -216,14 +210,6 @@ pre {
     padding-right: 5px;
     vertical-align: text-top;
 }
-
-.social-media-list {
-  li + li {
-    padding-top: 5px;
-  }
-}
-
-
 
 /**
  * Tables

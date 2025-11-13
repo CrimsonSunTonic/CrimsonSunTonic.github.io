@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 120" width="400" height="120">
+  <defs>
+    <linearGradient id="sunGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffcc00;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#ff7e5f;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff3333;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="sunRadial" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#ffff00;stop-opacity:1" />
+      <stop offset="70%" style="stop-color:#ff7e5f;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff3333;stop-opacity:1" />
+    </radialGradient>
+    <linearGradient id="textGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#fff5e1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ffcc00;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="textGradient2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff3333;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#ff6347;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff0000;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="textGlow">
+      <feGaussianBlur stdDeviation="1" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Sun on left side -->
+  <g>
+    <!-- Main sun circle -->
+    <circle cx="50" cy="60" r="35" fill="url(#sunRadial)" filter="url(#glow)"/>
+    
+    <!-- Inner golden circle -->
+    <circle cx="50" cy="60" r="30" fill="url(#sunGradient)" opacity="0.9"/>
+    
+    <!-- Sun rays -->
+    <g stroke="url(#sunGradient)" stroke-width="3" stroke-linecap="round" filter="url(#glow)">
+      <line x1="50" y1="15" x2="50" y2="5"/>
+      <line x1="85" y1="25" x2="92" y2="18"/>
+      <line x1="95" y1="60" x2="105" y2="60"/>
+      <line x1="85" y1="95" x2="92" y2="102"/>
+      <line x1="50" y1="105" x2="50" y2="115"/>
+      <line x1="15" y1="95" x2="8" y2="102"/>
+      <line x1="5" y1="60" x2="-5" y2="60"/>
+      <line x1="15" y1="25" x2="8" y2="18"/>
+    </g>
+  </g>
+  
+  <!-- Japanese characters "紅日" in center-left -->
+  <g>
+    <!-- Decorative background -->
+    <circle cx="130" cy="60" r="32" fill="rgba(0,0,0,0.2)" opacity="0.4"/>
+    
+    <!-- Character "紅" -->
+    <text x="115" y="68" font-family="'Microsoft YaHei', 'SimHei', 'Noto Sans JP', serif" font-size="48" font-weight="900" fill="url(#textGradient)" text-anchor="middle" dominant-baseline="middle" filter="url(#textGlow)" style="font-style: italic; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">紅</text>
+    
+    <!-- Character "日" -->
+    <text x="145" y="68" font-family="'Microsoft YaHei', 'SimHei', 'Noto Sans JP', serif" font-size="48" font-weight="900" fill="url(#textGradient2)" text-anchor="middle" dominant-baseline="middle" filter="url(#textGlow)" style="font-style: italic; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">日</text>
+    
+    <!-- Decorative lines -->
+    <line x1="100" y1="35" x2="160" y2="35" stroke="rgba(255,204,0,0.5)" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="100" y1="95" x2="160" y2="95" stroke="rgba(255,204,0,0.5)" stroke-width="1.5" stroke-linecap="round"/>
+  </g>
+  
+  <!-- Vertical divider -->
+  <line x1="185" y1="30" x2="185" y2="90" stroke="rgba(255,204,0,0.4)" stroke-width="2"/>
+  
+  <!-- English text "Crimson Sun" on right -->
+  <text x="280" y="55" font-family="'Arial', 'Helvetica', sans-serif" font-size="36" font-weight="700" fill="white" text-anchor="middle" dominant-baseline="middle" filter="url(#textGlow)" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.4); letter-spacing: 1px;">Crimson Sun</text>
+  
+  <!-- Tagline below -->
+  <text x="280" y="85" font-family="'Arial', 'Helvetica', sans-serif" font-size="14" font-weight="300" fill="rgba(255,255,255,0.8)" text-anchor="middle" dominant-baseline="middle" style="letter-spacing: 2px; font-style: italic;">Overdose with muzik</text>
+  
+  <!-- Decorative dots -->
+  <circle cx="195" cy="40" r="2.5" fill="rgba(255,204,0,0.8)"/>
+  <circle cx="195" cy="80" r="2.5" fill="rgba(255,204,0,0.8)"/>
+</svg>

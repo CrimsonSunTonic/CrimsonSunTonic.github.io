@@ -1,0 +1,97 @@
+---
+layout: default
+---
+
+<section class="songlist-section">
+  <div class="container">
+    <div class="main-card">
+      <header class="songlist-header">
+        <h1 class="page-heading">{{ page.title }}</h1>
+        
+        <!-- Modern Search Bar -->
+        <div class="search-container">
+          <div class="search-bar">
+            <i class="fas fa-search search-icon"></i>
+            <input 
+              type="text" 
+              id="songSearch" 
+              class="search-input" 
+              placeholder="Search songs, artists..." 
+              aria-label="Search songs"
+            >
+            <button class="search-clear" id="searchClear" aria-label="Clear search" style="opacity: 0; visibility: hidden;">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+          <div class="search-stats">
+            <span id="searchResultsCount">{{ site.posts.size }}</span> songs available
+          </div>
+        </div>
+      </header>
+
+      {%- if site.posts.size > 0 -%}
+        <div class="youtube-grid" id="songGrid">
+          {%- for post in site.posts -%}
+          <a class="video-card-link" href="{{ post.url | relative_url }}" 
+             data-search-data="{{ post.song_name | default: post.title | downcase }} {{ post.artist | default: '' | downcase }} {{ post.title | downcase }}">
+            <div class="video-card">
+              <div class="video-thumbnail">
+                {%- if post.youtube -%}
+                  <img class="thumbnail-image" data-youtube-url="{{ post.youtube }}" alt="{{ post.title | escape }}" loading="lazy">
+                {%- else -%}
+                  <div class="thumbnail-placeholder">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 180">
+                      <rect width="320" height="180" fill="#f3f3f3"/>
+                      <circle cx="160" cy="90" r="30" fill="#ff0000"/>
+                      <polygon points="150,75 150,105 175,90" fill="white"/>
+                    </svg>
+                  </div>
+                {%- endif -%}
+                <div class="duration-badge">
+                  {%- if post.content contains 'youtube' or post.content contains 'iframe' -%}
+                    <span>SONG</span>
+                  {%- endif -%}
+                </div>
+              </div>
+              
+              <div class="video-info">
+                <div class="video-meta">
+                  {%- if post.song_name -%}
+                    <p class="song-name">{{ post.song_name | escape }}</p>
+                  {%- else -%}
+                    <p class="song-name">{{ post.title | escape }}</p>
+                  {%- endif -%}
+                  
+                  {%- if post.artist -%}
+                    <p class="artist-name">{{ post.artist | escape }}</p>
+                  {%- endif -%}
+                </div>
+              </div>
+            </div>
+          </a>
+          {%- endfor -%}
+        </div>
+
+        <!-- No Results Message -->
+        <div id="noResults" class="no-results-message" style="display: none;">
+          <div class="no-results-content">
+            <i class="fas fa-music no-results-icon"></i>
+            <h3>No songs found</h3>
+            <p>Try adjusting your search terms or browse all songs</p>
+          </div>
+        </div>
+      {%- else -%}
+        <div class="no-results-message">
+          <div class="no-results-content">
+            <i class="fas fa-music no-results-icon"></i>
+            <h3>No songs available</h3>
+            <p>Check back soon for new song additions!</p>
+          </div>
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+<script src="{{ '/assets/js/youtube-thumbnail-loader.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/song-search.js' | relative_url }}"></script>

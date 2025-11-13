@@ -1,12 +1,52 @@
-<footer class="site-footer h-card">
-  <data class="u-url" href="{{ "/" | relative_url }}"></data>
-
-  <div class="wrapper">
-    <div class="footer-col-wrapper">
-      <div class="footer-col footer-col-4">
+<footer class="beautiful-footer">
+  <!-- Decorative top accent -->
+  <div class="footer-accent-top"></div>
+  
+  <div class="footer-content">
+    <!-- Left Section: Brand & Tagline -->
+    <div class="footer-section-left">
+      <div class="footer-brand">
+        <h3 class="footer-title">
+          <i class="fas fa-sun"></i>
+          {{ site.title | escape }}
+        </h3>
+        <p class="footer-tagline">🌅 Overdose with Muzik!!!🎵</p>
+      </div>
+    </div>
+    
+    <!-- Center Section: Navigation -->
+    <div class="footer-section-center">
+      <h4 class="footer-section-title">Quick Links</h4>
+      <ul class="footer-links">
+        <li><a href="{{ "/" | relative_url }}"><i class="fas fa-home"></i><span>Home</span></a></li>
+        <li><a href="{{ "/songlist/" | relative_url }}"><i class="fas fa-music"></i><span>Songs</span></a></li>
+        <li><a href="{{ "/about/" | relative_url }}"><i class="fas fa-info-circle"></i><span>About</span></a></li>
+      </ul>
+    </div>
+    
+    <!-- Right Section: Social -->
+    <div class="footer-section-right">
+      <h4 class="footer-section-title">Connect</h4>
+      <div class="footer-social">
         {%- include social.html -%}
       </div>
     </div>
   </div>
-
+  
+  <!-- Divider with gradient -->
+  <div class="footer-divider"></div>
+  
+  <!-- Bottom Section: Copyright & Links -->
+  <div class="footer-bottom">
+    <p class="footer-copyright">
+      <i class="fas fa-heart" style="color: #ffcc00;"></i>
+      &copy; <span id="year">2025</span> {{ site.title | escape }}. All rights reserved.
+    </p>
+    <div class="footer-bottom-links">
+      <a href="#" title="Back to Top"><i class="fas fa-arrow-up"></i></a>
+    </div>
+  </div>
+  
+  <!-- Decorative bottom accent -->
+  <div class="footer-accent-bottom"></div>
 </footer>

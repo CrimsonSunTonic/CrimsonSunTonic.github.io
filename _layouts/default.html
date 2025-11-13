@@ -4,17 +4,27 @@
   {%- include head.html -%}
 
   <body>
+    <!-- Sunset and Ocean Effects -->
+    <div class="sun"></div>
+    <div class="birds">
+      <i class="fas fa-dove"></i>
+      <i class="fas fa-dove"></i>
+      <i class="fas fa-dove"></i>
+    </div>
+    <div class="waves"></div>
+    <div class="waves"></div>
+    <div class="waves"></div>
 
-    {%- include header.html -%}
+    <div class="container">
+      {%- include header.html -%}
 
-    <main class="page-content" aria-label="Content">
-      <div class="wrapper">
+      <main class="page-content" aria-label="Content">
         {{ content }}
-      </div>
-    </main>
-
+      </main>
+    </div>
     {%- include footer.html -%}
-
+    <script src="{{ '/assets/js/sunset-theme.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/footer-enhancements.js' | relative_url }}"></script>
   </body>
 
 </html>

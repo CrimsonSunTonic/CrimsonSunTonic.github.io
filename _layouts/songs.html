@@ -2,41 +2,54 @@
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
 
   {%- include head.html -%}
-  <head>
-    <link rel="stylesheet" href="{{ "/assets/css/songLayout.css" | relative_url }}">
-  </head>
+  <link rel="stylesheet" href="{{ "/assets/css/songLayout.css" | relative_url }}">
+
   <body>
+    <!-- Sunset and Ocean Effects -->
+    <div class="sun"></div>
+    <div class="birds">
+      <i class="fas fa-dove"></i>
+      <i class="fas fa-dove"></i>
+      <i class="fas fa-dove"></i>
+    </div>
+    <div class="waves"></div>
+    <div class="waves"></div>
+    <div class="waves"></div>
 
-    {%- include header.html -%}
-    {%- include chord_data.html -%} <!-- Thêm dòng này -->
+    <div class="container">
+      {%- include header.html -%}
+      {%- include chord_data.html -%}
 
-    <main class="page-content" aria-label="Content">
-      <div class="wrapper">
-        <div class="video-container">
-          <iframe src="{{ page.youtube }}" frameborder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
-        </div>
-
-        <div class="song-container">
-          <h2>{{ page.song_name }}</h2>
-          <p>Artist: {{ page.artist }}</p>
-          <p>Tuning: {{ page.tuning }}</p>
-  
-          <div class="songs" id="songs">
-            <!-- The lyrics will be populated by the JavaScript function -->
+      <main class="page-content" aria-label="Content">
+        <div class="wrapper">
+          <div class="video-container">
+            <iframe src="{{ page.youtube }}" frameborder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+          </div>
+          <div class="main-card">
+              <h2>{{ page.song_name }}</h2>
+              <p>Artist: {{ page.artist }}</p>
+              <p>Tuning: {{ page.tuning }}</p>
+          </div>
+          <div class="main-card">
+            <div class="song-container">
+              <div class="songs" id="songs">
+                <!-- The lyrics will be populated by the JavaScript function -->
+              </div>
+            </div>
           </div>
         </div>
-
-      </div>
-    </main>
+      </main>
+    </div>
 
     {%- include footer.html -%}
-
     <!-- Load SVGuitar library -->
     <script src="{{ "/assets/js/svguitar.js" | relative_url }}"></script>
     <!-- Load chord database first -->
     <script src="{{ "/assets/js/chord-database.js" | relative_url }}"></script>
+    <!-- Load theme effects -->
+    <script src="{{ "/assets/js/sunset-theme.js" | relative_url }}"></script>
     <!-- Then load song layout -->
     <script src="{{ "/assets/js/songLayout.js" | relative_url }}"></script>
     <script>
