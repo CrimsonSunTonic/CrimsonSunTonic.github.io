@@ -1,49 +1,468 @@
-<!-- <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "en" }}">
-
-  {%- include head.html -%}
-  <head>
-    <link rel="stylesheet" href="{{ "/assets/css/familyTree.css" | relative_url }}">
-  </head>
-  <body>
-  <div class="container">
-    <div class="row">
-      <div id="family-tree" class="tree"></div>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }}</title>
+  <link rel="stylesheet" href="{{ '/assets/css/familyTree.css' | relative_url }}">
+  <script src="{{ "/assets/js/libs/FamilyTree.js" | relative_url }}"></script>
+</head>
+<body>
+  <div class="tree-container">
+    <h1>{{ page.title }}</h1>
+    <h2>{{ page.subtitle }}</h2>
+    
+    <div class="export-container">
+      <button id="debugBtn" class="export-btn">Debug Data</button>
+      <button id="exportYaml" class="export-btn">Export YAML</button>
     </div>
+    
+    <div id="tree"></div>
   </div>
 
   <script>
-    window.familyData = {{ site.data[page.data_file] | jsonify }};
-  </script>
-  <script src="{{ "/assets/js/familyTree.js" | relative_url }}"></script>
-</body>
-</html> -->
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>{{ page.title }}</title>
-  <link rel="stylesheet" href="{{ '/assets/css/familyTree.css' | relative_url }}">
-  <script src="https://balkan.app/js/FamilyTree.js"></script>
-</head>
-<body>
-  <div id="tree"></div>
-
-  <script>
     {% assign data_file = page.data_file | default: "family_tree_mother" %}
-    const data = {{ site.data[data_file] | jsonify }};
+    const initialFamilyData = {{ site.data[data_file] | jsonify }};
+    let family;
+    
+    // Biến lưu trữ dữ liệu hiện tại
+    let currentData = JSON.parse(JSON.stringify(initialFamilyData));
+    
+    // Biến đếm ID mới
+    let nextId = Math.max(...initialFamilyData.map(node => node.id)) + 1;
 
-    const chart = new FamilyTree(document.getElementById("tree"), {
-      nodeBinding: {
-        field_0: "name",
-        field_1: "title",
-        img_0: "img"
+    // Định nghĩa template mới kết hợp Hugo và Sriniz với gradient
+    FamilyTree.templates.myHugo = Object.assign({}, FamilyTree.templates.hugo);
+
+    // Thêm defs với gradient và các biểu tượng
+    FamilyTree.templates.myHugo.defs = `
+      <defs>
+        <!-- Gradient cho nam -->
+        <linearGradient id="maleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#4A90E2;stop-opacity:1" />
+          <stop offset="100%" style="stop-color:#1E3A8A;stop-opacity:1" />
+        </linearGradient>
+        
+        <!-- Gradient cho nữ -->
+        <linearGradient id="femaleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#E91E63;stop-opacity:1" />
+          <stop offset="100%" style="stop-color:#880E4F;stop-opacity:1" />
+        </linearGradient>
+        
+        <!-- Gradient cho expand icon nam -->
+        <linearGradient id="expandMaleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#64B5F6;stop-opacity:1" />
+          <stop offset="100%" style="stop-color:#1976D2;stop-opacity:1" />
+        </linearGradient>
+        
+        <!-- Gradient cho expand icon nữ -->
+        <linearGradient id="expandFemaleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#F48FB1;stop-opacity:1" />
+          <stop offset="100%" style="stop-color:#D81B60;stop-opacity:1" />
+        </linearGradient>
+      </defs>
+      
+      <g transform="matrix(0.05,0,0,0.05,-13 ,-12)" id="heart">
+        <path d="M448,256c0-106-86-192-192-192S64,150,64,256s86,192,192,192S448,362,448,256Z" style="fill:#fff;stroke:red;stroke-miterlimit:10;stroke-width:24px" fill="red"></path>
+        <path d="M256,360a16,16,0,0,1-9-2.78c-39.3-26.68-56.32-45-65.7-56.41-20-24.37-29.58-49.4-29.3-76.5.31-31.06,25.22-56.33,55.53-56.33,20.4,0,35,10.63,44.1,20.41a6,6,0,0,0,8.72,0c9.11-9.78,23.7-20.41,44.1-20.41,30.31,0,55.22,25.27,55.53,56.33.28,27.1-9.31,52.13-29.3,76.5-9.38,11.44-26.4,29.73-65.7,56.41A16,16,0,0,1,256,360Z" fill="red"></path>
+      </g>
+      <g id="sriniz_male_up">
+        <circle cx="15" cy="15" r="10" fill="#fff" stroke="#fff" stroke-width="1"></circle>
+        ${FamilyTree.icon.ft(15, 15, 'url(#maleGradient)', 7.5, 7.5)}
+      </g>
+      <g id="sriniz_female_up">
+        <circle cx="15" cy="15" r="10" fill="#fff" stroke="#fff" stroke-width="1"></circle>
+        ${FamilyTree.icon.ft(15, 15, 'url(#femaleGradient)', 7.5, 7.5)}
+      </g>`;
+
+    // Định nghĩa nút expand/collapse với gradient
+    const expandIconMale =
+      '<circle cx="125" cy="0" r="10" fill="url(#expandMaleGradient)" stroke="#fff" stroke-width="1"><title>Expand</title></circle>' +
+      '<line x1="118" y1="0" x2="132" y2="0" stroke-width="1" stroke="#fff"></line>' +
+      '<line x1="125" y1="-7" x2="125" y2="7" stroke-width="1" stroke="#fff"></line>';
+
+    const expandIconFemale =
+      '<circle cx="125" cy="0" r="10" fill="url(#expandFemaleGradient)" stroke="#fff" stroke-width="1"><title>Expand</title></circle>' +
+      '<line x1="118" y1="0" x2="132" y2="0" stroke-width="1" stroke="#fff"></line>' +
+      '<line x1="125" y1="-7" x2="125" y2="7" stroke-width="1" stroke="#fff"></line>';
+
+    // Template cho nam với gradient
+    FamilyTree.templates.myHugo_male = Object.assign({}, FamilyTree.templates.myHugo);
+    FamilyTree.templates.myHugo_male.node = '<rect x="0" y="0" height="{h}" width="{w}" fill="url(#maleGradient)" stroke="#aeaeae" stroke-width="1" rx="5" ry="5"></rect>';
+    FamilyTree.templates.myHugo_male.plus = expandIconMale;
+
+    // Template cho nữ với gradient
+    FamilyTree.templates.myHugo_female = Object.assign({}, FamilyTree.templates.myHugo);
+    FamilyTree.templates.myHugo_female.node = '<rect x="0" y="0" height="{h}" width="{w}" fill="url(#femaleGradient)" stroke="#aeaeae" stroke-width="1" rx="5" ry="5"></rect>';
+    FamilyTree.templates.myHugo_female.plus = expandIconFemale;
+
+    // Thêm biểu tượng giới tính trên cùng
+    FamilyTree.templates.myHugo_male.up = '<use x="195" y="0" xlink:href="#sriniz_male_up"></use>';
+    FamilyTree.templates.myHugo_female.up = '<use x="195" y="0" xlink:href="#sriniz_female_up"></use>';
+
+    // Pointer từ Sriniz với gradient
+    FamilyTree.templates.myHugo.pointer =
+      '<g data-pointer="pointer" transform="matrix(0,0,0,0,80,80)">><g transform="matrix(0.3,0,0,0.3,-17,-17)">' +
+      '<polygon fill="url(#maleGradient)" points="53.004,173.004 53.004,66.996 0,120" />' +
+      '<polygon fill="url(#maleGradient)" points="186.996,66.996 186.996,173.004 240,120" />' +
+      '<polygon fill="url(#femaleGradient)" points="66.996,53.004 173.004,53.004 120,0" />' +
+      '<polygon fill="url(#femaleGradient)" points="120,240 173.004,186.996 66.996,186.996" />' +
+      '<circle fill="red" cx="120" cy="120" r="30" />' +
+      '</g></g>';
+
+    function getOptions(){
+      const searchParams = new URLSearchParams(window.location.search);
+      var fit = searchParams.get('fit');
+      var enableSearch = true;
+      var scaleInitial = 1;
+      if (fit == 'yes'){
+        enableSearch = false;
+        scaleInitial = FamilyTree.match.boundary;
       }
-    });
+      return {enableSearch, scaleInitial};
+    }
 
-    chart.load(data);
+    // Hàm tìm node trong currentData theo ID
+    function findNodeById(id) {
+      return currentData.find(node => node.id == id);
+    }
+
+    // Hàm cập nhật node trong currentData
+    function updateNodeInCurrentData(nodeData) {
+      const index = currentData.findIndex(node => node.id == nodeData.id);
+      if (index !== -1) {
+        // Cập nhật node đã tồn tại
+        currentData[index] = { ...currentData[index], ...nodeData };
+      } else {
+        // Thêm node mới
+        currentData.push(nodeData);
+      }
+    }
+
+    // Hàm xử lý khi form edit được submit
+    function handleEditFormSubmit(nodeData) {
+      console.log('Edit form submitted:', nodeData);
+      
+      // Chuẩn hóa dữ liệu
+      const normalizedData = {
+        id: nodeData.id,
+        name: nodeData.name || "",
+        role: nodeData.role || "",
+        born: nodeData.born || "",
+        died: nodeData.died || "",
+        img: nodeData.photo || nodeData.img || (nodeData.gender === 'female' ? "/assets/images/family/female.svg" : "/assets/images/family/male.svg"),
+        gender: nodeData.gender || "male",
+        pids: nodeData.pids || [],
+        mid: nodeData.mid,
+        fid: nodeData.fid
+      };
+
+      updateNodeInCurrentData(normalizedData);
+      console.log('Current data updated:', currentData);
+    }
+
+    // Hàm xử lý khi thêm node mới
+    function handleAddNode(parentId, nodeData) {
+      const newNode = {
+        id: nextId++,
+        name: nodeData.name || "",
+        role: nodeData.role || "",
+        born: nodeData.born || "",
+        died: nodeData.died || "",
+        img: nodeData.photo || (nodeData.gender === 'female' ? "/assets/images/family/female.svg" : "/assets/images/family/male.svg"),
+        gender: nodeData.gender || "male",
+        pids: nodeData.pids || []
+      };
+
+      // Thiết lập quan hệ cha mẹ
+      if (parentId) {
+        const parent = findNodeById(parentId);
+        if (parent) {
+          if (parent.gender === 'male') {
+            newNode.fid = parentId;
+            if (parent.pids && parent.pids.length > 0) {
+              newNode.mid = parent.pids[0];
+            }
+          } else {
+            newNode.mid = parentId;
+            if (parent.pids && parent.pids.length > 0) {
+              newNode.fid = parent.pids[0];
+            }
+          }
+        }
+      }
+
+      currentData.push(newNode);
+      console.log('New node added:', newNode);
+      return newNode.id;
+    }
+
+    // Hàm chuyển đổi dữ liệu sang YAML format
+    function convertToYamlFormat(nodes) {
+      if (!nodes || !Array.isArray(nodes)) {
+        console.error('Nodes data is invalid:', nodes);
+        return [];
+      }
+      
+      return nodes.map(node => {
+        const yamlNode = {
+          id: node.id
+        };
+
+        // Thêm các trường có điều kiện
+        if (node.pids && node.pids.length > 0) yamlNode.pids = node.pids;
+        if (node.mid) yamlNode.mid = node.mid;
+        if (node.fid) yamlNode.fid = node.fid;
+        
+        yamlNode.name = node.name || "";
+        yamlNode.role = node.role || "";
+        yamlNode.born = node.born || "";
+        yamlNode.died = node.died || "";
+        yamlNode.photo = node.photo || (node.gender === 'female' ? "/assets/images/family/female.svg" : "/assets/images/family/male.svg");
+        yamlNode.gender = node.gender || "male";
+
+        return yamlNode;
+      }).sort((a, b) => (a.id - b.id));
+    }
+
+    // Hàm định dạng YAML
+    function formatYAML(data) {
+      if (!data || !Array.isArray(data)) {
+        return "# No data available";
+      }
+      
+      let yaml = "# Family Tree Data\n# Generated: " + new Date().toLocaleString('vi-VN') + "\n\n";
+      let currentGeneration = -1;
+      
+      data.forEach((node, index) => {
+        let generation = 0;
+        if (node.id <= 10) generation = 0;
+        else if (node.id <= 23) generation = 1;
+        else if (node.id <= 65) generation = 2;
+        else generation = 3;
+
+        if (generation !== currentGeneration) {
+          if (index > 0) yaml += "\n";
+          currentGeneration = generation;
+          switch(generation) {
+            case 0: yaml += "# Thế hệ 0 - Ông Sơ\n"; break;
+            case 1: yaml += "# Thế hệ 1 - Các con\n"; break;
+            case 2: yaml += "# Thế hệ 2 - Các cháu\n"; break;
+            case 3: yaml += "# Thế hệ 3 - Các chắt\n"; break;
+            default: yaml += "# Thế hệ " + generation + "\n";
+          }
+        }
+        
+        yaml += `- id: ${node.id}\n`;
+        
+        if (node.pids && node.pids.length > 0) {
+          yaml += `  pids: [${node.pids.join(', ')}]\n`;
+        }
+        if (node.mid) yaml += `  mid: ${node.mid}\n`;
+        if (node.fid) yaml += `  fid: ${node.fid}\n`;
+        
+        yaml += `  name: "${node.name}"\n`;
+        if (node.role && node.role !== "") yaml += `  role: "${node.role}"\n`;
+        yaml += `  born: "${node.born}"\n`;
+        yaml += `  died: "${node.died}"\n`;
+        yaml += `  photo: "${node.photo}"\n`;
+        yaml += `  gender: "${node.gender}"\n`;
+        
+        if (index < data.length - 1) yaml += "\n";
+      });
+      
+      return yaml;
+    }
+
+    // Hàm download file
+    function downloadFile(content, filename, contentType) {
+      const blob = new Blob([content], { type: contentType });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }
+
+    // Hàm export YAML
+    function exportToYaml() {
+      try {
+        const yamlFormatData = convertToYamlFormat(currentData);
+        const yamlContent = formatYAML(yamlFormatData);
+        
+        const timestamp = new Date().toISOString().slice(0, 10).replace(/-/g, '');
+        const filename = `family_tree_export_${timestamp}.yml`;
+        
+        downloadFile(yamlContent, filename, 'text/yaml');
+        return true;
+      } catch (error) {
+        console.error('Export error:', error);
+        throw error;
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      var options = getOptions();
+
+      family = new FamilyTree(document.getElementById('tree'), {
+        mouseScrool: FamilyTree.none,
+        scaleInitial: options.scaleInitial,
+        mode: 'dark',
+        template: 'myHugo', // Sử dụng template mới
+        enableSearch: options.enableSearch,
+        nodeMenu: {
+          edit: { text: 'Chỉnh sửa' },
+          details: { text: 'Chi tiết' },
+        },
+        nodeTreeMenu: true,
+        nodeBinding: {
+          field_0: 'name',
+          field_1: 'born',
+          img_0: 'photo'
+        },
+        editForm: {
+          titleBinding: "name",
+          photoBinding: "photo",
+          addMoreBtn: 'Thêm phần tử',
+          addMore: 'Thêm nhiều phần tử hơn',
+          addMoreFieldName: 'Tên phần tử',
+          generateElementsFromFields: false,
+          elements: [
+            { type: 'textbox', label: 'Họ và Tên', binding: 'name' },
+            { type: 'textbox', label: 'Vai trò', binding: 'role' },
+            { type: 'textbox', label: 'Email', binding: 'email' },
+            [
+              { type: 'textbox', label: 'Số điện thoại', binding: 'phone' },
+              { type: 'textbox', label: 'Ngày sinh', binding: 'born' },
+              { type: 'textbox', label: 'Ngày mất', binding: 'died' }
+            ],
+            [
+              { 
+                type: 'select', 
+                options: [
+                  { value: 'male', text: 'Nam' }, 
+                  { value: 'female', text: 'Nữ' }
+                ], 
+                label: 'Giới tính', 
+                binding: 'gender' 
+              },
+              { type: 'textbox', label: 'Thành phố', binding: 'city' },
+            ],
+            { type: 'textbox', label: 'URL Ảnh', binding: 'photo', btn: 'Tải lên' },
+          ]
+        },
+        toolbar: {
+          fullScreen: true,
+          zoom: true,
+          fit: true,
+          expandAll: true,
+        },
+      });
+
+      // Xử lý sự kiện render-link để thêm biểu tượng trái tim
+      family.on('render-link', function (sender, args) {
+        if (args.cnode.ppid != undefined)
+          args.html += '<use data-ctrl-ec-id="' + args.node.id + '" xlink:href="#heart" x="' + (args.p.xa) + '" y="' + (args.p.ya) + '"/>';
+        if (args.cnode.isPartner && args.node.partnerSeparation == 30)
+          args.html += '<use data-ctrl-ec-id="' + args.node.id + '" xlink:href="#heart" x="' + (args.p.xb) + '" y="' + (args.p.yb) + '"/>';
+      });
+
+      // Xử lý sự kiện khi form edit được đóng (sau khi submit)
+      family.on('edit-form-close', function (sender, args) {
+        console.log('Edit form closed:', args);
+        if (args && args.data) {
+          handleEditFormSubmit(args.data);
+        }
+      });
+
+      // Xử lý sự kiện khi node được thêm
+      family.on('add-node', function (sender, args) {
+        console.log('Node added:', args);
+        if (args && args.data) {
+          const newId = handleAddNode(args.parentId, args.data);
+          // Cập nhật lại dữ liệu để FamilyTree nhận node mới
+          setTimeout(() => {
+            family.load(currentData);
+          }, 100);
+        }
+      });
+
+      family.on('field', function (sender, args) {
+        if (args.name == 'born' && args.value) {
+          if (args.value.includes('-')) {
+            var date = new Date(args.value);
+            if (!isNaN(date)) {
+              args.value = date.toLocaleDateString('vi-VN');
+            }
+          }
+        }
+        if (args.name == 'died' && args.value) {
+          if (args.value.includes('-')) {
+            var date = new Date(args.value);
+            if (!isNaN(date)) {
+              args.value = date.toLocaleDateString('vi-VN');
+            }
+          }
+        }
+      });
+
+      // Xử lý sự kiện export YAML
+      document.getElementById('exportYaml').addEventListener('click', function() {
+        const btn = this;
+        try {
+          btn.textContent = 'Đang Export...';
+          btn.disabled = true;
+          
+          const success = exportToYaml();
+          
+          if (success) {
+            btn.textContent = 'Đã Export!';
+            setTimeout(() => {
+              btn.textContent = 'Export YAML';
+              btn.disabled = false;
+            }, 2000);
+          } else {
+            btn.textContent = 'Export YAML';
+            btn.disabled = false;
+          }
+          
+        } catch (error) {
+          console.error('Export error:', error);
+          alert('Có lỗi xảy ra khi export dữ liệu: ' + error.message);
+          btn.textContent = 'Export YAML';
+          btn.disabled = false;
+        }
+      });
+
+      // Xử lý sự kiện debug
+      document.getElementById('debugBtn').addEventListener('click', function() {
+        console.log('=== DEBUG INFORMATION ===');
+        console.log('Current data:', currentData);
+        console.log('Next ID:', nextId);
+        console.log('Family instance:', family);
+        
+        // Kiểm tra các node mới được thêm
+        const newNodes = currentData.filter(node => node.id >= nextId - 10);
+        console.log('Recently added nodes:', newNodes);
+        
+        alert('Check console for debug information (F12)');
+      });
+
+      // Load dữ liệu ban đầu
+      family.load(currentData);
+
+      // Xử lý responsive
+      window.addEventListener('resize', function() {
+        setTimeout(() => {
+          if (window.innerWidth < 768) {
+            family.zoom(0.8);
+          }
+        }, 300);
+      });
+    });
   </script>
 </body>
 </html>

@@ -1,108 +1,334 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 * {
-	padding: 0px;
-	margin: 0px;
-	box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
+
 body {
-	height: 100vh;
-	display: grid;
-	align-items: center;
-	font-family: 'Poppins', sans-serif;
-}
-.tree {
-  width: 100%;
-  height: 100vh;   /* full viewport height */
+  height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   overflow: hidden;
+  touch-action: pan-x pan-y;
 }
-.tree ul {
-	padding-top: 20px;
-	position: relative;
-	transition: .5s;
+
+.tree-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  position: relative;
 }
-.tree li {
-	display: inline-table;
-	text-align: center;
-	list-style-type: none;
-	position: relative;
-	padding: 10px;
-	transition: .5s;
+
+.tree-container h1 {
+  text-align: center;
+  color: white;
+  margin: 10px 0 5px 0;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  font-size: 2rem;
 }
-.tree li::before, .tree li::after {
-	content: '';
-	position: absolute;
-	top: 0;
-	right: 50%;
-	border-top: 1px solid #ccc;
-	width: 51%;
-	height: 10px;
+
+.tree-container h2 {
+  text-align: center;
+  color: gold;
+  margin: 0px 0 20px 0;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  font-size: 2rem;
 }
-.tree li::after {
-	right: auto;
-	left: 50%;
-	border-left: 1px solid #ccc;
+
+#tree {
+  width: 100%;
+  flex: 1;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  overflow: hidden;
+  touch-action: pan-x pan-y;
 }
-.tree li:only-child::after, .tree li:only-child::before {
-	display: none;
+
+/* Export button styles - cập nhật vị trí và kích thước */
+.export-container {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1000;
+  display: flex;
+  gap: 10px;
 }
-.tree li:only-child {
-	padding-top: 0;
+
+.export-btn {
+  background: #4CAF50;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+  min-width: 100px;
+  text-align: center;
 }
-.tree li:first-child::before, .tree li:last-child::after {
-	border: 0 none;
+
+.export-btn:hover {
+  background: #45a049;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
-.tree li:last-child::before {
-	border-right: 1px solid #ccc;
-	border-radius: 0 5px 0 0;
-	-webkit-border-radius: 0 5px 0 0;
-	-moz-border-radius: 0 5px 0 0;
+
+.export-btn:disabled {
+  background: #cccccc;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
-.tree li:first-child::after {
-	border-radius: 5px 0 0 0;
-	-webkit-border-radius: 5px 0 0 0;
-	-moz-border-radius: 5px 0 0 0;
+
+/* Button specific styles */
+#debugBtn {
+  background: #ff9800;
 }
-.tree ul ul::before {
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 50%;
-	border-left: 1px solid #ccc;
-	width: 0;
-	height: 20px;
+
+#debugBtn:hover {
+  background: #f57c00;
 }
-.tree li a {
-	border: 1px solid #ccc;
-	padding: 10px;
-	display: inline-grid;
-	border-radius: 5px;
-	text-decoration-line: none;
-	border-radius: 5px;
-	transition: .5s;
+
+#exportYaml {
+  background: #2196F3;
 }
-.tree li a img {
-	width: 50px;
-	height: 50px;
-	margin-bottom: 10px !important;
-	border-radius: 100px;
-	margin: auto;
+
+#exportYaml:hover {
+  background: #1976D2;
 }
-.tree li a span {
-	border: 1px solid #ccc;
-	border-radius: 5px;
-	color: #666;
-	padding: 8px;
-	font-size: 12px;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	font-weight: 500;
+
+/* Custom styles for Balkan FamilyTree */
+.bft-search {
+  top: 20px !important;
+  bottom: unset !important;
 }
-/*Hover-Section*/
-.tree li a:hover, .tree li a:hover i, .tree li a:hover span, .tree li a:hover+ul li a {
-	background: #c8e4f8;
-	color: #000;
-	border: 1px solid #94a0b4;
+
+.mini-map {
+  bottom: 45px !important;
 }
-.tree li a:hover+ul li::after, .tree li a:hover+ul li::before, .tree li a:hover+ul::before, .tree li a:hover+ul ul::before {
-	border-color: #94a0b4;
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .tree-container {
+    padding: 5px;
+  }
+  
+  .tree-container h1,
+  .tree-container h2 {
+    font-size: 1.5rem;
+    margin: 5px 0 15px 0;
+  }
+  
+  #tree {
+    border-radius: 10px;
+  }
+
+  .export-container {
+    bottom: 15px;
+    left: 15px;
+    gap: 8px;
+  }
+
+  .export-btn {
+    padding: 6px 12px;
+    font-size: 11px;
+    min-width: 80px;
+  }
+
+  /* Tăng kích thước thanh công cụ cho mobile */
+  .bft-toolbar {
+    transform: scale(1.2);
+    transform-origin: top right;
+  }
+
+  .bft-toolbar .bft-icon {
+    width: 44px !important;
+    height: 44px !important;
+    min-width: 44px !important;
+    min-height: 44px !important;
+  }
+
+  .bft-mini-map {
+    width: 120px !important;
+    height: 120px !important;
+    bottom: 60px !important;
+    right: 10px !important;
+  }
+
+  /* Tăng kích thước search box */
+  .bft-search {
+    top: 15px !important;
+    left: 15px !important;
+  }
+
+  .bft-search-input {
+    width: 180px !important;
+    height: 44px !important;
+    font-size: 16px !important;
+    padding: 0 15px !important;
+  }
+
+  /* Cải thiện form edit cho mobile */
+  .bft-edit-form {
+    width: 90vw !important;
+    max-width: 400px !important;
+  }
+
+  .bft-edit-form-content {
+    padding: 20px !important;
+  }
+
+  .bft-form-field {
+    margin-bottom: 20px !important;
+  }
+
+  .bft-form-field input,
+  .bft-form-field textarea {
+    font-size: 16px !important;
+    padding: 12px !important;
+    height: 48px !important;
+  }
+
+  .bft-edit-form-buttons {
+    padding: 20px !important;
+  }
+
+  .bft-edit-form-buttons button {
+    height: 50px !important;
+    font-size: 16px !important;
+    margin: 5px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .tree-container h1,
+  .tree-container h2 {
+    font-size: 1.3rem;
+    margin: 3px 0 10px 0;
+  }
+
+  .export-container {
+    bottom: 10px;
+    left: 10px;
+    gap: 6px;
+  }
+
+  .export-btn {
+    padding: 5px 10px;
+    font-size: 10px;
+    min-width: 70px;
+  }
+
+  .bft-toolbar {
+    transform: scale(1.1);
+  }
+
+  .bft-toolbar .bft-icon {
+    width: 40px !important;
+    height: 40px !important;
+    min-width: 40px !important;
+    min-height: 40px !important;
+  }
+
+  .bft-mini-map {
+    width: 100px !important;
+    height: 100px !important;
+    bottom: 50px !important;
+  }
+
+  .bft-search-input {
+    width: 150px !important;
+    height: 40px !important;
+  }
+}
+
+/* Touch device improvements */
+@media (hover: none) and (pointer: coarse) {
+  .bft-node {
+    cursor: default !important;
+  }
+  
+  .bft-icon {
+    cursor: pointer !important;
+  }
+}
+
+/* Loading state */
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-size: 18px;
+  color: #666;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .tree-container h1,
+  .tree-container h2 {
+    color: #000;
+    text-shadow: 2px 2px 0 #fff;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Print styles */
+@media print {
+  .tree-container {
+    background: white !important;
+  }
+  
+  .tree-container h1,
+  .tree-container h2 {
+    color: black !important;
+    text-shadow: none !important;
+  }
+  
+  #tree {
+    box-shadow: none !important;
+    border: 1px solid #ccc !important;
+  }
+  
+  .export-container {
+    display: none;
+  }
 }
