@@ -1,0 +1,164 @@
+- id: 1
+  pids: [2]
+  name: "King George VI"
+  role: "King"
+  born: "1895"
+  died: "1952"
+  img: "https://cdn.balkan.app/shared/f1.png"
+  gender: "male"
+
+- id: 2
+  pids: [1]
+  name: "Queen Elizabeth"
+  role: "Queen Mother" 
+  born: "1900"
+  died: "2002"
+  img: "https://cdn.balkan.app/shared/f2.png"
+  gender: "female"
+
+- id: 3
+  pids: [4]
+  mid: 2
+  fid: 1
+  name: "Queen Elizabeth II"
+  role: "Queen"
+  born: "1926"
+  died: "2022"
+  img: "https://cdn.balkan.app/shared/f5.png"
+  gender: "female"
+
+- id: 4
+  pids: [3]
+  name: "Prince Philip"
+  role: "Duke of Edinburgh"
+  born: "1921"
+  died: "2021"
+  img: "https://cdn.balkan.app/shared/f3.png"
+  gender: "male"
+
+- id: 5
+  mid: 2
+  fid: 1
+  name: "Princess Margaret"
+  role: "Princess"
+  born: "1930"
+  died: "2002"
+  img: "https://cdn.balkan.app/shared/f6.png"
+  gender: "female"
+
+- id: 6
+  mid: 3
+  fid: 4
+  pids: [7, 8]
+  name: "Charles"
+  role: "Prince of Wales"
+  born: "1948"
+  img: "https://cdn.balkan.app/shared/f8.png"
+  gender: "male"
+
+- id: 7
+  pids: [6]
+  name: "Diana"
+  role: "Princess of Wales"
+  born: "1961"
+  died: "1997"
+  img: "https://cdn.balkan.app/shared/f9.png"
+  gender: "female"
+
+- id: 8
+  pids: [6]
+  name: "Camila"
+  role: "Duchess of Cornwall"
+  born: "1947"
+  img: "https://cdn.balkan.app/shared/f7.png"
+  gender: "female"
+
+- id: 9
+  mid: 3
+  fid: 4
+  name: "Anne"
+  role: "Princess Royal"
+  born: "1950"
+  img: "https://cdn.balkan.app/shared/f10.png"
+  gender: "female"
+
+- id: 10
+  mid: 3
+  fid: 4
+  name: "Prince Andrew"
+  role: "Duke of York"
+  born: "1960"
+  img: "https://cdn.balkan.app/shared/f11.png"
+  gender: "male"
+
+- id: 11
+  mid: 3
+  fid: 4
+  name: "Prince Edward"
+  role: "Earl of Wessex"
+  born: "1964"
+  img: "https://cdn.balkan.app/shared/f12.png"
+  gender: "male"
+
+- id: 12
+  fid: 6
+  mid: 7
+  pids: [14]
+  name: "Prince William"
+  role: "Duke of Cambridge"
+  born: "1982"
+  img: "https://cdn.balkan.app/shared/f14.png"
+  gender: "male"
+
+- id: 13
+  fid: 6
+  mid: 7
+  pids: [15]
+  name: "Prince Harry"
+  role: "Prince"
+  born: "1984"
+  img: "https://cdn.balkan.app/shared/f15.png"
+  gender: "male"
+
+- id: 14
+  pids: [12]
+  name: "Catherine"
+  role: "Duchess of Cambridge"
+  born: "1982"
+  img: "https://cdn.balkan.app/shared/f13.png"
+  gender: "female"
+
+- id: 15
+  pids: [13]
+  name: "Meghan Markle"
+  role: "Duchess of Sussex"
+  born: "1981"
+  img: "https://cdn.balkan.app/shared/f16.png"
+  gender: "female"
+
+- id: 16
+  fid: 12
+  mid: 14
+  name: "Prince George"
+  role: "Prince"
+  born: "2013"
+  img: "https://cdn.balkan.app/shared/f17.png"
+  gender: "male"
+
+- id: 17
+  fid: 12
+  mid: 14
+  name: "Prince Charlotte"
+  role: "Princess"
+  born: "2015"
+  img: "https://cdn.balkan.app/shared/f18.png"
+  gender: "female"
+
+- id: 18
+  fid: 12
+  mid: 14
+  name: "Prince Louis"
+  role: "Prince"
+  born: "2018"
+  img: "https://cdn.balkan.app/shared/f19.png"
+  gender: "male"

@@ -1,143 +1,703 @@
+# Family Tree Data
+# Generated: 05:31:31 16/11/2025
+
+# Thế hệ 0 - Ông Sơ
 - id: 1
-  name: King George VI
-  role: father
-  born: null
-  died: null
-  img: https://cdn.balkan.app/shared/f1.png
-  parent_id: null   # top ancestor
+  pids: [2]
+  name: "Trần Toại"
+  born: "DD-MM-18xx"
+  died: "DD-MM-18xx"
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
 
 - id: 2
-  name: Queen Elizabeth (The Queen Mother)
-  role: mother
-  born: null
-  died: null
-  img: https://cdn.balkan.app/shared/f2.png
-  parent_id: null   # spouse of id 1
+  pids: [1]
+  name: "Phan Thị Lại"
+  born: "DD-MM-18xx"
+  died: "DD-MM-18xx"
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
 
 - id: 3
-  name: Queen Elizabeth II
-  role: daughter
-  born: null
-  died: null
-  img: https://cdn.balkan.app/shared/f5.png
-  parent_id: 1      # child of King George VI & Queen Elizabeth
+  mid: 2
+  fid: 1
+  name: "Trần Đài"
+  born: "DD-MM-18xx"
+  died: "DD-MM-18xx"
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
 
 - id: 4
-  name: Prince Philip (Duke of Edinburgh)
-  role: father
-  born: null
-  died: null
-  img: https://cdn.balkan.app/shared/f3.png
-  parent_id: null   # spouse of id 3
+  mid: 2
+  fid: 1
+  name: "Trần Thị Ngân"
+  born: "DD-MM-18xx"
+  died: "DD-MM-18xx"
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
 
 - id: 5
-  name: Princess Margaret
-  role: daughter
-  born: null
-  died: null
-  img: https://cdn.balkan.app/shared/f6.png
-  parent_id: 1
+  mid: 2
+  fid: 1
+  name: "Trần Lạng"
+  born: "DD-MM-18xx"
+  died: "DD-MM-18xx"
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
 
 - id: 6
-  name: Charles (Prince of Wales)
-  role: son
-  born: null
-  died: null
-  img: https://cdn.balkan.app/shared/f8.png
-  parent_id: 3
+  mid: 2
+  fid: 1
+  name: "Trần Thị Đà"
+  born: "DD-MM-18xx"
+  died: "DD-MM-18xx"
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
 
 - id: 7
-  name: Diana (Princess of Wales)
-  role: mother
-  born: null
-  died: null
-  img: https://cdn.balkan.app/shared/f9.png
-  parent_id: null   # spouse of id 6
+  pids: [8]
+  mid: 2
+  fid: 1
+  name: "Trần Liên"
+  born: "DD-MM-18xx"
+  died: "DD-MM-19xx(05-06)"
+  photo: "https://i2.wp.com/www.spiritualbotany.com/wp-content/uploads/2015/07/lotus-978659_1920-e1465583193321.jpg"
+  gender: "male"
 
 - id: 8
-  name: Camila (Duchess of Cornwall)
-  role: mother
-  born: null
-  died: null
-  img: https://cdn.balkan.app/shared/f7.png
-  parent_id: null   # spouse of id 6
+  pids: [7]
+  name: "Bùi Thị Đồng"
+  born: "DD-MM-18xx"
+  died: "24-10-1972(18-09)"
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
 
 - id: 9
-  name: Anne (Princess Royal)
-  role: daughter
-  born: null
-  died: null
-  img: https://cdn.balkan.app/shared/f10.png
-  parent_id: 3
+  mid: 2
+  fid: 1
+  name: "Trần Sinh???"
+  born: "DD-MM-18xx"
+  died: "DD-MM-18xx"
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
 
 - id: 10
-  name: Prince Andrew (Duke of York)
-  role: son
-  born: null
-  died: null
-  img: https://cdn.balkan.app/shared/f11.png
-  parent_id: 3
+  mid: 2
+  fid: 1
+  name: "Trần Bá"
+  born: "DD-MM-18xx"
+  died: "DD-MM-18xx"
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
 
+
+# Thế hệ 1 - Các con
 - id: 11
-  name: Prince Edward (Earl of Wessex)
-  role: son
-  born: null
-  died: null
-  img: https://cdn.balkan.app/shared/f12.png
-  parent_id: 3
+  pids: [12]
+  mid: 8
+  fid: 7
+  name: "Trần Tuần"
+  born: "DD-MM-1918"
+  died: "DD-MM-1985"
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
 
 - id: 12
-  name: Prince William (Duke of Cambridge)
-  role: son
-  born: null
-  died: null
-  img: https://cdn.balkan.app/shared/f14.png
-  parent_id: 6
+  pids: [11]
+  name: "Lê Thị Loan"
+  born: "DD-MM-19xx"
+  died: "DD-MM-19xx"
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
 
 - id: 13
-  name: Prince Harry
-  role: son
-  born: null
-  died: null
-  img: https://cdn.balkan.app/shared/f15.png
-  parent_id: 6
+  pids: [14]
+  mid: 8
+  fid: 7
+  name: "Trần Thị Phò"
+  born: "DD-MM-1920?(Dậu)"
+  died: "DD-MM-19xx"
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
 
 - id: 14
-  name: Catherine (Duchess of Cambridge)
-  role: mother
-  born: null
-  died: null
-  img: https://cdn.balkan.app/shared/f13.png
-  parent_id: null   # spouse of id 12
+  pids: [13]
+  name: "Lê Hoành"
+  born: "DD-MM-19xx"
+  died: "DD-MM-19xx"
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
 
 - id: 15
-  name: Meghan Markle
-  role: mother
-  born: null
-  died: null
-  img: https://cdn.balkan.app/shared/f16.png
-  parent_id: null   # spouse of id 13
+  pids: [16]
+  mid: 8
+  fid: 7
+  name: "Trần Thị Tư"
+  born: "DD-MM-1923?(Tý)"
+  died: "DD-MM-19xx"
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
 
 - id: 16
-  name: Prince George
-  role: son
-  born: null
-  died: null
-  img: https://cdn.balkan.app/shared/f17.png
-  parent_id: 12
+  pids: [15]
+  name: "Kiều Hạng"
+  born: "DD-MM-19xx"
+  died: "DD-MM-19xx"
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
 
 - id: 17
-  name: Prince Charlotte
-  role: daughter
-  born: null
-  died: null
-  img: https://cdn.balkan.app/shared/f18.png
-  parent_id: 12
+  pids: [18]
+  mid: 8
+  fid: 7
+  name: "Trần Đỉnh"
+  born: "DD-04-1926"
+  died: "09-08-1997(07-07)"
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
 
 - id: 18
-  name: Prince Louis
-  role: son
-  born: null
-  died: null
-  img: https://cdn.balkan.app/shared/f19.png
-  parent_id: 12
+  pids: [17]
+  name: "Nguyễn Thị Ghé"
+  born: "DD-MM-1925"
+  died: "04-05-2008"
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: 19
+  mid: 8
+  fid: 7
+  name: "Trần Vô Danh"
+  role: "Chết khi mới đẻ"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: 20
+  pids: [21]
+  mid: 8
+  fid: 7
+  name: "Trần Khâm"
+  born: "DD-MM-1932?(Dậu)"
+  died: "DD-MM-19xx"
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: 21
+  pids: [20]
+  name: "Lê Thị Ngọc Mai"
+  born: "DD-MM-19xx"
+  died: "DD-MM-19xx"
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: 22
+  pids: [23]
+  mid: 8
+  fid: 7
+  name: "Trần Điền"
+  born: "DD-MM-1936?(Sửu)"
+  died: "DD-MM-19xx"
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: 23
+  pids: [22]
+  name: "Nguyễn Thị Mỹ"
+  born: "DD-MM-19xx"
+  died: "DD-MM-19xx"
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+
+# Thế hệ 2 - Các cháu
+- id: 24
+  pids: [25]
+  mid: 12
+  fid: 11
+  name: "Trần Thị Băng Tâm"
+  born: "DD-MM-1943"
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: 25
+  pids: [24]
+  name: "Lê Văn Thanh"
+  born: "DD-MM-19xx"
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: 26
+  pids: [27]
+  mid: 12
+  fid: 11
+  name: "Trần An Thạch"
+  born: "DD-MM-1947"
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: 27
+  pids: [26]
+  name: "Nguyễn Thị Bạch Tuyết"
+  born: "DD-MM-19xx"
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: 28
+  pids: [29]
+  mid: 12
+  fid: 11
+  name: "Trần Thế Bửu"
+  born: "DD-MM-1950"
+  died: "DD-MM-1999?"
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: 29
+  pids: [28]
+  name: "Nguyễn Thị Quý"
+  born: "DD-MM-19xx"
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: 30
+  pids: [31]
+  mid: 12
+  fid: 11
+  name: "Trần Thị Phong"
+  born: "DD-MM-19xx"
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: 31
+  pids: [30]
+  name: "Phùng Xuân Thái"
+  born: "DD-MM-19xx"
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: 32
+  pids: [33]
+  mid: 12
+  fid: 11
+  name: "Trần Thị Phượng"
+  born: "DD-MM-19xx"
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: 33
+  pids: [32]
+  name: "Trần Ngọc Xuân"
+  born: "DD-MM-19xx"
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: 34
+  pids: [35]
+  mid: 12
+  fid: 11
+  name: "Trần Thị Thuận"
+  born: "DD-MM-19xx"
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: 35
+  pids: [34]
+  name: "Nguyễn Đức Lộc"
+  born: "DD-MM-19xx"
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: 36
+  pids: [37]
+  mid: 12
+  fid: 11
+  name: "Trần Thị Thảo"
+  born: "DD-MM-19xx"
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: 37
+  pids: [36]
+  name: "Châu Đức Minh"
+  born: "DD-MM-19xx"
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: 38
+  mid: 13
+  fid: 14
+  name: "Lê Thị Chi"
+  born: "DD-MM-19xx"
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: 39
+  mid: 13
+  fid: 14
+  name: "Lê Thị Vân"
+  born: "DD-MM-19xx"
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: 40
+  mid: 13
+  fid: 14
+  name: "Lê Thị Phương"
+  born: "DD-MM-19xx"
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: 41
+  mid: 13
+  fid: 14
+  name: "Lê Đình Thảo"
+  born: "DD-MM-19xx"
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: 42
+  mid: 13
+  fid: 14
+  name: "Lê Thị Triêm"
+  born: "DD-MM-19xx"
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: 43
+  mid: 13
+  fid: 14
+  name: "Lê Thành Ngọc"
+  born: "DD-MM-19xx"
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: 44
+  mid: 13
+  fid: 14
+  name: "Lê Đình Chính"
+  born: "DD-MM-19xx"
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: 45
+  mid: 15
+  fid: 16
+  name: "Kiều Hưng"
+  born: "DD-MM-19xx"
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: 46
+  mid: 15
+  fid: 16
+  name: "Kiều Hạnh"
+  born: "DD-MM-19xx"
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: 47
+  mid: 15
+  fid: 16
+  name: "Kiều Thị Khoe"
+  born: "DD-MM-19xx"
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: 48
+  mid: 15
+  fid: 16
+  name: "Kiều Tài"
+  born: "DD-MM-19xx"
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: 49
+  mid: 15
+  fid: 16
+  name: "Kiều Thị Nhẹ"
+  born: "DD-MM-19xx"
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: 50
+  mid: 15
+  fid: 16
+  name: "Kiều Thị Chín"
+  born: "DD-MM-19xx"
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: 51
+  mid: 18
+  fid: 17
+  name: "Trần Vô Danh"
+  role: "Chết khi mới đẻ"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: 52
+  pids: [53]
+  mid: 18
+  fid: 17
+  name: "Trần Dũng"
+  born: "22-03-1958"
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: 53
+  pids: [52]
+  name: "Kiều Thị Mỹ Dung"
+  born: "DD-MM-1954"
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: 54
+  pids: [55]
+  mid: 18
+  fid: 17
+  name: "Trần Thị Lý"
+  born: "19-11-1961"
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: 55
+  pids: [54]
+  name: "Huỳnh Văn Tỉnh"
+  born: "14-12-1952"
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: 56
+  pids: [57]
+  mid: 18
+  fid: 17
+  name: "Trần Thanh"
+  born: "08-03-1966"
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: 57
+  pids: [56]
+  name: "Nguyễn Thị Hương"
+  born: "DD-MM-19xx"
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: 58
+  pids: [59]
+  mid: 18
+  fid: 17
+  name: "Trần Thị Hợp"
+  born: "01-11-1968"
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: 59
+  pids: [58]
+  name: "Rodney Ganier"
+  born: "DD-MM-19xx"
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: 60
+  mid: 21
+  fid: 20
+  name: "Trần Bích Khuê"
+  born: "DD-MM-19xx"
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: 61
+  mid: 21
+  fid: 20
+  name: "Trần Bích Hồng"
+  born: "DD-MM-19xx"
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: 62
+  mid: 21
+  fid: 20
+  name: "Trần Minh Kỳ"
+  born: "DD-MM-19xx"
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: 63
+  mid: 23
+  fid: 22
+  name: "Trần Minh Hiền"
+  born: "DD-MM-19xx"
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: 64
+  mid: 23
+  fid: 22
+  name: "Trần Thục Quyên"
+  born: "DD-MM-19xx"
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: 65
+  mid: 23
+  fid: 22
+  name: "Trần Minh Quang"
+  born: "DD-MM-19xx"
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+
+# Thế hệ 3 - Các chắt
+- id: 66
+  mid: 24
+  fid: 25
+  name: "Lê Hoàng Lâm"
+  born: "DD-MM-19xx"
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: 67
+  pids: [73]
+  mid: 53
+  fid: 52
+  name: "Trần Thị Minh Lợi"
+  born: "DD-MM-19xx"
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: 68
+  mid: 53
+  fid: 52
+  name: "Trần Minh Thắng"
+  born: "DD-MM-19xx"
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: 69
+  pids: [_bndl]
+  mid: 54
+  fid: 55
+  name: "Huỳnh Trần Hồng Nhật"
+  born: "09-01-1997"
+  died: ""
+  photo: "https://scontent-itm1-1.xx.fbcdn.net/v/t39.30808-6/500024102_3307053126111506_1928015862474115460_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=105&ccb=1-7&_nc_sid=833d8c&_nc_ohc=kwZbdhXyDzYQ7kNvwELDR26&_nc_oc=Adn0O3olx5SmRw8s8EH5F1uUf6ULzgIXIFtYJdoGgPeRuonTln2hsNNz47d3SkQPO94&_nc_zt=23&_nc_ht=scontent-itm1-1.xx&_nc_gid=qnVngBQ0hMu9T4mQMDFp2w&oh=00_AfiDitBQA3CPOsC9wEYRyF0tJVM2r9q1XA_mRYJ0s9rfcw&oe=691E274F"
+  gender: "male"
+
+- id: 70
+  pids: [74]
+  mid: 57
+  fid: 56
+  name: "Trần Nguyễn Quang Minh"
+  born: "DD-MM-1996"
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: 71
+  mid: 58
+  fid: 59
+  name: "Trần Gia Huy (Zak)"
+  born: "DD-MM-2006"
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: 72
+  mid: 58
+  fid: 59
+  name: "Trần Xuân Viên (Julia)"
+  born: "DD-MM-2009"
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: 73
+  pids: [67]
+  name: "Phạm Quốc Huy"
+  born: "DD-MM-19xx"
+  died: "DD-MM-19xx"
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: 74
+  pids: [70]
+  name: "Nguyễn Trần Ngọc Huyền"
+  born: "DD-MM-19xx"
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: 75
+  mid: 67
+  fid: 73
+  name: "Phạm Trần Minh Khang"
+  born: "31-01-2023"
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: 76
+  mid: 67
+  fid: 73
+  name: "Phạm Trần Minh Long"
+  born: "15-11-2024"
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: 77
+  mid: 74
+  fid: 70
+  name: "Trần Nguyễn Minh Anh"
+  born: "DD-MM-2025"
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"

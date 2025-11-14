@@ -1,49 +1,375 @@
-<!-- <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "en" }}">
-
-  {%- include head.html -%}
-  <head>
-    <link rel="stylesheet" href="{{ "/assets/css/familyTree.css" | relative_url }}">
-  </head>
-  <body>
-  <div class="container">
-    <div class="row">
-      <div id="family-tree" class="tree"></div>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }}</title>
+  <link rel="stylesheet" href="{{ '/assets/css/familyTree.css' | relative_url }}">
+  <script src="{{ "/assets/js/libs/FamilyTree.js" | relative_url }}"></script>
+</head>
+<body>
+  <div class="tree-container">
+    <h1>{{ page.title }}</h1>
+    <h2>{{ page.subtitle }}</h2>
+    
+    <div class="export-container">
+      <button id="debugBtn" class="export-btn">Debug Data</button>
+      <button id="exportYaml" class="export-btn">Export YAML</button>
     </div>
+    
+    <div id="tree"></div>
   </div>
 
   <script>
-    window.familyData = {{ site.data[page.data_file] | jsonify }};
-  </script>
-  <script src="{{ "/assets/js/familyTree.js" | relative_url }}"></script>
-</body>
-</html> -->
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>{{ page.title }}</title>
-  <link rel="stylesheet" href="{{ '/assets/css/familyTree.css' | relative_url }}">
-  <script src="https://balkan.app/js/FamilyTree.js"></script>
-</head>
-<body>
-  <div id="tree"></div>
-
-  <script>
     {% assign data_file = page.data_file | default: "family_tree_mother" %}
-    const data = {{ site.data[data_file] | jsonify }};
+    const initialFamilyData = {{ site.data[data_file] | jsonify }};
+    let family;
+    
+    // Biến lưu trữ dữ liệu hiện tại
+    let currentData = JSON.parse(JSON.stringify(initialFamilyData));
+    
+    // Biến đếm ID mới
+    let nextId = Math.max(...initialFamilyData.map(node => node.id)) + 1;
 
-    const chart = new FamilyTree(document.getElementById("tree"), {
-      nodeBinding: {
-        field_0: "name",
-        field_1: "title",
-        img_0: "img"
+    function getOptions(){
+      const searchParams = new URLSearchParams(window.location.search);
+      var fit = searchParams.get('fit');
+      var enableSearch = true;
+      var scaleInitial = 1;
+      if (fit == 'yes'){
+        enableSearch = false;
+        scaleInitial = FamilyTree.match.boundary;
       }
-    });
+      return {enableSearch, scaleInitial};
+    }
 
-    chart.load(data);
+    // Hàm tìm node trong currentData theo ID
+    function findNodeById(id) {
+      return currentData.find(node => node.id == id);
+    }
+
+    // Hàm cập nhật node trong currentData
+    function updateNodeInCurrentData(nodeData) {
+      const index = currentData.findIndex(node => node.id == nodeData.id);
+      if (index !== -1) {
+        // Cập nhật node đã tồn tại
+        currentData[index] = { ...currentData[index], ...nodeData };
+      } else {
+        // Thêm node mới
+        currentData.push(nodeData);
+      }
+    }
+
+    // Hàm xử lý khi form edit được submit
+    function handleEditFormSubmit(nodeData) {
+      console.log('Edit form submitted:', nodeData);
+      
+      // Chuẩn hóa dữ liệu
+      const normalizedData = {
+        id: nodeData.id,
+        name: nodeData.name || "",
+        role: nodeData.role || "",
+        born: nodeData.born || "",
+        died: nodeData.died || "",
+        img: nodeData.photo || nodeData.img || (nodeData.gender === 'female' ? "/assets/images/family/female.svg" : "/assets/images/family/male.svg"),
+        gender: nodeData.gender || "male",
+        pids: nodeData.pids || [],
+        mid: nodeData.mid,
+        fid: nodeData.fid
+      };
+
+      updateNodeInCurrentData(normalizedData);
+      console.log('Current data updated:', currentData);
+    }
+
+    // Hàm xử lý khi thêm node mới
+    function handleAddNode(parentId, nodeData) {
+      const newNode = {
+        id: nextId++,
+        name: nodeData.name || "",
+        role: nodeData.role || "",
+        born: nodeData.born || "",
+        died: nodeData.died || "",
+        img: nodeData.photo || (nodeData.gender === 'female' ? "/assets/images/family/female.svg" : "/assets/images/family/male.svg"),
+        gender: nodeData.gender || "male",
+        pids: nodeData.pids || []
+      };
+
+      // Thiết lập quan hệ cha mẹ
+      if (parentId) {
+        const parent = findNodeById(parentId);
+        if (parent) {
+          if (parent.gender === 'male') {
+            newNode.fid = parentId;
+            if (parent.pids && parent.pids.length > 0) {
+              newNode.mid = parent.pids[0];
+            }
+          } else {
+            newNode.mid = parentId;
+            if (parent.pids && parent.pids.length > 0) {
+              newNode.fid = parent.pids[0];
+            }
+          }
+        }
+      }
+
+      currentData.push(newNode);
+      console.log('New node added:', newNode);
+      return newNode.id;
+    }
+
+    // Hàm chuyển đổi dữ liệu sang YAML format
+    function convertToYamlFormat(nodes) {
+      if (!nodes || !Array.isArray(nodes)) {
+        console.error('Nodes data is invalid:', nodes);
+        return [];
+      }
+      
+      return nodes.map(node => {
+        const yamlNode = {
+          id: node.id
+        };
+
+        // Thêm các trường có điều kiện
+        if (node.pids && node.pids.length > 0) yamlNode.pids = node.pids;
+        if (node.mid) yamlNode.mid = node.mid;
+        if (node.fid) yamlNode.fid = node.fid;
+        
+        yamlNode.name = node.name || "";
+        yamlNode.role = node.role || "";
+        yamlNode.born = node.born || "";
+        yamlNode.died = node.died || "";
+        yamlNode.photo = node.photo || (node.gender === 'female' ? "/assets/images/family/female.svg" : "/assets/images/family/male.svg");
+        yamlNode.gender = node.gender || "male";
+
+        return yamlNode;
+      }).sort((a, b) => (a.id - b.id));
+    }
+
+    // Hàm định dạng YAML
+    function formatYAML(data) {
+      if (!data || !Array.isArray(data)) {
+        return "# No data available";
+      }
+      
+      let yaml = "# Family Tree Data\n# Generated: " + new Date().toLocaleString('vi-VN') + "\n\n";
+      let currentGeneration = -1;
+      
+      data.forEach((node, index) => {
+        let generation = 0;
+        if (node.id <= 10) generation = 0;
+        else if (node.id <= 23) generation = 1;
+        else if (node.id <= 65) generation = 2;
+        else generation = 3;
+
+        if (generation !== currentGeneration) {
+          if (index > 0) yaml += "\n";
+          currentGeneration = generation;
+          switch(generation) {
+            case 0: yaml += "# Thế hệ 0 - Ông Sơ\n"; break;
+            case 1: yaml += "# Thế hệ 1 - Các con\n"; break;
+            case 2: yaml += "# Thế hệ 2 - Các cháu\n"; break;
+            case 3: yaml += "# Thế hệ 3 - Các chắt\n"; break;
+            default: yaml += "# Thế hệ " + generation + "\n";
+          }
+        }
+        
+        yaml += `- id: ${node.id}\n`;
+        
+        if (node.pids && node.pids.length > 0) {
+          yaml += `  pids: [${node.pids.join(', ')}]\n`;
+        }
+        if (node.mid) yaml += `  mid: ${node.mid}\n`;
+        if (node.fid) yaml += `  fid: ${node.fid}\n`;
+        
+        yaml += `  name: "${node.name}"\n`;
+        if (node.role && node.role !== "") yaml += `  role: "${node.role}"\n`;
+        yaml += `  born: "${node.born}"\n`;
+        yaml += `  died: "${node.died}"\n`;
+        yaml += `  photo: "${node.photo}"\n`;
+        yaml += `  gender: "${node.gender}"\n`;
+        
+        if (index < data.length - 1) yaml += "\n";
+      });
+      
+      return yaml;
+    }
+
+    // Hàm download file
+    function downloadFile(content, filename, contentType) {
+      const blob = new Blob([content], { type: contentType });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }
+
+    // Hàm export YAML
+    function exportToYaml() {
+      try {
+        const yamlFormatData = convertToYamlFormat(currentData);
+        const yamlContent = formatYAML(yamlFormatData);
+        
+        const timestamp = new Date().toISOString().slice(0, 10).replace(/-/g, '');
+        const filename = `family_tree_export_${timestamp}.yml`;
+        
+        downloadFile(yamlContent, filename, 'text/yaml');
+        return true;
+      } catch (error) {
+        console.error('Export error:', error);
+        throw error;
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      var options = getOptions();
+
+      family = new FamilyTree(document.getElementById('tree'), {
+        mouseScrool: FamilyTree.none,
+        scaleInitial: options.scaleInitial,
+        mode: 'dark',
+        template: 'hugo',
+        enableSearch: options.enableSearch,
+        nodeMenu: {
+          edit: { text: 'Chỉnh sửa' },
+          details: { text: 'Chi tiết' },
+        },
+        nodeTreeMenu: true,
+        nodeBinding: {
+          field_0: 'name',
+          field_1: 'born',
+          img_0: 'photo'
+        },
+        editForm: {
+          titleBinding: "name",
+          photoBinding: "photo",
+          addMoreBtn: 'Thêm phần tử',
+          addMore: 'Thêm nhiều phần tử hơn',
+          addMoreFieldName: 'Tên phần tử',
+          generateElementsFromFields: false,
+          elements: [
+            { type: 'textbox', label: 'Họ và Tên', binding: 'name' },
+            { type: 'textbox', label: 'Vai trò', binding: 'role' },
+            { type: 'textbox', label: 'Email', binding: 'email' },
+            [
+              { type: 'textbox', label: 'Số điện thoại', binding: 'phone' },
+              { type: 'textbox', label: 'Ngày sinh', binding: 'born' },
+              { type: 'textbox', label: 'Ngày mất', binding: 'died' }
+            ],
+            [
+              { 
+                type: 'select', 
+                options: [
+                  { value: 'male', text: 'Nam' }, 
+                  { value: 'female', text: 'Nữ' }
+                ], 
+                label: 'Giới tính', 
+                binding: 'gender' 
+              },
+              { type: 'textbox', label: 'Thành phố', binding: 'city' },
+            ],
+            { type: 'textbox', label: 'URL Ảnh', binding: 'photo', btn: 'Tải lên' },
+          ]
+        },
+      });
+
+      // Xử lý sự kiện khi form edit được đóng (sau khi submit)
+      family.on('edit-form-close', function (sender, args) {
+        console.log('Edit form closed:', args);
+        if (args && args.data) {
+          handleEditFormSubmit(args.data);
+        }
+      });
+
+      // Xử lý sự kiện khi node được thêm
+      family.on('add-node', function (sender, args) {
+        console.log('Node added:', args);
+        if (args && args.data) {
+          const newId = handleAddNode(args.parentId, args.data);
+          // Cập nhật lại dữ liệu để FamilyTree nhận node mới
+          setTimeout(() => {
+            family.load(currentData);
+          }, 100);
+        }
+      });
+
+      family.on('field', function (sender, args) {
+        if (args.name == 'born' && args.value) {
+          if (args.value.includes('-')) {
+            var date = new Date(args.value);
+            if (!isNaN(date)) {
+              args.value = date.toLocaleDateString('vi-VN');
+            }
+          }
+        }
+        if (args.name == 'died' && args.value) {
+          if (args.value.includes('-')) {
+            var date = new Date(args.value);
+            if (!isNaN(date)) {
+              args.value = date.toLocaleDateString('vi-VN');
+            }
+          }
+        }
+      });
+
+      // Xử lý sự kiện export YAML
+      document.getElementById('exportYaml').addEventListener('click', function() {
+        const btn = this;
+        try {
+          btn.textContent = 'Đang Export...';
+          btn.disabled = true;
+          
+          const success = exportToYaml();
+          
+          if (success) {
+            btn.textContent = 'Đã Export!';
+            setTimeout(() => {
+              btn.textContent = 'Export YAML';
+              btn.disabled = false;
+            }, 2000);
+          } else {
+            btn.textContent = 'Export YAML';
+            btn.disabled = false;
+          }
+          
+        } catch (error) {
+          console.error('Export error:', error);
+          alert('Có lỗi xảy ra khi export dữ liệu: ' + error.message);
+          btn.textContent = 'Export YAML';
+          btn.disabled = false;
+        }
+      });
+
+      // Xử lý sự kiện debug
+      document.getElementById('debugBtn').addEventListener('click', function() {
+        console.log('=== DEBUG INFORMATION ===');
+        console.log('Current data:', currentData);
+        console.log('Next ID:', nextId);
+        console.log('Family instance:', family);
+        
+        // Kiểm tra các node mới được thêm
+        const newNodes = currentData.filter(node => node.id >= nextId - 10);
+        console.log('Recently added nodes:', newNodes);
+        
+        alert('Check console for debug information (F12)');
+      });
+
+      // Load dữ liệu ban đầu
+      family.load(currentData);
+
+      // Xử lý responsive
+      window.addEventListener('resize', function() {
+        setTimeout(() => {
+          if (window.innerWidth < 768) {
+            family.zoom(0.8);
+          }
+        }, 300);
+      });
+    });
   </script>
 </body>
 </html>
