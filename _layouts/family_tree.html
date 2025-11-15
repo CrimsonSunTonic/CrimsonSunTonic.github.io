@@ -7,17 +7,20 @@
   <link rel="stylesheet" href="{{ '/assets/css/familyTree.css' | relative_url }}">
   <script src="{{ "/assets/js/libs/FamilyTree.js" | relative_url }}"></script>
 </head>
-<body>
+<body class="ancestral-hall">
   <div class="tree-container">
-    <h1>{{ page.title }}</h1>
-    <h2>{{ page.subtitle }}</h2>
-    
+    <header class="ancestral-header">
+      <h1>{{ page.title }}</h1>
+      <h2>{{ page.subtitle }}</h2>
+      <div class="ancestral-divider"></div>
+    </header>
+
     <div class="export-container">
       <button id="debugBtn" class="export-btn">Debug Data</button>
-      <button id="exportYaml" class="export-btn">Export YAML</button>
+      <button id="exportYaml" class="export-btn">Xuất YAML</button>
     </div>
     
-    <div id="tree"></div>
+    <div id="tree" class="ancestral-tree"></div>
   </div>
 
   <script>

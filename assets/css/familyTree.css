@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 * {
-  padding: 0px;
-  margin: 0px;
+  padding: 0;
+  margin: 0;
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
@@ -10,10 +10,11 @@
   user-select: none;
 }
 
-body {
+body.ancestral-hall {
   height: 100vh;
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  font-family: 'Noto Serif', serif;
+  background: linear-gradient(to bottom, #f5f0e1, #e6d3a7);
+  color: #3b2f2f;
   overflow: hidden;
   touch-action: pan-x pan-y;
 }
@@ -23,37 +24,47 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  padding: 20px;
   position: relative;
 }
 
-.tree-container h1 {
+.ancestral-header {
   text-align: center;
-  color: white;
-  margin: 10px 0 5px 0;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-  font-size: 2rem;
+  margin-bottom: 20px;
 }
 
-.tree-container h2 {
-  text-align: center;
-  color: gold;
-  margin: 0px 0 20px 0;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-  font-size: 2rem;
+.ancestral-header h1 {
+  font-size: 2.5rem;
+  color: #5d4037;
+  margin-bottom: 5px;
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
 }
 
-#tree {
-  width: 100%;
+.ancestral-header h2 {
+  font-size: 1.8rem;
+  color: #8d6e63;
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
+.ancestral-divider {
+  width: 60%;
+  margin: 10px auto;
+  border-top: 1px solid #bcaaa4;
+  opacity: 0.6;
+}
+
+#tree.ancestral-tree {
   flex: 1;
-  background: white;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  background: #fff9f0;
+  border: 2px solid #d7ccc8;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   touch-action: pan-x pan-y;
 }
 
-/* Export button styles - cập nhật vị trí và kích thước */
 .export-container {
   position: absolute;
   bottom: 20px;
@@ -64,13 +75,13 @@ body {
 }
 
 .export-btn {
-  background: #4CAF50;
+  background: #8d6e63;
   color: white;
   border: none;
   padding: 8px 15px;
   border-radius: 20px;
   cursor: pointer;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Noto Serif', serif;
   font-size: 12px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
   transition: all 0.3s ease;
@@ -79,65 +90,35 @@ body {
 }
 
 .export-btn:hover {
-  background: #45a049;
+  background: #6d4c41;
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 
 .export-btn:disabled {
-  background: #cccccc;
+  background: #bcaaa4;
   cursor: not-allowed;
   transform: none;
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
-/* Button specific styles */
-#debugBtn {
-  background: #ff9800;
-}
-
-#debugBtn:hover {
-  background: #f57c00;
-}
-
-#exportYaml {
-  background: #2196F3;
-}
-
-#exportYaml:hover {
-  background: #1976D2;
-}
-
-/* Custom styles for Balkan FamilyTree */
-.bft-search {
-  top: 20px !important;
-  bottom: unset !important;
-}
-
-.mini-map {
-  bottom: 45px !important;
-}
-
 /* Mobile Styles */
 @media (max-width: 768px) {
   .tree-container {
-    padding: 5px;
+    padding: 10px;
   }
-  
-  .tree-container h1,
-  .tree-container h2 {
+
+  .ancestral-header h1 {
+    font-size: 2rem;
+  }
+
+  .ancestral-header h2 {
     font-size: 1.5rem;
-    margin: 5px 0 15px 0;
-  }
-  
-  #tree {
-    border-radius: 10px;
   }
 
   .export-container {
     bottom: 15px;
     left: 15px;
-    gap: 8px;
   }
 
   .export-btn {
@@ -145,190 +126,20 @@ body {
     font-size: 11px;
     min-width: 80px;
   }
-
-  /* Tăng kích thước thanh công cụ cho mobile */
-  .bft-toolbar {
-    transform: scale(1.2);
-    transform-origin: top right;
-  }
-
-  .bft-toolbar .bft-icon {
-    width: 44px !important;
-    height: 44px !important;
-    min-width: 44px !important;
-    min-height: 44px !important;
-  }
-
-  .bft-mini-map {
-    width: 120px !important;
-    height: 120px !important;
-    bottom: 60px !important;
-    right: 10px !important;
-  }
-
-  /* Tăng kích thước search box */
-  .bft-search {
-    top: 15px !important;
-    left: 15px !important;
-  }
-
-  .bft-search-input {
-    width: 180px !important;
-    height: 44px !important;
-    font-size: 16px !important;
-    padding: 0 15px !important;
-  }
-
-  /* Cải thiện form edit cho mobile */
-  .bft-edit-form {
-    width: 90vw !important;
-    max-width: 400px !important;
-  }
-
-  .bft-edit-form-content {
-    padding: 20px !important;
-  }
-
-  .bft-form-field {
-    margin-bottom: 20px !important;
-  }
-
-  .bft-form-field input,
-  .bft-form-field textarea {
-    font-size: 16px !important;
-    padding: 12px !important;
-    height: 48px !important;
-  }
-
-  .bft-edit-form-buttons {
-    padding: 20px !important;
-  }
-
-  .bft-edit-form-buttons button {
-    height: 50px !important;
-    font-size: 16px !important;
-    margin: 5px !important;
-  }
 }
 
 @media (max-width: 480px) {
-  .tree-container h1,
-  .tree-container h2 {
-    font-size: 1.3rem;
-    margin: 3px 0 10px 0;
+  .ancestral-header h1 {
+    font-size: 1.6rem;
   }
 
-  .export-container {
-    bottom: 10px;
-    left: 10px;
-    gap: 6px;
+  .ancestral-header h2 {
+    font-size: 1.2rem;
   }
 
   .export-btn {
     padding: 5px 10px;
     font-size: 10px;
     min-width: 70px;
-  }
-
-  .bft-toolbar {
-    transform: scale(1.1);
-  }
-
-  .bft-toolbar .bft-icon {
-    width: 40px !important;
-    height: 40px !important;
-    min-width: 40px !important;
-    min-height: 40px !important;
-  }
-
-  .bft-mini-map {
-    width: 100px !important;
-    height: 100px !important;
-    bottom: 50px !important;
-  }
-
-  .bft-search-input {
-    width: 150px !important;
-    height: 40px !important;
-  }
-}
-
-/* Touch device improvements */
-@media (hover: none) and (pointer: coarse) {
-  .bft-node {
-    cursor: default !important;
-  }
-  
-  .bft-icon {
-    cursor: pointer !important;
-  }
-}
-
-/* Loading state */
-.loading {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  font-size: 18px;
-  color: #666;
-}
-
-/* Scrollbar styling */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
-
-/* High contrast mode support */
-@media (prefers-contrast: high) {
-  .tree-container h1,
-  .tree-container h2 {
-    color: #000;
-    text-shadow: 2px 2px 0 #fff;
-  }
-}
-
-/* Reduced motion support */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-}
-
-/* Print styles */
-@media print {
-  .tree-container {
-    background: white !important;
-  }
-  
-  .tree-container h1,
-  .tree-container h2 {
-    color: black !important;
-    text-shadow: none !important;
-  }
-  
-  #tree {
-    box-shadow: none !important;
-    border: 1px solid #ccc !important;
-  }
-  
-  .export-container {
-    display: none;
   }
 }
