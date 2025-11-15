@@ -391,22 +391,11 @@
         }
       });
 
+      // Xử lý ngày tháng như text - không parse thành Date
       family.on('field', function (sender, args) {
-        if (args.name == 'born' && args.value) {
-          if (args.value.includes('-')) {
-            var date = new Date(args.value);
-            if (!isNaN(date)) {
-              args.value = date.toLocaleDateString('vi-VN');
-            }
-          }
-        }
-        if (args.name == 'died' && args.value) {
-          if (args.value.includes('-')) {
-            var date = new Date(args.value);
-            if (!isNaN(date)) {
-              args.value = date.toLocaleDateString('vi-VN');
-            }
-          }
+        if ((args.name == 'born' || args.name == 'died') && args.value) {
+          // Chỉ hiển thị giá trị text nguyên gốc, không xử lý gì thêm
+          args.value = args.value;
         }
       });
 
