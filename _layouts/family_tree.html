@@ -6,21 +6,71 @@
   <title>{{ page.title }}</title>
   <link rel="stylesheet" href="{{ '/assets/css/familyTree.css' | relative_url }}">
   <script src="{{ "/assets/js/libs/FamilyTree.js" | relative_url }}"></script>
+  <!-- Thêm font chữ Hán Nôm -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Noto+Sans+SC:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
-<body class="ancestral-hall">
-  <div class="tree-container">
-    <header class="ancestral-header">
-      <h1>{{ page.title }}</h1>
-      <h2>{{ page.subtitle }}</h2>
-      <div class="ancestral-divider"></div>
-    </header>
-
-    <div class="export-container">
-      <button id="debugBtn" class="export-btn">Debug Data</button>
-      <button id="exportYaml" class="export-btn">Xuất YAML</button>
+<body>
+  <!-- Khung từ đường với hoành phi và câu đối -->
+  <div class="ancestral-altar">
+    <!-- Hoành phi phía trên -->
+    <div class="horizontal-tablet">
+      <div class="tablet-content">
+        <span class="chinese-text">{{ page.subtitle }}</span>
+        <span class="vietnamese-text">{{ page.title }}</span>
+      </div>
+      <div class="tablet-decoration"></div>
     </div>
-    
-    <div id="tree" class="ancestral-tree"></div>
+
+    <!-- Câu đối hai bên -->
+    <div class="parallel-couplet left-couplet">
+      <div class="couplet-text">
+        <p class="chinese">祖德流芳思木本</p>
+        <p class="vietnamese">Tổ đức lưu phương tư mộc bản</p>
+      </div>
+    </div>
+
+    <div class="parallel-couplet right-couplet">
+      <div class="couplet-text">
+        <p class="chinese">宗功浩大想水源</p>
+        <p class="vietnamese">Tông công hạo đại tưởng thủy nguyên</p>
+      </div>
+    </div>
+
+    <!-- Bàn thờ chính -->
+    <div class="main-altar">
+      <div class="altar-table">
+        <!-- Container chính cho cây gia phả -->
+        <div class="tree-container">
+          
+          <!-- Các nút chức năng được thiết kế như vật phẩm thờ cúng -->
+          <div class="ritual-tools">
+            <button id="debugBtn" class="ritual-btn" title="Xem dữ liệu">
+              <span class="btn-icon">📜</span>
+              <span class="btn-text">Debug</span>
+            </button>
+            <button id="exportYaml" class="ritual-btn" title="Xuất gia phả">
+              <span class="btn-icon">🖋️</span>
+              <span class="btn-text">Biên Chép</span>
+            </button>
+          </div>
+          
+          <!-- Cây gia phả được đặt trong khung bài vị -->
+          <div class="memorial-tablet">
+            <div id="tree"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lư hương và đồ thờ -->
+    <div class="worship-items">
+      <div class="incense-burner"></div>
+      <div class="offering-bowls">
+        <div class="bowl"></div>
+        <div class="bowl"></div>
+        <div class="bowl"></div>
+      </div>
+    </div>
   </div>
 
   <script>
@@ -116,7 +166,7 @@
     function getOptions(){
       const searchParams = new URLSearchParams(window.location.search);
       var fit = searchParams.get('fit');
-      var enableSearch = true;
+      var enableSearch = false;
       var scaleInitial = 1;
       if (fit == 'yes'){
         enableSearch = false;
@@ -456,7 +506,7 @@
       window.addEventListener('resize', function() {
         setTimeout(() => {
           if (window.innerWidth < 768) {
-            family.zoom(0.8);
+            family.zoom(0.3);
           }
         }, 300);
       });

@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Noto+Sans+SC:wght@300;400;500&display=swap');
 
 * {
-  padding: 0;
-  margin: 0;
+  padding: 0px;
+  margin: 0px;
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
@@ -10,136 +10,461 @@
   user-select: none;
 }
 
-body.ancestral-hall {
+body {
   height: 100vh;
-  font-family: 'Noto Serif', serif;
-  background: linear-gradient(to bottom, #f5f0e1, #e6d3a7);
-  color: #3b2f2f;
+  font-family: 'Noto Sans SC', 'Times New Roman', serif;
+  background: linear-gradient(135deg, #3E2723 0%, #5D4037 100%);
   overflow: hidden;
   touch-action: pan-x pan-y;
 }
 
-.tree-container {
+/* Khung từ đường */
+.ancestral-altar {
+  position: relative;
   width: 100%;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: 
+    radial-gradient(circle at 20% 80%, #4E342E 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, #3E2723 0%, transparent 50%),
+    linear-gradient(135deg, #3E2723 0%, #5D4037 100%);
+}
+
+/* Hoành phi */
+.horizontal-tablet {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  text-align: center;
+}
+
+.tablet-content {
+  background: linear-gradient(135deg, #8B4513 0%, #A0522D 100%);
+  padding: 15px 40px;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  border: 2px solid gold;
+  position: relative;
+}
+
+.tablet-content .chinese-text {
+  display: block;
+  font-family: 'Noto Serif SC', serif;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: gold;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.tablet-content .vietnamese-text {
+  display: block;
+  font-size: 1.2rem;
+  color: #FFF8E1;
+  margin-top: 5px;
+  letter-spacing: 2px;
+}
+
+.tablet-decoration {
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 15px;
+  background: linear-gradient(90deg, transparent 10%, gold 50%, transparent 90%);
+  border-radius: 50%;
+}
+
+/* Câu đối */
+.parallel-couplet {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-80%);
+  width: 120px;
+  background: linear-gradient(135deg, #5D4037 0%, #3E2723 100%);
+  padding: 30px 15px;
+  border: 1px solid gold;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+  z-index: 99;
+}
+
+.left-couplet {
+  left: 20px;
+  border-right: 3px solid gold;
+}
+
+.right-couplet {
+  right: 20px;
+  border-left: 3px solid gold;
+}
+
+.couplet-text {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.couplet-text .chinese {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 1.4rem;
+  color: gold;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.couplet-text .vietnamese {
+  font-size: 0.9rem;
+  color: #D7CCC8;
+  line-height: 1.6;
+}
+
+/* Bàn thờ chính */
+.main-altar {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 20px 20px 20px;
+}
+
+.altar-table {
+  width: 95%;
+  height: 90%;
+  background: linear-gradient(135deg, #6D4C41 0%, #4E342E 100%);
+  border-radius: 15px;
+  border: 3px solid #8D6E63;
+  box-shadow: 
+    inset 0 0 50px rgba(0,0,0,0.3),
+    0 20px 50px rgba(0,0,0,0.5);
+  position: relative;
+  overflow: hidden;
+}
+
+.altar-table::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: linear-gradient(180deg, #8D6E63 0%, transparent 100%);
+  z-index: 2;
+}
+
+/* Hương án */
+.incense-table {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 40px;
+  z-index: 3;
+}
+
+.incense-stick {
+  width: 4px;
+  height: 40px;
+  background: linear-gradient(180deg, #FFD700 0%, #FF6B00 100%);
+  border-radius: 2px;
+  position: relative;
+  animation: incenseSmoke 3s ease-in-out infinite;
+}
+
+.incense-stick::after {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 20px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.8) 0%, transparent 100%);
+  animation: smokeRise 3s ease-in-out infinite;
+}
+
+.center-stick {
+  animation-delay: 1s;
+}
+
+.right-stick {
+  animation-delay: 2s;
+}
+
+@keyframes incenseSmoke {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
+}
+
+@keyframes smokeRise {
+  0% { 
+    transform: translateX(-50%) translateY(0);
+    opacity: 0;
+  }
+  50% { 
+    opacity: 0.8;
+  }
+  100% { 
+    transform: translateX(-50%) translateY(-30px);
+    opacity: 0;
+  }
+}
+
+/* Container chính */
+.tree-container {
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   padding: 20px;
   position: relative;
 }
 
-.ancestral-header {
+.family-title {
   text-align: center;
   margin-bottom: 20px;
+  z-index: 2;
 }
 
-.ancestral-header h1 {
-  font-size: 2.5rem;
-  color: #5d4037;
+.main-title {
+  color: #FFF8E1;
+  font-size: 2.2rem;
   margin-bottom: 5px;
-  letter-spacing: 2px;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  font-family: 'Noto Serif SC', serif;
+  letter-spacing: 1px;
 }
 
-.ancestral-header h2 {
+.sub-title {
+  color: gold;
   font-size: 1.8rem;
-  color: #8d6e63;
-  margin-bottom: 10px;
-  font-style: italic;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  font-family: 'Noto Serif SC', serif;
 }
 
-.ancestral-divider {
-  width: 60%;
-  margin: 10px auto;
-  border-top: 1px solid #bcaaa4;
-  opacity: 0.6;
-}
-
-#tree.ancestral-tree {
-  flex: 1;
-  background: #fff9f0;
-  border: 2px solid #d7ccc8;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  touch-action: pan-x pan-y;
-}
-
-.export-container {
+/* Công cụ nghi lễ */
+.ritual-tools {
   position: absolute;
   bottom: 20px;
   left: 20px;
   z-index: 1000;
   display: flex;
-  gap: 10px;
+  gap: 15px;
 }
 
-.export-btn {
-  background: #8d6e63;
-  color: white;
-  border: none;
-  padding: 8px 15px;
-  border-radius: 20px;
+.ritual-btn {
+  background: linear-gradient(135deg, #8B4513 0%, #A0522D 100%);
+  color: #FFF8E1;
+  border: 1px solid gold;
+  padding: 10px 15px;
+  border-radius: 25px;
   cursor: pointer;
-  font-family: 'Noto Serif', serif;
-  font-size: 12px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 14px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
   transition: all 0.3s ease;
-  min-width: 100px;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 120px;
+  justify-content: center;
 }
 
-.export-btn:hover {
-  background: #6d4c41;
+.ritual-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+  background: linear-gradient(135deg, #A0522D 0%, #8B4513 100%);
 }
 
-.export-btn:disabled {
-  background: #bcaaa4;
+.ritual-btn:disabled {
+  opacity: 0.6;
   cursor: not-allowed;
   transform: none;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.btn-icon {
+  font-size: 16px;
+}
+
+.btn-text {
+  font-weight: 500;
+}
+
+/* Khung bài vị */
+.memorial-tablet {
+  flex: 1;
+  background: rgba(255, 248, 225, 0.05);
+  border: 2px solid #8D6E63;
+  border-radius: 10px;
+  box-shadow: 
+    inset 0 0 30px rgba(0,0,0,0.2),
+    0 0 30px rgba(0,0,0,0.3);
+  overflow: hidden;
+  position: relative;
+}
+
+.memorial-tablet::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(139, 69, 19, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(165, 42, 42, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+#tree {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+
+/* Custom styles for FamilyTree */
+.bft-search {
+  top: 80px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+}
+
+.bft-search-input {
+  background: rgba(255, 248, 225, 0.9) !important;
+  border: 1px solid gold !important;
+  border-radius: 20px !important;
+  color: #5D4037 !important;
+}
+
+.bft-mini-map {
+  bottom: 80px !important;
+  right: 20px !important;
+  border: 1px solid gold !important;
+  border-radius: 10px !important;
+  overflow: hidden;
+}
+
+.bft-toolbar {
+  background: linear-gradient(135deg, #8B4513 0%, #A0522D 100%) !important;
+  border: 1px solid gold !important;
+  border-radius: 25px !important;
+  padding: 5px !important;
+}
+
+.bft-toolbar .bft-icon {
+  background: rgba(255, 248, 225, 0.9) !important;
+  border-radius: 50% !important;
+  margin: 2px !important;
 }
 
 /* Mobile Styles */
 @media (max-width: 768px) {
-  .tree-container {
-    padding: 10px;
+  .horizontal-tablet {
+    top: 10px;
   }
-
-  .ancestral-header h1 {
-    font-size: 2rem;
+  
+  .tablet-content {
+    padding: 10px 20px;
   }
-
-  .ancestral-header h2 {
-    font-size: 1.5rem;
+  
+  .tablet-content .chinese-text {
+    font-size: 1.8rem;
   }
-
-  .export-container {
-    bottom: 15px;
-    left: 15px;
+  
+  .tablet-content .vietnamese-text {
+    font-size: 1rem;
   }
-
-  .export-btn {
-    padding: 6px 12px;
-    font-size: 11px;
-    min-width: 80px;
+  
+  .parallel-couplet {
+    display: none;
+  }
+  
+  .main-title {
+    font-size: 1.8rem;
+  }
+  
+  .sub-title {
+    font-size: 1.4rem;
+  }
+  
+  .ritual-tools {
+    bottom: 10px;
+    left: 10px;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .ritual-btn {
+    min-width: 100px;
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+  
+  .bft-toolbar {
+    transform: scale(0.9);
+    transform-origin: top right;
   }
 }
 
 @media (max-width: 480px) {
-  .ancestral-header h1 {
-    font-size: 1.6rem;
+  .main-altar {
+    padding: 60px 10px 10px 10px;
   }
-
-  .ancestral-header h2 {
+  
+  .tree-container {
+    padding: 10px;
+  }
+  
+  .main-title {
+    font-size: 1.5rem;
+  }
+  
+  .sub-title {
     font-size: 1.2rem;
   }
+  
+  .family-title {
+    margin-bottom: 10px;
+  }
+}
 
-  .export-btn {
-    padding: 5px 10px;
-    font-size: 10px;
-    min-width: 70px;
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .tablet-content {
+    border: 3px solid #000;
+  }
+  
+  .ritual-btn {
+    border: 2px solid #000;
+  }
+}
+
+/* Print styles */
+@media print {
+  .ancestral-altar {
+    background: white !important;
+  }
+  
+  .ritual-tools,
+  .incense-table {
+    display: none;
+  }
+  
+  .memorial-tablet {
+    border: 2px solid #000 !important;
+    box-shadow: none !important;
+  }
+  
+  .main-title,
+  .sub-title {
+    color: black !important;
+    text-shadow: none !important;
   }
 }
