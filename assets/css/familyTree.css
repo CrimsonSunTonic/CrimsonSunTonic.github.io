@@ -43,7 +43,7 @@ body {
 
 .tablet-content {
   background: linear-gradient(135deg, #8B4513 0%, #A0522D 100%);
-  padding: 15px 40px;
+  padding: 15px 10px;
   border-radius: 8px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.5);
   border: 2px solid gold;
@@ -63,7 +63,6 @@ body {
   display: block;
   font-size: 1.2rem;
   color: #FFF8E1;
-  margin-top: 5px;
   letter-spacing: 2px;
 }
 
@@ -82,14 +81,18 @@ body {
 .parallel-couplet {
   position: absolute;
   top: 50%;
-  transform: translateY(-80%);
-  width: 120px;
+  transform: translateY(-100%);
   background: linear-gradient(135deg, #5D4037 0%, #3E2723 100%);
-  padding: 30px 15px;
   border: 1px solid gold;
   box-shadow: 0 5px 20px rgba(0,0,0,0.3);
   z-index: 99;
+  width: fit-content;
+  height: fit-content;
+  min-width: 80px;
+  max-width: 200px;
+  text-align: center;
 }
+
 
 .left-couplet {
   left: 20px;
@@ -104,24 +107,23 @@ body {
 .couplet-text {
   writing-mode: vertical-rl;
   text-orientation: mixed;
-  height: 300px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  padding: 10px;
 }
 
 .couplet-text .chinese {
   font-family: 'Noto Serif SC', serif;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   color: gold;
-  margin-bottom: 20px;
   text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-}
-
-.couplet-text .vietnamese {
-  font-size: 0.9rem;
-  color: #D7CCC8;
-  line-height: 1.6;
+  line-height: 1.8;
+  letter-spacing: 2px;
+  white-space: nowrap;
+  padding: 5px 10px;
 }
 
 /* Bàn thờ chính */
