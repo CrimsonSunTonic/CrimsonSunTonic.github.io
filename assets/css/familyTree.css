@@ -1,3 +1,4 @@
+/* assets/css/familyTree.css */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Noto+Sans+SC:wght@300;400;500&display=swap');
 
 * {
@@ -33,75 +34,79 @@ body {
 
 /* Hoành phi */
 .horizontal-tablet {
-  position: absolute;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
+  position: relative;
+  margin: 20px auto;
   z-index: 100;
   text-align: center;
+  width: fit-content;
 }
 
 .tablet-content {
   background: linear-gradient(135deg, #8B4513 0%, #A0522D 100%);
-  padding: 15px 10px;
-  border-radius: 8px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-  border: 2px solid gold;
+  padding: 20px 40px;
+  border-radius: 10px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+  border: 3px solid gold;
   position: relative;
+  overflow: hidden;
 }
 
 .tablet-content .chinese-text {
   display: block;
   font-family: 'Noto Serif SC', serif;
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   font-weight: bold;
   color: gold;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+  letter-spacing: 3px;
 }
 
 .tablet-content .vietnamese-text {
   display: block;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   color: #FFF8E1;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
+  margin-top: 10px;
+  font-weight: 500;
 }
 
 .tablet-decoration {
   position: absolute;
-  bottom: -10px;
+  bottom: -15px;
   left: 50%;
   transform: translateX(-50%);
-  width: 80%;
-  height: 15px;
+  width: 90%;
+  height: 20px;
   background: linear-gradient(90deg, transparent 10%, gold 50%, transparent 90%);
   border-radius: 50%;
+  filter: blur(2px);
 }
 
 /* Câu đối */
 .parallel-couplet {
   position: absolute;
-  top: 50%;
-  transform: translateY(-100%);
+  top: 10%;
+  transform: translateY(-50%);
   background: linear-gradient(135deg, #5D4037 0%, #3E2723 100%);
-  border: 1px solid gold;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+  border: 2px solid gold;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
   z-index: 99;
   width: fit-content;
   height: fit-content;
-  min-width: 80px;
-  max-width: 200px;
+  min-width: 100px;
+  max-width: 250px;
   text-align: center;
+  padding: 5px;
 }
 
-
 .left-couplet {
-  left: 20px;
-  border-right: 3px solid gold;
+  left: 30px;
+  border-right: 4px solid gold;
 }
 
 .right-couplet {
-  right: 20px;
-  border-left: 3px solid gold;
+  right: 30px;
+  border-left: 4px solid gold;
 }
 
 .couplet-text {
@@ -111,19 +116,19 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 200px;
-  padding: 10px;
+  min-height: 300px;
+  padding: 15px 10px;
 }
 
 .couplet-text .chinese {
   font-family: 'Noto Serif SC', serif;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   color: gold;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-  line-height: 1.8;
-  letter-spacing: 2px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+  line-height: 2;
+  letter-spacing: 3px;
   white-space: nowrap;
-  padding: 5px 10px;
+  padding: 8px 12px;
 }
 
 /* Bàn thờ chính */
@@ -133,18 +138,19 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 80px 20px 20px 20px;
 }
 
 .altar-table {
   width: 95%;
-  height: 90%;
-  background: linear-gradient(135deg, #6D4C41 0%, #4E342E 100%);
-  border-radius: 15px;
-  border: 3px solid #8D6E63;
+  height: 100%;
+  background: 
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%235D4037"/><path d="M0,0 L100,100 M100,0 L0,100" stroke="%234E342E" stroke-width="1" opacity="0.1"/></svg>'),
+    linear-gradient(135deg, #6D4C41 0%, #4E342E 100%);
+  border-radius: 20px;
+  border: 4px solid #8D6E63;
   box-shadow: 
-    inset 0 0 50px rgba(0,0,0,0.3),
-    0 20px 50px rgba(0,0,0,0.5);
+    inset 0 0 60px rgba(0,0,0,0.4),
+    0 25px 60px rgba(0,0,0,0.6);
   position: relative;
   overflow: hidden;
 }
@@ -155,66 +161,85 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  height: 60px;
+  height: 80px;
   background: linear-gradient(180deg, #8D6E63 0%, transparent 100%);
+  z-index: 2;
+}
+
+.altar-table::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: linear-gradient(0deg, #5D4037 0%, transparent 100%);
   z-index: 2;
 }
 
 /* Hương án */
 .incense-table {
   position: absolute;
-  top: 10px;
+  top: 15px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  gap: 40px;
+  gap: 50px;
   z-index: 3;
 }
 
 .incense-stick {
-  width: 4px;
-  height: 40px;
+  width: 5px;
+  height: 50px;
   background: linear-gradient(180deg, #FFD700 0%, #FF6B00 100%);
-  border-radius: 2px;
+  border-radius: 3px;
   position: relative;
-  animation: incenseSmoke 3s ease-in-out infinite;
+  animation: incenseSmoke 4s ease-in-out infinite;
+  box-shadow: 0 0 10px rgba(255, 107, 0, 0.5);
 }
 
 .incense-stick::after {
   content: '';
   position: absolute;
-  top: -20px;
+  top: -25px;
   left: 50%;
   transform: translateX(-50%);
-  width: 2px;
-  height: 20px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.8) 0%, transparent 100%);
-  animation: smokeRise 3s ease-in-out infinite;
+  width: 3px;
+  height: 25px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.9) 0%, transparent 100%);
+  animation: smokeRise 4s ease-in-out infinite;
+  border-radius: 2px;
 }
 
 .center-stick {
-  animation-delay: 1s;
+  animation-delay: 1.3s;
 }
 
 .right-stick {
-  animation-delay: 2s;
+  animation-delay: 2.6s;
 }
 
 @keyframes incenseSmoke {
-  0%, 100% { opacity: 0.7; }
-  50% { opacity: 1; }
+  0%, 100% { 
+    opacity: 0.7;
+    box-shadow: 0 0 10px rgba(255, 107, 0, 0.5);
+  }
+  50% { 
+    opacity: 1;
+    box-shadow: 0 0 20px rgba(255, 107, 0, 0.8);
+  }
 }
 
 @keyframes smokeRise {
   0% { 
-    transform: translateX(-50%) translateY(0);
+    transform: translateX(-50%) translateY(0) scale(0.8);
     opacity: 0;
   }
-  50% { 
-    opacity: 0.8;
+  30% { 
+    opacity: 0.9;
   }
   100% { 
-    transform: translateX(-50%) translateY(-30px);
+    transform: translateX(-50%) translateY(-80px) scale(1.8);
     opacity: 0;
   }
 }
@@ -225,64 +250,48 @@ body {
   height: 100%;
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding: 30px;
   position: relative;
-}
-
-.family-title {
-  text-align: center;
-  margin-bottom: 20px;
-  z-index: 2;
-}
-
-.main-title {
-  color: #FFF8E1;
-  font-size: 2.2rem;
-  margin-bottom: 5px;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-  font-family: 'Noto Serif SC', serif;
-  letter-spacing: 1px;
-}
-
-.sub-title {
-  color: gold;
-  font-size: 1.8rem;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-  font-family: 'Noto Serif SC', serif;
 }
 
 /* Công cụ nghi lễ */
 .ritual-tools {
   position: absolute;
-  bottom: 20px;
-  left: 20px;
+  bottom: 30px;
+  left: 30px;
   z-index: 1000;
   display: flex;
-  gap: 15px;
+  gap: 20px;
 }
 
 .ritual-btn {
   background: linear-gradient(135deg, #8B4513 0%, #A0522D 100%);
   color: #FFF8E1;
-  border: 1px solid gold;
-  padding: 10px 15px;
-  border-radius: 25px;
+  border: 2px solid gold;
+  padding: 12px 20px;
+  border-radius: 30px;
   cursor: pointer;
   font-family: 'Noto Sans SC', sans-serif;
-  font-size: 14px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  font-size: 16px;
+  font-weight: 500;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
   transition: all 0.3s ease;
   display: flex;
   align-items: center;
-  gap: 8px;
-  min-width: 120px;
+  gap: 10px;
+  min-width: 140px;
   justify-content: center;
+  letter-spacing: 1px;
 }
 
 .ritual-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
   background: linear-gradient(135deg, #A0522D 0%, #8B4513 100%);
+}
+
+.ritual-btn:active {
+  transform: translateY(-1px);
 }
 
 .ritual-btn:disabled {
@@ -292,7 +301,7 @@ body {
 }
 
 .btn-icon {
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .btn-text {
@@ -302,12 +311,15 @@ body {
 /* Khung bài vị */
 .memorial-tablet {
   flex: 1;
-  background: rgba(255, 248, 225, 0.05);
-  border: 2px solid #8D6E63;
-  border-radius: 10px;
+  background: 
+    radial-gradient(circle at 30% 30%, rgba(139, 69, 19, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 70% 70%, rgba(165, 42, 42, 0.1) 0%, transparent 50%),
+    rgba(255, 248, 225, 0.03);
+  border: 3px solid #8D6E63;
+  border-radius: 15px;
   box-shadow: 
-    inset 0 0 30px rgba(0,0,0,0.2),
-    0 0 30px rgba(0,0,0,0.3);
+    inset 0 0 40px rgba(0,0,0,0.3),
+    0 0 40px rgba(0,0,0,0.4);
   overflow: hidden;
   position: relative;
 }
@@ -320,8 +332,8 @@ body {
   right: 0;
   bottom: 0;
   background: 
-    radial-gradient(circle at 20% 30%, rgba(139, 69, 19, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 80% 70%, rgba(165, 42, 42, 0.1) 0%, transparent 50%);
+    radial-gradient(circle at 20% 30%, rgba(139, 69, 19, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(165, 42, 42, 0.15) 0%, transparent 50%);
   pointer-events: none;
 }
 
@@ -331,120 +343,213 @@ body {
   background: transparent;
 }
 
+/* Lư hương và đồ thờ */
+.worship-items {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  z-index: 98;
+}
+
+.incense-burner {
+  width: 120px;
+  height: 60px;
+  background: linear-gradient(135deg, #5D4037 0%, #3E2723 100%);
+  border-radius: 10px;
+  border: 2px solid gold;
+  position: relative;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.incense-burner::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 10px;
+  background: linear-gradient(135deg, #8B4513 0%, #A0522D 100%);
+  border-radius: 5px;
+}
+
+.offering-bowls {
+  display: flex;
+  gap: 20px;
+}
+
+.bowl {
+  width: 50px;
+  height: 25px;
+  background: linear-gradient(135deg, #8B4513 0%, #A0522D 100%);
+  border-radius: 50%;
+  border: 1px solid gold;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+}
+
 /* Custom styles for FamilyTree */
 .bft-search {
-  top: 80px !important;
+  top: 100px !important;
   left: 50% !important;
   transform: translateX(-50%) !important;
+  background: rgba(139, 69, 19, 0.9) !important;
+  border: 1px solid gold !important;
+  border-radius: 25px !important;
+  padding: 10px !important;
 }
 
 .bft-search-input {
-  background: rgba(255, 248, 225, 0.9) !important;
+  background: rgba(255, 248, 225, 0.95) !important;
   border: 1px solid gold !important;
   border-radius: 20px !important;
   color: #5D4037 !important;
+  padding: 8px 15px !important;
 }
 
 .bft-mini-map {
-  bottom: 80px !important;
-  right: 20px !important;
-  border: 1px solid gold !important;
-  border-radius: 10px !important;
+  bottom: 100px !important;
+  right: 30px !important;
+  border: 2px solid gold !important;
+  border-radius: 15px !important;
   overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
 .bft-toolbar {
   background: linear-gradient(135deg, #8B4513 0%, #A0522D 100%) !important;
-  border: 1px solid gold !important;
-  border-radius: 25px !important;
-  padding: 5px !important;
+  border: 2px solid gold !important;
+  border-radius: 30px !important;
+  padding: 8px !important;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
 .bft-toolbar .bft-icon {
-  background: rgba(255, 248, 225, 0.9) !important;
+  background: rgba(255, 248, 225, 0.95) !important;
   border-radius: 50% !important;
-  margin: 2px !important;
+  margin: 3px !important;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
 /* Mobile Styles */
 @media (max-width: 768px) {
   .horizontal-tablet {
-    top: 10px;
+    margin: 10px auto;
+  }
+
+  .main-altar {
+    height: 80%;
   }
   
   .tablet-content {
-    padding: 10px 20px;
+    padding: 15px 25px;
   }
   
   .tablet-content .chinese-text {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
   
   .tablet-content .vietnamese-text {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
   
   .parallel-couplet {
     display: none;
   }
   
-  .main-title {
-    font-size: 1.8rem;
+  .altar-table {
+    height: 100%;
   }
   
-  .sub-title {
-    font-size: 1.4rem;
+  .tree-container {
+    padding: 15px;
+  }
+  
+  .ritual-tools {
+    bottom: 15px;
+    left: 15px;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .ritual-btn {
+    min-width: 120px;
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+  
+  .bft-toolbar {
+    transform: scale(0.85);
+    transform-origin: top right;
+  }
+  
+  .bft-mini-map {
+    bottom: 120px;
+    right: 15px;
+    transform: scale(0.8);
+    transform-origin: bottom right;
+  }
+  
+  .incense-table {
+    gap: 30px;
+  }
+  
+  .incense-stick {
+    height: 40px;
+  }
+  
+  .worship-items {
+    bottom: 10px;
+  }
+  
+  .incense-burner {
+    width: 100px;
+    height: 50px;
+  }
+  
+  .bowl {
+    width: 40px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tablet-content .chinese-text {
+    font-size: 1.7rem;
+  }
+  
+  .tablet-content .vietnamese-text {
+    font-size: 1rem;
   }
   
   .ritual-tools {
     bottom: 10px;
     left: 10px;
-    flex-direction: column;
-    gap: 10px;
   }
   
   .ritual-btn {
-    min-width: 100px;
+    min-width: 110px;
     padding: 8px 12px;
     font-size: 12px;
-  }
-  
-  .bft-toolbar {
-    transform: scale(0.9);
-    transform-origin: top right;
-  }
-}
-
-@media (max-width: 480px) {
-  .main-altar {
-    padding: 60px 10px 10px 10px;
-  }
-  
-  .tree-container {
-    padding: 10px;
-  }
-  
-  .main-title {
-    font-size: 1.5rem;
-  }
-  
-  .sub-title {
-    font-size: 1.2rem;
-  }
-  
-  .family-title {
-    margin-bottom: 10px;
   }
 }
 
 /* High contrast mode support */
 @media (prefers-contrast: high) {
   .tablet-content {
-    border: 3px solid #000;
+    border: 4px solid #000;
   }
   
   .ritual-btn {
-    border: 2px solid #000;
+    border: 3px solid #000;
+  }
+  
+  .parallel-couplet {
+    border: 3px solid #000;
   }
 }
 
@@ -455,18 +560,24 @@ body {
   }
   
   .ritual-tools,
-  .incense-table {
+  .incense-table,
+  .worship-items {
     display: none;
   }
   
   .memorial-tablet {
-    border: 2px solid #000 !important;
+    border: 3px solid #000 !important;
     box-shadow: none !important;
   }
   
-  .main-title,
-  .sub-title {
+  .tablet-content .chinese-text,
+  .tablet-content .vietnamese-text {
     color: black !important;
     text-shadow: none !important;
+  }
+  
+  .altar-table {
+    box-shadow: none !important;
+    border: 2px solid #000 !important;
   }
 }

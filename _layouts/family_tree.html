@@ -8,10 +8,201 @@
   <script src="{{ "/assets/js/libs/FamilyTree.js" | relative_url }}"></script>
   <!-- Thêm font chữ Hán Nôm -->
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Noto+Sans+SC:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    /* Animation Intro */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    @keyframes slideDown {
+      from { transform: translateY(-50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    
+    @keyframes incenseGlow {
+      0%, 100% { opacity: 0.7; }
+      50% { opacity: 1; }
+    }
+    
+    @keyframes smokeRise {
+      0% { transform: translateY(0) scale(0.8); opacity: 0; }
+      50% { opacity: 0.8; }
+      100% { transform: translateY(-100px) scale(1.5); opacity: 0; }
+    }
+    
+    .intro-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #3E2723 0%, #5D4037 100%);
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      animation: fadeIn 1s ease-out;
+    }
+    
+    .intro-title {
+      font-family: 'Noto Serif SC', serif;
+      font-size: 3.5rem;
+      color: gold;
+      text-shadow: 0 0 20px rgba(255, 215, 0, 0.7);
+      margin-bottom: 2rem;
+      animation: slideDown 1.5s ease-out;
+      text-align: center;
+    }
+    
+    .intro-subtitle {
+      font-family: 'Noto Serif SC', serif;
+      font-size: 1.8rem;
+      color: #FFF8E1;
+      margin-bottom: 3rem;
+      animation: slideDown 1.5s ease-out 0.5s both;
+      text-align: center;
+    }
+    
+    .intro-incense {
+      display: flex;
+      gap: 60px;
+      margin-bottom: 3rem;
+      animation: slideDown 1.5s ease-out 1s both;
+    }
+    
+    .intro-incense-stick {
+      width: 6px;
+      height: 80px;
+      background: linear-gradient(180deg, #FFD700 0%, #FF6B00 100%);
+      border-radius: 3px;
+      position: relative;
+      animation: incenseGlow 2s ease-in-out infinite;
+    }
+    
+    .intro-incense-stick::after {
+      content: '';
+      position: absolute;
+      top: -40px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 4px;
+      height: 40px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.8) 0%, transparent 100%);
+      border-radius: 2px;
+      animation: smokeRise 3s ease-in-out infinite;
+    }
+    
+    .intro-incense-stick:nth-child(2) {
+      animation-delay: 0.5s;
+    }
+    
+    .intro-incense-stick:nth-child(3) {
+      animation-delay: 1s;
+    }
+    
+    .intro-button {
+      background: linear-gradient(135deg, #8B4513 0%, #A0522D 100%);
+      color: #FFF8E1;
+      border: 2px solid gold;
+      padding: 15px 40px;
+      border-radius: 30px;
+      font-family: 'Noto Serif SC', serif;
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      animation: slideDown 1.5s ease-out 1.5s both;
+    }
+    
+    .intro-button:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      background: linear-gradient(135deg, #A0522D 0%, #8B4513 100%);
+    }
+    
+    .intro-fade-out {
+      animation: fadeIn 1s ease-out reverse forwards;
+    }
+    
+    /* Cải tiến giao diện chính */
+    .ancestral-altar {
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+    
+    .ancestral-altar.fade-in {
+      opacity: 1;
+    }
+    
+    /* Thêm hiệu ứng cho hoành phi */
+    .horizontal-tablet {
+      position: relative;
+      margin: 0 auto;
+      width: fit-content;
+      animation: slideDown 1.5s ease-out;
+    }
+    
+    .tablet-content {
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .tablet-content::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, transparent 30%, rgba(255,215,0,0.1) 50%, transparent 70%);
+      animation: shine 5s linear infinite;
+    }
+    
+    @keyframes shine {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+    
+    /* Hiệu ứng cho câu đối */
+    .parallel-couplet {
+      animation: slideDown 1.5s ease-out 0.3s both;
+    }
+    
+    .left-couplet {
+      animation-delay: 0.5s;
+    }
+    
+    .right-couplet {
+      animation-delay: 0.7s;
+    }
+    
+    /* Hiệu ứng cho bàn thờ */
+    .main-altar {
+      animation: slideDown 1.5s ease-out 0.9s both;
+    }
+    
+    /* Hiệu ứng cho các nút */
+    .ritual-tools {
+      animation: slideDown 1.5s ease-out 1.1s both;
+    }
+  </style>
 </head>
 <body>
+  <!-- Intro Animation -->
+  <div id="introOverlay" class="intro-overlay">
+    <h1 class="intro-title">{{ page.title }}</h1>
+    <h2 class="intro-subtitle">{{ page.subtitle }}</h2>
+    <div class="intro-incense">
+      <div class="intro-incense-stick"></div>
+      <div class="intro-incense-stick"></div>
+      <div class="intro-incense-stick"></div>
+    </div>
+    <button id="enterButton" class="intro-button">Xem Gia Phả</button>
+  </div>
+
   <!-- Khung từ đường với hoành phi và câu đối -->
-  <div class="ancestral-altar">
+  <div id="ancestralAltar" class="ancestral-altar">
     <!-- Hoành phi phía trên -->
     <div class="horizontal-tablet">
       <div class="tablet-content">
@@ -44,7 +235,7 @@
           <div class="ritual-tools">
             <button id="debugBtn" class="ritual-btn" title="Xem dữ liệu">
               <span class="btn-icon">📜</span>
-              <span class="btn-text">Debug</span>
+              <span class="btn-text">Gia Phả</span>
             </button>
             <button id="exportYaml" class="ritual-btn" title="Xuất gia phả">
               <span class="btn-icon">🖋️</span>
@@ -57,16 +248,6 @@
             <div id="tree"></div>
           </div>
         </div>
-      </div>
-    </div>
-
-    <!-- Lư hương và đồ thờ -->
-    <div class="worship-items">
-      <div class="incense-burner"></div>
-      <div class="offering-bowls">
-        <div class="bowl"></div>
-        <div class="bowl"></div>
-        <div class="bowl"></div>
       </div>
     </div>
   </div>
@@ -111,6 +292,12 @@
           <stop offset="0%" style="stop-color:#F48FB1;stop-opacity:1" />
           <stop offset="100%" style="stop-color:#D81B60;stop-opacity:1" />
         </linearGradient>
+        
+        <!-- Pattern gỗ cho nền -->
+        <pattern id="woodPattern" patternUnits="userSpaceOnUse" width="100" height="100">
+          <rect width="100" height="100" fill="#5D4037"/>
+          <path d="M0,0 L100,100 M100,0 L0,100" stroke="#4E342E" stroke-width="1" opacity="0.1"/>
+        </pattern>
       </defs>
       
       <g transform="matrix(0.05,0,0,0.05,-13 ,-12)" id="heart">
@@ -356,158 +543,181 @@
     }
 
     document.addEventListener('DOMContentLoaded', function() {
-      var options = getOptions();
-
-      family = new FamilyTree(document.getElementById('tree'), {
-        orientation: FamilyTree.orientation.left,
-        mouseScrool: FamilyTree.none,
-        scaleInitial: options.scaleInitial,
-        mode: 'dark',
-        template: 'myHugo', // Sử dụng template mới
-        enableSearch: options.enableSearch,
-        nodeMenu: {
-          edit: { text: 'Chỉnh sửa' },
-          details: { text: 'Chi tiết' },
-        },
-        nodeTreeMenu: true,
-        nodeBinding: {
-          field_0: 'name',
-          field_1: 'born',
-          img_0: 'photo'
-        },
-        editForm: {
-          titleBinding: "name",
-          photoBinding: "photo",
-          addMoreBtn: 'Thêm phần tử',
-          addMore: 'Thêm nhiều phần tử hơn',
-          addMoreFieldName: 'Tên phần tử',
-          generateElementsFromFields: false,
-          elements: [
-            { type: 'textbox', label: 'Họ và Tên', binding: 'name' },
-            { type: 'textbox', label: 'Vai trò', binding: 'role' },
-            { type: 'textbox', label: 'Email', binding: 'email' },
-            [
-              { type: 'textbox', label: 'Số điện thoại', binding: 'phone' },
-              { type: 'textbox', label: 'Ngày sinh', binding: 'born' },
-              { type: 'textbox', label: 'Ngày mất', binding: 'died' }
-            ],
-            [
-              { 
-                type: 'select', 
-                options: [
-                  { value: 'male', text: 'Nam' }, 
-                  { value: 'female', text: 'Nữ' }
-                ], 
-                label: 'Giới tính', 
-                binding: 'gender' 
-              },
-              { type: 'textbox', label: 'Thành phố', binding: 'city' },
-            ],
-            { type: 'textbox', label: 'URL Ảnh', binding: 'photo', btn: 'Tải lên' },
-          ]
-        },
-        toolbar: {
-          fullScreen: true,
-          zoom: true,
-          fit: true,
-          expandAll: true,
-        },
-      });
-
-      // Xử lý sự kiện render-link để thêm biểu tượng trái tim
-      family.on('render-link', function (sender, args) {
-        if (args.cnode.ppid != undefined)
-          args.html += '<use data-ctrl-ec-id="' + args.node.id + '" xlink:href="#heart" x="' + (args.p.xa) + '" y="' + (args.p.ya) + '"/>';
-        if (args.cnode.isPartner && args.node.partnerSeparation == 30)
-          args.html += '<use data-ctrl-ec-id="' + args.node.id + '" xlink:href="#heart" x="' + (args.p.xb) + '" y="' + (args.p.yb) + '"/>';
-      });
-
-      // Xử lý sự kiện khi form edit được đóng (sau khi submit)
-      family.on('edit-form-close', function (sender, args) {
-        console.log('Edit form closed:', args);
-        if (args && args.data) {
-          handleEditFormSubmit(args.data);
-        }
-      });
-
-      // Xử lý sự kiện khi node được thêm
-      family.on('add-node', function (sender, args) {
-        console.log('Node added:', args);
-        if (args && args.data) {
-          const newId = handleAddNode(args.parentId, args.data);
-          // Cập nhật lại dữ liệu để FamilyTree nhận node mới
-          setTimeout(() => {
-            family.load(currentData);
-          }, 100);
-        }
-      });
-
-      // Xử lý ngày tháng như text - không parse thành Date
-      family.on('field', function (sender, args) {
-        if ((args.name == 'born' || args.name == 'died') && args.value) {
-          // Chỉ hiển thị giá trị text nguyên gốc, không xử lý gì thêm
-          args.value = args.value;
-        }
-      });
-
-      // Xử lý sự kiện export YAML
-      document.getElementById('exportYaml').addEventListener('click', function() {
-        const btn = this;
-        try {
-          btn.textContent = 'Đang Export...';
-          btn.disabled = true;
+      // Xử lý intro
+      const introOverlay = document.getElementById('introOverlay');
+      const enterButton = document.getElementById('enterButton');
+      const ancestralAltar = document.getElementById('ancestralAltar');
+      const toggleMusicBtn = document.getElementById('toggleMusic');
+      
+      enterButton.addEventListener('click', function() {
+        // Hiệu ứng fade out cho intro
+        introOverlay.classList.add('intro-fade-out');
+        
+        // Hiển thị giao diện chính sau khi intro kết thúc
+        setTimeout(() => {
+          introOverlay.style.display = 'none';
+          ancestralAltar.classList.add('fade-in');
           
-          const success = exportToYaml();
+          // Khởi tạo cây gia phả
+          initializeFamilyTree();
           
-          if (success) {
-            btn.textContent = 'Đã Export!';
+        }, 1000);
+      });
+      
+      function initializeFamilyTree() {
+        var options = getOptions();
+
+        family = new FamilyTree(document.getElementById('tree'), {
+          orientation: FamilyTree.orientation.left,
+          mouseScrool: FamilyTree.action.zoom,
+          scaleInitial: 0.7,
+          mode: 'dark',
+          template: 'myHugo', // Sử dụng template mới
+          enableSearch: options.enableSearch,
+          nodeMenu: {
+            edit: { text: 'Chỉnh sửa' },
+            details: { text: 'Chi tiết' },
+          },
+          nodeTreeMenu: true,
+          nodeBinding: {
+            field_0: 'name',
+            field_1: 'born',
+            img_0: 'photo'
+          },
+          editForm: {
+            titleBinding: "name",
+            photoBinding: "photo",
+            addMoreBtn: 'Thêm phần tử',
+            addMore: 'Thêm nhiều phần tử hơn',
+            addMoreFieldName: 'Tên phần tử',
+            generateElementsFromFields: false,
+            elements: [
+              { type: 'textbox', label: 'Họ và Tên', binding: 'name' },
+              { type: 'textbox', label: 'Vai trò', binding: 'role' },
+              { type: 'textbox', label: 'Email', binding: 'email' },
+              [
+                { type: 'textbox', label: 'Số điện thoại', binding: 'phone' },
+                { type: 'textbox', label: 'Ngày sinh', binding: 'born' },
+                { type: 'textbox', label: 'Ngày mất', binding: 'died' }
+              ],
+              [
+                { 
+                  type: 'select', 
+                  options: [
+                    { value: 'male', text: 'Nam' }, 
+                    { value: 'female', text: 'Nữ' }
+                  ], 
+                  label: 'Giới tính', 
+                  binding: 'gender' 
+                },
+                { type: 'textbox', label: 'Thành phố', binding: 'city' },
+              ],
+              { type: 'textbox', label: 'URL Ảnh', binding: 'photo', btn: 'Tải lên' },
+            ]
+          },
+          toolbar: {
+            fullScreen: true,
+            zoom: true,
+            fit: true,
+            expandAll: true,
+          },
+        });
+
+        // Xử lý sự kiện render-link để thêm biểu tượng trái tim
+        family.on('render-link', function (sender, args) {
+          if (args.cnode.ppid != undefined)
+            args.html += '<use data-ctrl-ec-id="' + args.node.id + '" xlink:href="#heart" x="' + (args.p.xa) + '" y="' + (args.p.ya) + '"/>';
+          if (args.cnode.isPartner && args.node.partnerSeparation == 30)
+            args.html += '<use data-ctrl-ec-id="' + args.node.id + '" xlink:href="#heart" x="' + (args.p.xb) + '" y="' + (args.p.yb) + '"/>';
+        });
+
+        // Xử lý sự kiện khi form edit được đóng (sau khi submit)
+        family.on('edit-form-close', function (sender, args) {
+          console.log('Edit form closed:', args);
+          if (args && args.data) {
+            handleEditFormSubmit(args.data);
+          }
+        });
+
+        // Xử lý sự kiện khi node được thêm
+        family.on('add-node', function (sender, args) {
+          console.log('Node added:', args);
+          if (args && args.data) {
+            const newId = handleAddNode(args.parentId, args.data);
+            // Cập nhật lại dữ liệu để FamilyTree nhận node mới
             setTimeout(() => {
+              family.load(currentData);
+            }, 100);
+          }
+        });
+
+        // Xử lý ngày tháng như text - không parse thành Date
+        family.on('field', function (sender, args) {
+          if ((args.name == 'born' || args.name == 'died') && args.value) {
+            // Chỉ hiển thị giá trị text nguyên gốc, không xử lý gì thêm
+            args.value = args.value;
+          }
+        });
+
+        // Xử lý sự kiện export YAML
+        document.getElementById('exportYaml').addEventListener('click', function() {
+          const btn = this;
+          try {
+            btn.textContent = 'Đang Export...';
+            btn.disabled = true;
+            
+            const success = exportToYaml();
+            
+            if (success) {
+              btn.textContent = 'Đã Export!';
+              setTimeout(() => {
+                btn.textContent = 'Export YAML';
+                btn.disabled = false;
+              }, 2000);
+            } else {
               btn.textContent = 'Export YAML';
               btn.disabled = false;
-            }, 2000);
-          } else {
+            }
+            
+          } catch (error) {
+            console.error('Export error:', error);
+            alert('Có lỗi xảy ra khi export dữ liệu: ' + error.message);
             btn.textContent = 'Export YAML';
             btn.disabled = false;
           }
+        });
+
+        // Xử lý sự kiện debug
+        document.getElementById('debugBtn').addEventListener('click', function() {
+          console.log('=== DEBUG INFORMATION ===');
+          console.log('Current data:', currentData);
+          console.log('Next ID:', nextId);
+          console.log('Family instance:', family);
           
-        } catch (error) {
-          console.error('Export error:', error);
-          alert('Có lỗi xảy ra khi export dữ liệu: ' + error.message);
-          btn.textContent = 'Export YAML';
-          btn.disabled = false;
-        }
-      });
+          // Kiểm tra các node mới được thêm
+          const newNodes = currentData.filter(node => node.id >= nextId - 10);
+          console.log('Recently added nodes:', newNodes);
+          
+          alert('Check console for debug information (F12)');
+        });
 
-      // Xử lý sự kiện debug
-      document.getElementById('debugBtn').addEventListener('click', function() {
-        console.log('=== DEBUG INFORMATION ===');
-        console.log('Current data:', currentData);
-        console.log('Next ID:', nextId);
-        console.log('Family instance:', family);
-        
-        // Kiểm tra các node mới được thêm
-        const newNodes = currentData.filter(node => node.id >= nextId - 10);
-        console.log('Recently added nodes:', newNodes);
-        
-        alert('Check console for debug information (F12)');
-      });
+        family.onInit(() => {
+          family.collapse(11, [12,14,16,21,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,60,61,62,63,64,65]);
+          family.center(17);
+        });
 
-      family.onInit(() => {
-        family.collapse(11, [12,14,16,21,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,60,61,62,63,64,65]);
-        family.center(17);
-      });
+        // Load dữ liệu ban đầu
+        family.load(currentData);
 
-      // Load dữ liệu ban đầu
-      family.load(currentData);
-
-      // Xử lý responsive
-      window.addEventListener('resize', function() {
-        setTimeout(() => {
-          if (window.innerWidth < 768) {
-            family.zoom(0.3);
-          }
-        }, 300);
-      });
+        // Xử lý responsive
+        window.addEventListener('resize', function() {
+          setTimeout(() => {
+            if (window.innerWidth < 768) {
+              family.zoom(0.05);
+            }
+          }, 300);
+        });
+      }
     });
   </script>
 </body>
