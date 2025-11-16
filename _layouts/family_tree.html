@@ -8,233 +8,6 @@
   <script src="{{ "/assets/js/libs/FamilyTree.js" | relative_url }}"></script>
   <!-- Thêm font chữ Hán Nôm -->
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Noto+Sans+SC:wght@300;400;500&display=swap" rel="stylesheet">
-  <style>
-    /* Animation Intro */
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    
-    @keyframes slideDown {
-      from { transform: translateY(-50px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
-    
-    @keyframes incenseGlow {
-      0%, 100% { opacity: 0.7; }
-      50% { opacity: 1; }
-    }
-    
-    @keyframes smokeRise {
-      0% { transform: translateY(0) scale(0.8); opacity: 0; }
-      50% { opacity: 0.8; }
-      100% { transform: translateY(-100px) scale(1.5); opacity: 0; }
-    }
-    
-    .intro-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(135deg, #3E2723 0%, #5D4037 100%);
-      z-index: 9999;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      animation: fadeIn 1s ease-out;
-      overflow: hidden; /* Chỉ overflow hidden cho intro */
-    }
-    
-    .intro-title {
-      font-family: 'Noto Serif SC', serif;
-      font-size: 3.5rem;
-      color: gold;
-      text-shadow: 0 0 20px rgba(255, 215, 0, 0.7);
-      margin-bottom: 2rem;
-      animation: slideDown 1.5s ease-out;
-      text-align: center;
-    }
-    
-    .intro-subtitle {
-      font-family: 'Noto Serif SC', serif;
-      font-size: 1.8rem;
-      color: #FFF8E1;
-      margin-bottom: 3rem;
-      animation: slideDown 1.5s ease-out 0.5s both;
-      text-align: center;
-    }
-    
-    .intro-incense {
-      display: flex;
-      gap: 60px;
-      margin-bottom: 3rem;
-      animation: slideDown 1.5s ease-out 1s both;
-    }
-    
-    .intro-incense-stick {
-      width: 6px;
-      height: 80px;
-      background: linear-gradient(180deg, #FFD700 0%, #FF6B00 100%);
-      border-radius: 3px;
-      position: relative;
-      animation: incenseGlow 2s ease-in-out infinite;
-    }
-    
-    .intro-incense-stick::after {
-      content: '';
-      position: absolute;
-      top: -40px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 4px;
-      height: 40px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.8) 0%, transparent 100%);
-      border-radius: 2px;
-      animation: smokeRise 3s ease-in-out infinite;
-    }
-    
-    .intro-incense-stick:nth-child(2) {
-      animation-delay: 0.5s;
-    }
-    
-    .intro-incense-stick:nth-child(3) {
-      animation-delay: 1s;
-    }
-    
-    .intro-button {
-      background: linear-gradient(135deg, #8B4513 0%, #A0522D 100%);
-      color: #FFF8E1;
-      border: 2px solid gold;
-      padding: 15px 40px;
-      border-radius: 30px;
-      font-family: 'Noto Serif SC', serif;
-      font-size: 1.5rem;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      animation: slideDown 1.5s ease-out 1.5s both;
-    }
-    
-    .intro-button:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-      background: linear-gradient(135deg, #A0522D 0%, #8B4513 100%);
-    }
-    
-    .intro-fade-out {
-      animation: fadeIn 1s ease-out reverse forwards;
-    }
-    
-    /* Cải tiến giao diện chính */
-    .ancestral-altar {
-      opacity: 0;
-      transition: opacity 1s ease;
-      min-height: 100vh; /* Đảm bảo chiều cao tối thiểu */
-      overflow: visible; /* Cho phép scroll */
-    }
-    
-    .ancestral-altar.fade-in {
-      opacity: 1;
-    }
-    
-    /* Thêm hiệu ứng cho hoành phi */
-    .horizontal-tablet {
-      position: relative;
-      margin: 20px auto;
-      width: fit-content;
-      animation: slideDown 1.5s ease-out;
-    }
-    
-    .tablet-content {
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .tablet-content::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(45deg, transparent 30%, rgba(255,215,0,0.1) 50%, transparent 70%);
-      animation: shine 5s linear infinite;
-    }
-    
-    @keyframes shine {
-      0% { transform: translateX(-100%); }
-      100% { transform: translateX(100%); }
-    }
-    
-    /* Hiệu ứng cho câu đối */
-    .parallel-couplet {
-      animation: slideDown 1.5s ease-out 0.3s both;
-    }
-    
-    .left-couplet {
-      animation-delay: 0.5s;
-    }
-    
-    .right-couplet {
-      animation-delay: 0.7s;
-    }
-    
-    /* Hiệu ứng cho bàn thờ */
-    .main-altar {
-      animation: slideDown 1.5s ease-out 0.9s both;
-    }
-
-    /* Mobile-specific fixes */
-    @media (max-width: 768px) {
-      body {
-        overflow: auto; /* Cho phép scroll trên mobile */
-        height: auto;
-        min-height: 100vh;
-      }
-
-      .ancestral-altar {
-        height: auto;
-        min-height: 100vh;
-        overflow: visible;
-      }
-
-      .main-altar {
-        padding: 80px 10px 10px 10px;
-        height: auto;
-        min-height: calc(100vh - 100px);
-      }
-
-      .altar-table {
-        height: auto;
-        min-height: 600px; /* Chiều cao tối thiểu cho mobile */
-      }
-
-      .tree-container {
-        height: auto;
-        min-height: 500px;
-      }
-
-      .memorial-tablet {
-        height: 500px; /* Chiều cao cố định cho cây gia phả trên mobile */
-        overflow: auto; /* Cho phép scroll bên trong */
-      }
-
-      #tree {
-        min-height: 500px;
-        height: auto;
-      }
-
-      /* Đảm bảo FamilyTree có thể scroll */
-      .familytree {
-        overflow: auto !important;
-      }
-
-      .bft-container {
-        overflow: auto !important;
-      }
-    }
-  </style>
 </head>
 <body>
   <!-- Intro Animation -->
@@ -246,7 +19,7 @@
       <div class="intro-incense-stick"></div>
       <div class="intro-incense-stick"></div>
     </div>
-    <button id="enterButton" class="intro-button">Vào Từ Đường</button>
+    <button id="enterButton" class="intro-button">Xem Giả Phả</button>
   </div>
 
   <!-- Khung từ đường với hoành phi và câu đối -->
@@ -277,7 +50,11 @@
     <div class="main-altar">
         <!-- Container chính cho cây gia phả -->
         <div class="tree-container">
-          
+          <!-- Cây gia phả được đặt trong khung bài vị -->
+          <div class="memorial-tablet">
+            <div id="tree"></div>
+          </div>
+
           <!-- Các nút chức năng được thiết kế như vật phẩm thờ cúng -->
           <div class="ritual-tools">
             <button id="debugBtn" class="ritual-btn" title="Xem dữ liệu">
@@ -288,11 +65,6 @@
               <span class="btn-icon">🖋️</span>
               <span class="btn-text">Biên Chép</span>
             </button>
-          </div>
-          
-          <!-- Cây gia phả được đặt trong khung bài vị -->
-          <div class="memorial-tablet">
-            <div id="tree"></div>
           </div>
       </div>
     </div>

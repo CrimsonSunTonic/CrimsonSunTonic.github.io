@@ -11,6 +11,181 @@
   user-select: none;
 }
 
+/* Animation Intro */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes incenseGlow {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
+}
+
+@keyframes smokeRise {
+  0% { transform: translateY(0) scale(0.8); opacity: 0; }
+  50% { opacity: 0.8; }
+  100% { transform: translateY(-100px) scale(1.5); opacity: 0; }
+}
+
+.intro-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #3E2723 0%, #5D4037 100%);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 1s ease-out;
+  overflow: hidden; /* Chỉ overflow hidden cho intro */
+}
+
+.intro-title {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 3.5rem;
+  color: gold;
+  text-shadow: 0 0 20px rgba(255, 215, 0, 0.7);
+  margin-bottom: 2rem;
+  animation: slideDown 1.5s ease-out;
+  text-align: center;
+}
+
+.intro-subtitle {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 1.8rem;
+  color: #FFF8E1;
+  margin-bottom: 3rem;
+  animation: slideDown 1.5s ease-out 0.5s both;
+  text-align: center;
+}
+
+.intro-incense {
+  display: flex;
+  gap: 60px;
+  margin-bottom: 3rem;
+  animation: slideDown 1.5s ease-out 1s both;
+}
+
+.intro-incense-stick {
+  width: 6px;
+  height: 80px;
+  background: linear-gradient(180deg, #FFD700 0%, #FF6B00 100%);
+  border-radius: 3px;
+  position: relative;
+  animation: incenseGlow 2s ease-in-out infinite;
+}
+
+.intro-incense-stick::after {
+  content: '';
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 40px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.8) 0%, transparent 100%);
+  border-radius: 2px;
+  animation: smokeRise 3s ease-in-out infinite;
+}
+
+.intro-incense-stick:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.intro-incense-stick:nth-child(3) {
+  animation-delay: 1s;
+}
+
+.intro-button {
+  background: linear-gradient(135deg, #8B4513 0%, #A0522D 100%);
+  color: #FFF8E1;
+  border: 2px solid gold;
+  padding: 15px 40px;
+  border-radius: 30px;
+  font-family: 'Noto Serif SC', serif;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  animation: slideDown 1.5s ease-out 1.5s both;
+}
+
+.intro-button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  background: linear-gradient(135deg, #A0522D 0%, #8B4513 100%);
+}
+
+.intro-fade-out {
+  animation: fadeIn 1s ease-out reverse forwards;
+}
+
+/* Cải tiến giao diện chính */
+.ancestral-altar {
+  opacity: 0;
+  transition: opacity 1s ease;
+  min-height: 100vh; /* Đảm bảo chiều cao tối thiểu */
+  overflow: visible; /* Cho phép scroll */
+}
+
+.ancestral-altar.fade-in {
+  opacity: 1;
+}
+
+/* Thêm hiệu ứng cho hoành phi */
+.horizontal-tablet {
+  position: relative;
+  margin: 20px auto;
+  width: fit-content;
+  animation: slideDown 1.5s ease-out;
+}
+
+.tablet-content {
+  position: relative;
+  overflow: hidden;
+}
+
+.tablet-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 30%, rgba(255,215,0,0.1) 50%, transparent 70%);
+  animation: shine 5s linear infinite;
+}
+
+@keyframes shine {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Hiệu ứng cho câu đối */
+.parallel-couplet {
+  animation: slideDown 1.5s ease-out 0.3s both;
+}
+
+.left-couplet {
+  animation-delay: 0.5s;
+}
+
+.right-couplet {
+  animation-delay: 0.7s;
+}
+
+/* Hiệu ứng cho bàn thờ */
+.main-altar {
+  animation: slideDown 1.5s ease-out 0.9s both;
+}
 /* QUAN TRỌNG: Sửa lỗi scroll trên mobile */
 body {
   height: 100vh;
@@ -136,16 +311,17 @@ body {
 
 /* Bàn thờ chính */
 .main-altar {
-  flex: 1;
+  flex: 1; /* QUAN TRỌNG: Chiếm toàn bộ không gian */
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start; /* Thay đổi từ center thành flex-start */
   align-items: center;
+  padding: 20px 0; /* Thêm padding để tạo khoảng cách */
 }
 
 .altar-table {
-  width: 95%;
-  height: 100%;
+  width: 98%; /* Tăng width để sử dụng không gian tốt hơn */
+  height: 100%; /* Chiếm toàn bộ chiều cao */
   background: 
     url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%235D4037"/><path d="M0,0 L100,100 M100,0 L0,100" stroke="%234E342E" stroke-width="1" opacity="0.1"/></svg>'),
     linear-gradient(135deg, #6D4C41 0%, #4E342E 100%);
@@ -156,6 +332,8 @@ body {
     0 25px 60px rgba(0,0,0,0.6);
   position: relative;
   overflow: visible;
+  display: flex;
+  flex-direction: column;
 }
 
 .altar-table::before {
@@ -249,12 +427,14 @@ body {
 
 /* Container chính */
 .tree-container {
-  width: 80%;
+  width: 95%;
   height: 100%;
   display: flex;
   flex-direction: column;
   position: relative;
+  flex: 1; /* QUAN TRỌNG: Chiếm toàn bộ không gian còn lại */
 }
+
 
 /* Công cụ nghi lễ */
 .ritual-tools {
@@ -312,7 +492,7 @@ body {
 
 /* Khung bài vị - QUAN TRỌNG: Sửa cho mobile */
 .memorial-tablet {
-  flex: 1;
+  flex: 1; /* QUAN TRỌNG: Chiếm toàn bộ chiều cao */
   background: 
     radial-gradient(circle at 30% 30%, rgba(139, 69, 19, 0.1) 0%, transparent 50%),
     radial-gradient(circle at 70% 70%, rgba(165, 42, 42, 0.1) 0%, transparent 50%),
@@ -322,8 +502,9 @@ body {
   box-shadow: 
     inset 0 0 40px rgba(0,0,0,0.3),
     0 0 40px rgba(0,0,0,0.4);
-  overflow: auto; /* QUAN TRỌNG: Cho phép scroll */
+  overflow: auto;
   position: relative;
+  min-height: 500px; /* Chiều cao tối thiểu */
 }
 
 .memorial-tablet::before {
@@ -441,152 +622,68 @@ body {
 /* QUAN TRỌNG: Mobile Styles - Sửa lỗi scroll */
 @media (max-width: 768px) {
   body {
-    overflow-y: auto; /* Đảm bảo scroll dọc */
+    overflow-y: auto;
     height: auto;
   }
 
   .ancestral-altar {
-    height: 80%;
-  }
-
-  .horizontal-tablet {
-    margin: 10px auto;
+    height: auto; /* Thay đổi từ 80% thành auto */
+    min-height: 100vh; /* Đảm bảo chiều cao tối thiểu */
   }
 
   .main-altar {
-    height: 80%;
+    height: auto; /* Thay đổi từ 80% thành auto */
+    min-height: 70vh; /* Chiều cao tối thiểu trên mobile */
+    padding: 10px 0;
   }
-  
-  .tablet-content {
-    padding: 15px 25px;
-  }
-  
-  .tablet-content .chinese-text {
-    font-size: 2rem;
-  }
-  
-  .tablet-content .vietnamese-text {
-    font-size: 1.1rem;
-  }
-  
-  .parallel-couplet {
-    display: none;
-  }
-  
-  .altar-table {
-    height: 100%;
-  }
-  
+
   .tree-container {
-    height: auto;
+    width: 98%; /* Tăng width trên mobile */
+    height: 90%;
   }
-  
+
   .memorial-tablet {
-    height: 400px; /* Chiều cao cố định cho mobile */
-    overflow: auto; /* Cho phép scroll */
-    min-height: 400px;
+    height: 100%; /* Tăng chiều cao trên mobile */
+    min-height: 600px;
+    flex: 1;
   }
 
-  #tree {
-    min-height: 400px;
-    height: auto;
-    overflow: visible;
+  .altar-table {
+    height: 100%; /* Đảm bảo chiều cao 100% */
+    min-height: 650px; /* Chiều cao tối thiểu */
   }
-  
+
+  /* Điều chỉnh vị trí các nút công cụ */
   .ritual-tools {
-    bottom: 15px;
-    left: 15px;
-    flex-direction: column;
-    gap: 12px;
-    position: relative; /* Thay đổi từ absolute để không bị che */
-    margin-top: 20px;
-  }
-  
-  .ritual-btn {
-    min-width: 120px;
-    padding: 10px 15px;
-    font-size: 14px;
-  }
-  
-  .bft-toolbar {
-    transform: scale(0.85);
-    transform-origin: top right;
-  }
-  
-  .bft-mini-map {
-    bottom: 120px;
-    right: 15px;
-    transform: scale(0.8);
-    transform-origin: bottom right;
-  }
-  
-  .incense-table {
-    gap: 30px;
-  }
-  
-  .incense-stick {
-    height: 40px;
-  }
-  
-  .worship-items {
-    bottom: 10px;
     position: relative; /* Thay đổi từ absolute */
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
-  
-  .incense-burner {
-    width: 100px;
-    height: 50px;
-  }
-  
-  .bowl {
-    width: 40px;
-    height: 20px;
+    bottom: auto;
+    left: auto;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    align-self: center;
   }
 
-  /* Đảm bảo FamilyTree có thể scroll trên mobile */
-  .familytree {
-    overflow: auto !important;
-    touch-action: pan-y pan-x !important;
-  }
-
-  .bft-container {
-    overflow: auto !important;
+  .parallel-couplet {
+    display: none; 
   }
 }
 
 @media (max-width: 480px) {
-  .main-altar {
-    padding: 70px 5px 5px 5px;
-  }
-  
-  .tablet-content .chinese-text {
-    font-size: 1.7rem;
-  }
-  
-  .tablet-content .vietnamese-text {
-    font-size: 1rem;
-  }
-  
-  .ritual-tools {
-    bottom: 10px;
-    left: 10px;
-  }
-  
-  .ritual-btn {
-    min-width: 110px;
-    padding: 8px 12px;
-    font-size: 12px;
-  }
-
   .memorial-tablet {
-    height: 350px;
-    min-height: 350px;
+    height: 500px; /* Giảm nhẹ cho màn hình rất nhỏ */
+    min-height: 500px;
   }
 
-  #tree {
-    min-height: 350px;
+  .altar-table {
+    min-height: 550px;
+  }
+
+  .main-altar {
+    min-height: 60vh;
+  }
+
+  .parallel-couplet {
+    display: none; /* Ẩn câu đối trên
   }
 }
 
@@ -632,4 +729,39 @@ body {
     box-shadow: none !important;
     border: 2px solid #000 !important;
   }
+}
+
+.familytree {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.bft-container {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.bft-canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Thêm style để đảm bảo scroll mượt mà */
+.memorial-tablet::-webkit-scrollbar {
+  width: 8px;
+}
+
+.memorial-tablet::-webkit-scrollbar-track {
+  background: rgba(139, 69, 19, 0.3);
+  border-radius: 4px;
+}
+
+.memorial-tablet::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #8B4513 0%, #A0522D 100%);
+  border-radius: 4px;
+  border: 1px solid gold;
+}
+
+.memorial-tablet::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #A0522D 0%, #8B4513 100%);
 }
