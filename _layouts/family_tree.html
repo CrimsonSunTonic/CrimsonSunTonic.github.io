@@ -44,6 +44,7 @@
       justify-content: center;
       align-items: center;
       animation: fadeIn 1s ease-out;
+      overflow: hidden; /* Chỉ overflow hidden cho intro */
     }
     
     .intro-title {
@@ -129,6 +130,8 @@
     .ancestral-altar {
       opacity: 0;
       transition: opacity 1s ease;
+      min-height: 100vh; /* Đảm bảo chiều cao tối thiểu */
+      overflow: visible; /* Cho phép scroll */
     }
     
     .ancestral-altar.fade-in {
@@ -138,7 +141,7 @@
     /* Thêm hiệu ứng cho hoành phi */
     .horizontal-tablet {
       position: relative;
-      margin: 0 auto;
+      margin: 20px auto;
       width: fit-content;
       animation: slideDown 1.5s ease-out;
     }
@@ -181,10 +184,55 @@
     .main-altar {
       animation: slideDown 1.5s ease-out 0.9s both;
     }
-    
-    /* Hiệu ứng cho các nút */
-    .ritual-tools {
-      animation: slideDown 1.5s ease-out 1.1s both;
+
+    /* Mobile-specific fixes */
+    @media (max-width: 768px) {
+      body {
+        overflow: auto; /* Cho phép scroll trên mobile */
+        height: auto;
+        min-height: 100vh;
+      }
+
+      .ancestral-altar {
+        height: auto;
+        min-height: 100vh;
+        overflow: visible;
+      }
+
+      .main-altar {
+        padding: 80px 10px 10px 10px;
+        height: auto;
+        min-height: calc(100vh - 100px);
+      }
+
+      .altar-table {
+        height: auto;
+        min-height: 600px; /* Chiều cao tối thiểu cho mobile */
+      }
+
+      .tree-container {
+        height: auto;
+        min-height: 500px;
+      }
+
+      .memorial-tablet {
+        height: 500px; /* Chiều cao cố định cho cây gia phả trên mobile */
+        overflow: auto; /* Cho phép scroll bên trong */
+      }
+
+      #tree {
+        min-height: 500px;
+        height: auto;
+      }
+
+      /* Đảm bảo FamilyTree có thể scroll */
+      .familytree {
+        overflow: auto !important;
+      }
+
+      .bft-container {
+        overflow: auto !important;
+      }
     }
   </style>
 </head>
@@ -198,7 +246,7 @@
       <div class="intro-incense-stick"></div>
       <div class="intro-incense-stick"></div>
     </div>
-    <button id="enterButton" class="intro-button">Xem Gia Phả</button>
+    <button id="enterButton" class="intro-button">Vào Từ Đường</button>
   </div>
 
   <!-- Khung từ đường với hoành phi và câu đối -->
@@ -227,7 +275,6 @@
 
     <!-- Bàn thờ chính -->
     <div class="main-altar">
-      <div class="altar-table">
         <!-- Container chính cho cây gia phả -->
         <div class="tree-container">
           
@@ -247,11 +294,8 @@
           <div class="memorial-tablet">
             <div id="tree"></div>
           </div>
-        </div>
       </div>
     </div>
-  </div>
-
   <script>
     {% assign data_file = page.data_file | default: "family_tree_mother" %}
     const initialFamilyData = {{ site.data[data_file] | jsonify }};
@@ -709,14 +753,6 @@
         // Load dữ liệu ban đầu
         family.load(currentData);
 
-        // Xử lý responsive
-        window.addEventListener('resize', function() {
-          setTimeout(() => {
-            if (window.innerWidth < 768) {
-              family.zoom(0.05);
-            }
-          }, 300);
-        });
       }
     });
   </script>
