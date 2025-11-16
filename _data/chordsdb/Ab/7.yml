@@ -1,1 +1,12 @@
- 
+- name: "G#7"
+  fingers: "112131"
+  barres: [
+    {
+      fromString: 6,
+      toString: 1,
+      fret: 1
+    }
+  ]
+  title: "G#7"
+  position: 4
+

@@ -1,1 +1,23 @@
- 
+- name: "A#m7b5"
+  fingers: "x2121x"
+  barres: []
+  title: "A#m7b5"
+  position: 1
+
+- name: "A#m7b5(v2)"
+  fingers: "x122x2"
+  barres: []
+  title: "A#m7b5"
+  position: 4
+
+- name: "Bbm7b5"
+  fingers: "x2121x"
+  barres: []
+  title: "Bbm7b5"
+  position: 1
+
+- name: "Bbm7b5(v2)"
+  fingers: "x122x2"
+  barres: []
+  title: "Bbm7b5"
+  position: 4

@@ -1,1 +1,5 @@
- 
+- name: "AM7"
+  fingers: "02120x"
+  barres: []
+  title: "AM7"
+  position: 1

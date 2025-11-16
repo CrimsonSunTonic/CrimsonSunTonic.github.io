@@ -1,1 +1,23 @@
- 
+- name: "Bsus4"
+  fingers: "25242x"
+  barres: [
+    {
+      fromString: 5,
+      toString: 1,
+      fret: 2
+    }
+  ]
+  title: "Bsus4"
+  position: 1
+
+- name: "Bsus4(v2)"
+  fingers: "00212x"
+  barres: []
+  title: "Bsus4"
+  position: 1
+
+- name: "Bsus4(v3)"
+  fingers: "00442x"
+  barres: []
+  title: "Bsus4"
+  position: 1

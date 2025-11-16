@@ -1,1 +1,5 @@
- 
+- name: "Asus2"
+  fingers: "00220x"
+  barres: []
+  title: "Asus2"
+  position: 1

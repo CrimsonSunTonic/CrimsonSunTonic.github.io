@@ -18,6 +18,7 @@ div.chord {
 
 div.lyric {
   text-align: left;
+  color: darkgreen;
   /* margin: .3em; */
   /* border: 1px solid blue; */
 }

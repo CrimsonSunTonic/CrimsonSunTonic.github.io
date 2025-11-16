@@ -1,1 +1,17 @@
- 
+- name: "G#m7"
+  fingers: "111131"
+  barres: [
+    {
+      fromString: 6,
+      toString: 1,
+      fret: 1
+    }
+  ]
+  title: "G#m7"
+  position: 4
+
+- name: "G#m7(v2)"
+  fingers: "0044x4"
+  barres: []
+  title: "G#m7"
+  position: 1
