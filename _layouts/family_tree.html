@@ -290,23 +290,6 @@
       
       data.forEach((node, index) => {
         let generation = 0;
-        if (node.id <= 10) generation = 0;
-        else if (node.id <= 23) generation = 1;
-        else if (node.id <= 65) generation = 2;
-        else generation = 3;
-
-        if (generation !== currentGeneration) {
-          if (index > 0) yaml += "\n";
-          currentGeneration = generation;
-          switch(generation) {
-            case 0: yaml += "# Thế hệ 0 - Ông Sơ\n"; break;
-            case 1: yaml += "# Thế hệ 1 - Các con\n"; break;
-            case 2: yaml += "# Thế hệ 2 - Các cháu\n"; break;
-            case 3: yaml += "# Thế hệ 3 - Các chắt\n"; break;
-            default: yaml += "# Thế hệ " + generation + "\n";
-          }
-        }
-        
         yaml += `- id: ${node.id}\n`;
         
         if (node.pids && node.pids.length > 0) {

@@ -1,6 +1,6 @@
 ---
 layout: family_tree
-title: BÌNH TÂN TRẦN HUỲNH TỘC THẾ PHỔ
+title: BÌNH TÂN HUỲNH TỘC THẾ PHỔ
 subtitle: 平津黄族世譜
 permalink: /huynhtocchigiapha/
 data_file: family_tree_father
