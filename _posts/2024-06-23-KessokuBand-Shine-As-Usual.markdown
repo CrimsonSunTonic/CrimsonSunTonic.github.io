@@ -21,18 +21,18 @@ youtube: "https://www.youtube.com/embed/ipo90Je8Fkg"
 誰[F#m7] の[E/G#]胸にも[A]届か[G#7]ない <br>
 
 [Chorus] <br>
-一生[CM7]存在証明 [D7]永遠(トワ)を超 [Bm7]えてい[Em7]け <br>
-ちくしょう！[Am7]どうやったって[D#dim7]時は 止ま[Em7]らない <br>
-間[Dm7]に合[G7]うか[CM7]な 見[D7]知らぬ世[D#dim7]界の果[Em7]て <br>
+一生[CM7(v2)]存在証明 [D7(v2)]永遠(トワ)を超 [Bm7(v2)]えてい[Em7(v3)]け <br>
+ちくしょう！[Am7(v3)]どうやったって[D#dim7(v2)]時は 止ま[Em7(v3)]らない <br>
+間[Dm7]に合[G7]うか[CM7(v2)]な 見[D7]知らぬ世[D#dim7]界の果[Em7]て <br>
 いつ[Am7]か どう[D9sus4]か <br>
-秒速[CM7]340 [D7]mを超[Bm7]えてい[Em7]け <br>
+秒速[CM7(v2)]340 [D7]mを超[Bm7]えてい[Em7]け <br>
 誰も[Am7]聞いたことない旋[D#dim7]律は鳴り止[Em7]まない <br>
-変[Dm7]われ[G7]なくて[CM7]も 代[D/C]わりはい[D#dim7]ないから <br>
+変[Dm7]われ[G7]なくて[CM7(v2)]も 代[D/C]わりはい[D#dim7]ないから <br>
 鏡を閉じ[C#m7(v2)b5]て <br>
-革[CM7]命寸前の未[D7]来を睨んだ <br><br>
+革[CM7(v2)]命寸前の未[D7]来を睨んだ <br><br>
 
-[CM7] [D7] x3 <br>
-[CM7] [B7]<br><br>
+[CM7(v2)] [D7] x3 <br>
+[CM7(v2)] [B7]<br><br>
 
 [Verse 2]<br>
 [C#m7(v2)]天才だって[Bsus4(v2)]信じてた 気[Asus2]付かされ[E/G#]た<br>
@@ -47,11 +47,11 @@ youtube: "https://www.youtube.com/embed/ipo90Je8Fkg"
 未[F#m7]来なん[E/G#]て欲しく[Asus2]ないで[G#7]しょ」<br><br>
 
 [Chorus]<br>
-一生[CM7]全身全霊 [D7]限界を超[Bm7]えてい[Em7]け<br>
+一生[CM7(v2)]全身全霊 [D7]限界を超[Bm7]えてい[Em7]け<br>
 何回[Am7]間違えたって [D#dim7]指を止め[Em7]るなよ<br>
-[Dm7]叶わ[G7]なくて[CM7]も [D7]叶えたいと[D#dim7]願って<br>
+[Dm7]叶わ[G7]なくて[CM7(v2)]も [D7]叶えたいと[D#dim7]願って<br>
 [Em7]奏で続け[C#m7(v2)b5]る<br>
-敗[CM7]北宣言の未[D7]来を進んだ<br><br>
+敗[CM7(v2)]北宣言の未[D7]来を進んだ<br><br>
 
 [Instrumental Bridge]<br>
 [Em9] [Cadd9] [Gsus2] [Dsus4] x4<br>
@@ -60,14 +60,14 @@ youtube: "https://www.youtube.com/embed/ipo90Je8Fkg"
 [Chorus]<br> 
 「一生[Csus2]才能凡庸 [D7]天才じゃな[Bm7]いから[Em7]さ<br>
 何にも[Csus2]ない何にもでき[B7]ない」なんて言[Em7]い訳<br>
-し[Dm7]たくはないか[CM7]ら [D7]何度も[D#dim7]挑んでや[Em7]る<br>
-つい[CM7]てこい[D7]よ<br>
-秒速[CM7]340 [D7]mを超[Bm7]えてい[Em7]け <br>
+し[Dm7]たくはないか[CM7(v2)]ら [D7]何度も[D#dim7]挑んでや[Em7]る<br>
+つい[CM7(v2)]てこい[D7]よ<br>
+秒速[CM7(v2)]340 [D7]mを超[Bm7]えてい[Em7]け <br>
 誰も[Am7]聞いたことない旋[D#dim7]律は鳴り止[Em7]まない <br>
-変[Dm7]われ[G7]なくて[CM7]も 代[D/C]わりはい[D#dim7]ないから <br>
+変[Dm7]われ[G7]なくて[CM7(v2)]も 代[D/C]わりはい[D#dim7]ないから <br>
 鏡を閉じ[C#m7(v2)b5]て <br>
-革[CM7]命寸前の未[D7]来だなんて<br>
-[CM7]紛れもなく確か[D7]な希望[※]だ<br>
+革[CM7(v2)]命寸前の未[D7]来だなんて<br>
+[CM7(v2)]紛れもなく確か[D7]な希望[※]だ<br>
 [Outro]<br>
 [Gsus4 G Gsus2 Gsus4]<br>
 [Gsus4 G Gsus2 Bsus4(v2)]<br><br>

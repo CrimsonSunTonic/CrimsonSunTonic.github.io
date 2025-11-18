@@ -5,13 +5,7 @@
   position: 1
 
 - name: "D#dim7(v2)"
-  fingers: "13132x"
-  barres: [
-    {
-      fret: 1,
-      fromString: 5,
-      toString: 1
-    }
-  ]
+  fingers: "x3132x"
+  barres: []
   title: "D#dim7"
   position: 5

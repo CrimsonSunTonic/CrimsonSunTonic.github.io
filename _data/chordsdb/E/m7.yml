@@ -9,3 +9,15 @@
   barres: []
   title: "Em7"
   position: 1
+
+- name: "Em7(v3)"
+  fingers: "12131x"
+  barres: [
+    {
+      fromString: 6,
+      toString: 1,
+      fret: 1
+    }
+  ]
+  title: "Em7"
+  position: 7

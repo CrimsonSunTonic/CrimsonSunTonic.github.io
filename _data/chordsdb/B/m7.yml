@@ -9,3 +9,15 @@
   ]
   title: "Bm7"
   position: 1
+
+- name: "Bm7(v2)"
+  fingers: "111131"
+  barres: [
+    {
+      fromString: 6,
+      toString: 1,
+      fret: 1
+    }
+  ]
+  title: "Bm7"
+  position: 7
