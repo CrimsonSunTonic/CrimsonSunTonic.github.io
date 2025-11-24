@@ -1,7 +1,6 @@
 # Family Tree Data
-# Generated: 07:54:01 16/11/2025
+# Generated: 11:58:42 24/11/2025
 
-# Thế hệ 0 - Ông Sơ
 - id: 1
   pids: [2]
   name: "Trần Toại"
@@ -90,8 +89,6 @@
   photo: "/assets/images/family/male.svg"
   gender: "male"
 
-
-# Thế hệ 1 - Các con
 - id: 11
   pids: [12]
   mid: 8
@@ -156,8 +153,19 @@
   photo: "/assets/images/family/male.svg"
   gender: "male"
 
+- id: _aahj
+  mid: _r6v5
+  fid: _cv0r
+  name: "Nguyễn Gấm"
+  born: "DD-MM-1922"
+  died: "DD-MM-195X"
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
 - id: 18
   pids: [17]
+  mid: _cv0r
+  fid: _r6v5
   name: "Nguyễn Thị Ghé"
   born: "DD-MM-1925"
   died: "04-05-2008"
@@ -210,8 +218,6 @@
   photo: "/assets/images/family/female.svg"
   gender: "female"
 
-
-# Thế hệ 2 - Các cháu
 - id: 24
   pids: [25]
   mid: 12
@@ -591,8 +597,6 @@
   photo: "/assets/images/family/male.svg"
   gender: "male"
 
-
-# Thế hệ 3 - Các chắt
 - id: 66
   mid: 24
   fid: 25
@@ -701,3 +705,163 @@
   died: ""
   photo: "/assets/images/family/female.svg"
   gender: "female"
+
+- id: _r6v5
+  pids: [_cv0r]
+  name: "Nguyễn Gối"
+  born: "18XX?"
+  died: "193X"
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: _cv0r
+  pids: [_r6v5]
+  name: "Võ Thị Ngâu"
+  born: "18XX?"
+  died: "193X"
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: _0fbt
+  mid: _r6v5
+  fid: _cv0r
+  name: "Nguyễn Thị Ghẹ"
+  born: "DD-MM-19XX"
+  died: "DD-MM-19XX"
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: _6ug0
+  mid: _r6v5
+  fid: _cv0r
+  name: "Nguyễn .... ?"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: _eie1
+  pids: [_rd75]
+  mid: _r6v5
+  fid: _cv0r
+  name: "Nguyễn Châu"
+  born: "DD-MM-1934"
+  died: "DD-MM-1978"
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: _rd75
+  pids: [_eie1]
+  name: "Nguyễn Thị Phích"
+  born: "DD-MM-1935"
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: _fsyd
+  pids: [_4v1t]
+  mid: _eie1
+  fid: _rd75
+  name: "Nguyễn Minh Tuấn"
+  born: "DD-MM-1958"
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: _a119
+  pids: [_ex2h]
+  mid: _eie1
+  fid: _rd75
+  name: "Nguyễn Thị Liễu"
+  born: "DD-MM-1967"
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: _9e9r
+  pids: [_kl7k]
+  mid: _eie1
+  fid: _rd75
+  name: "Nguyễn Thị Hồng"
+  born: "DD-MM-1970"
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: _ihf8
+  pids: [_dbnc]
+  mid: _eie1
+  fid: _rd75
+  name: "Nguyễn Thị Yến"
+  born: "DD-MM-1972"
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: _4v1t
+  pids: [_fsyd]
+  name: "Tuyết Vân"
+  born: "DD-MM-1961"
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: _15ev
+  mid: _fsyd
+  fid: _4v1t
+  name: "Nguyễn Thị Minh Thư"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: _4f6e
+  mid: _fsyd
+  fid: _4v1t
+  name: "Nguyễn ..."
+  born: ""
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: _ex2h
+  pids: [_a119]
+  name: "... Điền"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: _chww
+  mid: _a119
+  fid: _ex2h
+  name: "... Trang"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: _rdde
+  mid: _a119
+  fid: _ex2h
+  name: "... (Tý)"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: _kl7k
+  pids: [_9e9r]
+  name: "... Trung"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: _dbnc
+  pids: [_ihf8]
+  name: "... Linh"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
