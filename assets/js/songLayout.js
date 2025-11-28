@@ -172,13 +172,22 @@ function renderLyrics(line) {
 
 function renderSong(input) {
   let lines = input.split('\n').map(line => line.trim()).filter(line => line !== '');
-
   let songsDiv = document.getElementById('songs');
   songsDiv.innerHTML = '';
 
   lines.forEach(line => {
-    let lyricsLineDiv = renderLyrics(line);
-    songsDiv.appendChild(lyricsLineDiv);
+    // Check if this line is an HTML header (h1, h2, h3, etc.)
+    if (line.match(/^<h[1-6]/)) {
+      // Create a container for the header
+      let headerContainer = document.createElement('div');
+      headerContainer.className = 'section-header';
+      headerContainer.innerHTML = line;
+      songsDiv.appendChild(headerContainer);
+    } else {
+      // Process as regular lyrics line
+      let lyricsLineDiv = renderLyrics(line);
+      songsDiv.appendChild(lyricsLineDiv);
+    }
   });
 }
 

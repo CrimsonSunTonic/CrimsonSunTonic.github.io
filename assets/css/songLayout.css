@@ -115,3 +115,33 @@ div.video-container {
   flex-direction: column;
   justify-content: space-between;
 }
+
+.section-header {
+  margin: 2rem 0 1rem 0;
+  text-align: center;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 0.5rem;
+}
+
+.section-header h1,
+.section-header h2,
+.section-header h3,
+.section-header h4,
+.section-header h5,
+.section-header h6 {
+  margin: 0;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Style for the main headers (h1) */
+.section-header h1 {
+  font-size: 1.8rem;
+  color: #2c3e50;
+}
+
+/* Style for sub-headers (h2) */
+.section-header h2 {
+  font-size: 1.5rem;
+  color: #34495e;
+}
