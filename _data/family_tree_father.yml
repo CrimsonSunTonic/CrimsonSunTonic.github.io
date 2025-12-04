@@ -1,8 +1,28 @@
 # Family Tree Data
-# Generated: 19:51:17 29/11/2025
+# Generated: 20:01:19 4/12/2025
+
+- id: _2t4p
+  pids: [_u1qi]
+  name: "Ông Tổ"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: _u1qi
+  pids: [_2t4p]
+  name: "Bà Tổ"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
 - id: _fzt5
   pids: [_r3et]
+  mid: _2t4p
+  fid: _u1qi
   name: "Huỳnh Lễ"
+  role: "Thứ 6"
   born: ""
   died: "(22/6)"
   photo: "/assets/images/family/male.svg"
@@ -13,6 +33,25 @@
   name: "Nguyễn Thị Bạc"
   born: ""
   died: "(22/2)"
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: _e9dt
+  pids: [_r7nk]
+  mid: _2t4p
+  fid: _u1qi
+  name: "Huỳnh Sạn"
+  role: "Thứ 9"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: _r7nk
+  pids: [_e9dt]
+  name: "Nguyễn Thị Điều"
+  born: ""
+  died: ""
   photo: "/assets/images/family/female.svg"
   gender: "female"
 
