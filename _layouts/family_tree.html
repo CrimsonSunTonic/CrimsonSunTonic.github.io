@@ -141,40 +141,22 @@
         ${FamilyTree.icon.ft(15, 15, 'url(#femaleGradient)', 7.5, 7.5)}
       </g>`;
 
-    // Định nghĩa nút expand/collapse với gradient
-    const expandIconMale =
-      '<circle cx="-10" cy="50" r="10" fill="url(#expandMaleGradient)" stroke="#fff" stroke-width="1"><title>Expand</title></circle>' +
-      '<line x1="-17" y1="50" x2="-3" y2="50" stroke-width="1" stroke="#fff"></line>' +
-      '<line x1="-10" y1="43" x2="-10" y2="57" stroke-width="1" stroke="#fff"></line>';
-
-    const expandIconFemale =
-      '<circle cx="-10" cy="50" r="10" fill="url(#expandMaleGradient)" stroke="#fff" stroke-width="1"><title>Expand</title></circle>' +
-      '<line x1="-17" y1="50" x2="-3" y2="50" stroke-width="1" stroke="#fff"></line>' +
-      '<line x1="-10" y1="43" x2="-10" y2="57" stroke-width="1" stroke="#fff"></line>';
-
-    // Template cho nam với gradient
-    FamilyTree.templates.myHugo_male = Object.assign({}, FamilyTree.templates.myHugo);
-    FamilyTree.templates.myHugo_male.node = '<rect x="0" y="0" height="{h}" width="{w}" fill="url(#maleGradient)" stroke="#aeaeae" stroke-width="1" rx="5" ry="5"></rect>';
-    FamilyTree.templates.myHugo_male.plus = expandIconMale;
-
-    // Template cho nữ với gradient
-    FamilyTree.templates.myHugo_female = Object.assign({}, FamilyTree.templates.myHugo);
-    FamilyTree.templates.myHugo_female.node = '<rect x="0" y="0" height="{h}" width="{w}" fill="url(#femaleGradient)" stroke="#aeaeae" stroke-width="1" rx="5" ry="5"></rect>';
-    FamilyTree.templates.myHugo_female.plus = expandIconFemale;
-
-    // Thêm biểu tượng giới tính trên cùng
-    FamilyTree.templates.myHugo_male.up = '<use x="195" y="0" xlink:href="#sriniz_male_up"></use>';
-    FamilyTree.templates.myHugo_female.up = '<use x="195" y="0" xlink:href="#sriniz_female_up"></use>';
-
-    // Pointer từ Sriniz với gradient
-    FamilyTree.templates.myHugo.pointer =
-      '<g data-pointer="pointer" transform="matrix(0,0,0,0,80,80)">><g transform="matrix(0.3,0,0,0.3,-17,-17)">' +
-      '<polygon fill="url(#maleGradient)" points="53.004,173.004 53.004,66.996 0,120" />' +
-      '<polygon fill="url(#maleGradient)" points="186.996,66.996 186.996,173.004 240,120" />' +
-      '<polygon fill="url(#femaleGradient)" points="66.996,53.004 173.004,53.004 120,0" />' +
-      '<polygon fill="url(#femaleGradient)" points="120,240 173.004,186.996 66.996,186.996" />' +
-      '<circle fill="red" cx="120" cy="120" r="30" />' +
-      '</g></g>';
+    // Hàm tạo expand icon dựa trên orientation
+    function createExpandIcon(orientation, gender) {
+      const gradientId = gender === 'female' ? 'expandFemaleGradient' : 'expandMaleGradient';
+      
+      if (orientation === FamilyTree.orientation.top) {
+        // Vị trí cho orientation top: tăng x thêm 125, giảm y đi 60
+        return '<circle cx="115" cy="-10" r="10" fill="url(#' + gradientId + ')" stroke="#fff" stroke-width="1"><title>Expand</title></circle>' +
+               '<line x1="108" y1="-10" x2="122" y2="-10" stroke-width="1" stroke="#fff"></line>' +
+               '<line x1="115" y1="-17" x2="115" y2="-3" stroke-width="1" stroke="#fff"></line>';
+      } else {
+        // Vị trí mặc định cho orientation left
+        return '<circle cx="-10" cy="50" r="10" fill="url(#' + gradientId + ')" stroke="#fff" stroke-width="1"><title>Expand</title></circle>' +
+               '<line x1="-17" y1="50" x2="-3" y2="50" stroke-width="1" stroke="#fff"></line>' +
+               '<line x1="-10" y1="43" x2="-10" y2="57" stroke-width="1" stroke="#fff"></line>';
+      }
+    }
 
     function getOptions(){
       const searchParams = new URLSearchParams(window.location.search);
@@ -186,6 +168,21 @@
         scaleInitial = FamilyTree.match.boundary;
       }
       return {enableSearch, scaleInitial};
+    }
+
+    // Hàm kiểm tra thiết bị
+    function isMobileDevice() {
+      // Kiểm tra user agent
+      const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+      const isMobile = /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(userAgent.toLowerCase());
+      
+      // Kiểm tra kích thước màn hình
+      const isSmallScreen = window.innerWidth <= 768;
+      
+      // Kiểm tra touch events
+      const hasTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+      
+      return isMobile || isSmallScreen || hasTouch;
     }
 
     // Hàm tìm node trong currentData theo ID
@@ -376,9 +373,47 @@
       
       function initializeFamilyTree() {
         var options = getOptions();
+        
+        // Xác định orientation dựa trên thiết bị
+        var orientation;
+        if (isMobileDevice()) {
+          orientation = FamilyTree.orientation.left;  // Điện thoại
+          console.log("Đang sử dụng orientation cho điện thoại: left");
+        } else {
+          orientation = FamilyTree.orientation.top;   // PC
+          console.log("Đang sử dụng orientation cho PC: top");
+        }
+
+        // Tạo expand icon dựa trên orientation
+        const expandIconMale = createExpandIcon(orientation, 'male');
+        const expandIconFemale = createExpandIcon(orientation, 'female');
+
+        // Template cho nam với gradient
+        FamilyTree.templates.myHugo_male = Object.assign({}, FamilyTree.templates.myHugo);
+        FamilyTree.templates.myHugo_male.node = '<rect x="0" y="0" height="{h}" width="{w}" fill="url(#maleGradient)" stroke="#aeaeae" stroke-width="1" rx="5" ry="5"></rect>';
+        FamilyTree.templates.myHugo_male.plus = expandIconMale;
+
+        // Template cho nữ với gradient
+        FamilyTree.templates.myHugo_female = Object.assign({}, FamilyTree.templates.myHugo);
+        FamilyTree.templates.myHugo_female.node = '<rect x="0" y="0" height="{h}" width="{w}" fill="url(#femaleGradient)" stroke="#aeaeae" stroke-width="1" rx="5" ry="5"></rect>';
+        FamilyTree.templates.myHugo_female.plus = expandIconFemale;
+
+        // Thêm biểu tượng giới tính trên cùng
+        FamilyTree.templates.myHugo_male.up = '<use x="195" y="0" xlink:href="#sriniz_male_up"></use>';
+        FamilyTree.templates.myHugo_female.up = '<use x="195" y="0" xlink:href="#sriniz_female_up"></use>';
+
+        // Pointer từ Sriniz với gradient
+        FamilyTree.templates.myHugo.pointer =
+          '<g data-pointer="pointer" transform="matrix(0,0,0,0,80,80)">><g transform="matrix(0.3,0,0,0.3,-17,-17)">' +
+          '<polygon fill="url(#maleGradient)" points="53.004,173.004 53.004,66.996 0,120" />' +
+          '<polygon fill="url(#maleGradient)" points="186.996,66.996 186.996,173.004 240,120" />' +
+          '<polygon fill="url(#femaleGradient)" points="66.996,53.004 173.004,53.004 120,0" />' +
+          '<polygon fill="url(#femaleGradient)" points="120,240 173.004,186.996 66.996,186.996" />' +
+          '<circle fill="red" cx="120" cy="120" r="30" />' +
+          '</g></g>';
 
         family = new FamilyTree(document.getElementById('tree'), {
-          orientation: FamilyTree.orientation.left,
+          orientation: orientation,  // Sử dụng orientation đã xác định
           mouseScrool: FamilyTree.action.zoom,
           scaleInitial: 0.7,
           mode: 'dark',
@@ -503,6 +538,8 @@
           console.log('Current data:', currentData);
           console.log('Next ID:', nextId);
           console.log('Family instance:', family);
+          console.log('Device type:', isMobileDevice() ? 'Mobile' : 'PC');
+          console.log('Orientation:', isMobileDevice() ? 'left' : 'top');
           
           // Kiểm tra các node mới được thêm
           const newNodes = currentData.filter(node => node.id >= nextId - 10);
