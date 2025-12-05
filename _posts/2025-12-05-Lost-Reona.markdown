@@ -8,7 +8,7 @@ tuning: "Drop D DADGBE"
 youtube: "https://www.youtube.com/embed/JDQ_Rhaj1_Y"
 ---
 
-# Verse 1
+# Verse
 
 Cut my hair just because I thought that
 Maybe things would change
@@ -18,3 +18,20 @@ Falls to the ground, floating
 Just like gold dust it's sparkling
 Taking me back to the start, my spirits are darkening
 It makes me feel so weak
+
+# Pre-Chorus
+
+Looking for a reason why I can't comprehend
+I feel the lightness in my head
+Now my thoughts are clouded by strange things I see
+
+# Chorus
+
+For every breath I take every day
+Every drop of blood, every stain
+Like the moon, I will wax and wane
+Circle's complete
+For all thе promises that I keep
+All the nights when I can't sleep
+Evеry time that I held your hand
+Iician far gesund gemynd
