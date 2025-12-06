@@ -105,8 +105,6 @@ chords:
 # [>>] [F#9sus4] [DM13sus2] [x2]
 # [~~] [F#9sus4][F#9sus4]
 ---
-<<<<<<< HEAD
-=======
 
 # Verse
 
@@ -135,4 +133,3 @@ For all thе promises that I keep
 All the nights when I can't sleep
 Evеry time that I held your hand
 Iician far gesund gemynd
->>>>>>> 23980e5a44e88e2450b2fc4ddc805a00d4cbb11b
