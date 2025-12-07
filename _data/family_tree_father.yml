@@ -1,5 +1,5 @@
 # Family Tree Data
-# Generated: 21:47:17 6/12/2025
+# Generated: 19:57:39 7/12/2025
 
 - id: _2t4p
   pids: [_u1qi]
@@ -16,6 +16,17 @@
   died: ""
   photo: "/assets/images/family/female.svg"
   gender: "female"
+
+- id: _1uav
+  pids: [_ksvs]
+  mid: _2t4p
+  fid: _u1qi
+  name: "Huỳnh ..."
+  role: "Thứ 4"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
 
 - id: _fzt5
   pids: [_r3et]
@@ -487,11 +498,22 @@
   photo: "/assets/images/family/male.svg"
   gender: "male"
 
+- id: _aj9d
+  mid: _e9dt
+  fid: _r7nk
+  name: "Huỳnh Thị ..."
+  role: "Thứ 2"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
 - id: _bqaq
   pids: [_eyd2, _88pt]
   mid: _e9dt
   fid: _r7nk
   name: "Huỳnh Cảnh"
+  role: "Thứ 3"
   born: ""
   died: ""
   photo: "/assets/images/family/male.svg"
@@ -514,6 +536,52 @@
   photo: "/assets/images/family/female.svg"
   gender: "female"
 
+- id: _0aqj
+  pids: [_idc1]
+  mid: _e9dt
+  fid: _r7nk
+  name: "Huỳnh Khải"
+  role: "Thứ 4"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: _idc1
+  pids: [_0aqj]
+  name: "Phạm Thị Gieo"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: _7a0o
+  mid: _e9dt
+  fid: _r7nk
+  name: "Huỳnh Thị ..."
+  role: "Thứ 5"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: _xe5e
+  pids: [_41c2]
+  mid: _e9dt
+  fid: _r7nk
+  name: "Huỳnh Tường"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: _41c2
+  pids: [_xe5e]
+  name: "???"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
 
 - id: _6ms3
   mid: _bqaq
@@ -565,7 +633,7 @@
   mid: _bqaq
   fid: _eyd2
   name: "Huỳnh Hiến"
-  born: ""
+  born: "1952"
   died: ""
   photo: "/assets/images/family/male.svg"
   gender: "male"
@@ -591,7 +659,7 @@
 - id: _9t83
   mid: _bqaq
   fid: _eyd2
-  name: "Huỳnh Hiểu"
+  name: "Huỳnh Văn Hữu"
   born: ""
   died: ""
   photo: "/assets/images/family/male.svg"
@@ -600,10 +668,46 @@
 - id: _a77u
   pids: [_avcz]
   name: "Dương Thị Cát"
-  born: ""
+  born: "1956"
   died: ""
   photo: "/assets/images/family/female.svg"
   gender: "female"
+
+- id: _9kst
+  mid: _bqaq
+  fid: _eyd2
+  name: "Huỳnh Văn Hiểu"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: _j375
+  mid: _bqaq
+  fid: _eyd2
+  name: "Huỳnh Văn Phiên"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: _h83c
+  mid: _bqaq
+  fid: _eyd2
+  name: "Huỳnh Văn Thảo"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: _4o9q
+  mid: _bqaq
+  fid: _eyd2
+  name: "Huỳnh Văn Bang"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
 
 - id: _zd1t
   pids: [_kxog]
@@ -703,3 +807,195 @@
   died: ""
   photo: "/assets/images/family/male.svg"
   gender: "male"
+
+- id: _37p8
+  mid: _0aqj
+  fid: _idc1
+  name: "Huỳnh Thị Hai"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: _l70z
+  mid: _0aqj
+  fid: _idc1
+  name: "Huỳnh Thị Đấu"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: _172w
+  mid: _0aqj
+  fid: _idc1
+  name: "Huỳnh Văn Tranh"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: _vlky
+  mid: _0aqj
+  fid: _idc1
+  name: "Huỳnh Thị Nhật Trâm"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: _64cn
+  mid: _xe5e
+  fid: _41c2
+  name: "Huỳnh Văn Trực"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: _ksvs
+  pids: [_1uav]
+  name: "???"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: _g0qz
+  pids: [_hty5]
+  mid: _1uav
+  fid: _ksvs
+  name: "Huỳnh ..."
+  born: ""
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: _hty5
+  pids: [_g0qz]
+  name: "???"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: _54tl
+  mid: _g0qz
+  fid: _hty5
+  name: "Huỳnh Vô Danh"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: _jg2v
+  mid: _g0qz
+  fid: _hty5
+  name: "Huỳnh Thị Nhung"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: _wn7t
+  pids: [_bcm4]
+  mid: _g0qz
+  fid: _hty5
+  name: "Huỳnh Nhương"
+  role: "có 18 người con"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: _84pl
+  mid: _g0qz
+  fid: _hty5
+  name: "Huỳnh Nhượng"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: _09wb
+  mid: _g0qz
+  fid: _hty5
+  name: "Huỳnh Vô Danh"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: _0vi7
+  mid: _g0qz
+  fid: _hty5
+  name: "Huỳnh Thản"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: _tcp1
+  mid: _g0qz
+  fid: _hty5
+  name: "Huỳnh..."
+  role: "Thứ 8"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: _w41s
+  mid: _g0qz
+  fid: _hty5
+  name: "Huỳnh ..."
+  role: "Thứ 9"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: _qdyw
+  mid: _g0qz
+  fid: _hty5
+  name: "Huỳnh Văn Thặng"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: _kzc3
+  mid: _g0qz
+  fid: _hty5
+  name: "Huỳnh Thị Thường"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: _bcm4
+  pids: [_wn7t]
+  name: "Đỗ Thị Chứa"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: _snfl
+  pids: [_yo7s]
+  mid: _wn7t
+  fid: _bcm4
+  name: "Huỳnh Ngọc Ảnh"
+  role: "anh Ảnh"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: _yo7s
+  pids: [_snfl]
+  name: "Ngô Thị ..."
+  born: ""
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"

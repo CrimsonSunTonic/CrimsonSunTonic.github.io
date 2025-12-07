@@ -23,7 +23,6 @@ function createChordDiagram(chordName) {
             strings: 6,
             frets: 5,
             position: 1,
-            tuning: ['E', 'A', 'D', 'G', 'B', 'E'],
             fretLabelFontSize: 38,
             tuningsFontSize: 28,
             fingerSize: 0.65,
