@@ -5,7 +5,7 @@ date: 2025-12-05 12:58:52 +0900
 song_name: "Lost"
 artist: "Reona"
 tuning: "Drop D DADGBE"
-youtube: "https://www.youtube.com/embed/JDQ_Rhaj1_Y"
+youtube: "https://www.youtube.com/embed/kuLIm2edJuU"
 chords:
   Esus4:
     fingers: "002222"
