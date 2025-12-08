@@ -1,5 +1,5 @@
 # Family Tree Data
-# Generated: 20:39:55 8/12/2025
+# Generated: 20:56:45 8/12/2025
 
 - id: _jwwi
   name: "Trần Tu"
@@ -107,6 +107,7 @@
   gender: "male"
 
 - id: 5
+  pids: [_79ep]
   mid: 2
   fid: 1
   name: "Trần Lạng"
@@ -392,6 +393,7 @@
   died: ""
   photo: "/assets/images/family/female.svg"
   gender: "female"
+
 - id: _h6cl
   pids: [_01a7]
   name: "Lê Thị Giỏi"
@@ -1200,3 +1202,150 @@
   died: ""
   photo: "/assets/images/family/male.svg"
   gender: "male"
+
+- id: _79ep
+  pids: [5]
+  name: "Nguyễn Thị Lòng"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: _ekob
+  pids: [_juol]
+  mid: 5
+  fid: _79ep
+  name: "Trần Thị Đen"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: _pjfj
+  pids: [_aixb]
+  mid: 5
+  fid: _79ep
+  name: "Trần Anh"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: _3g9m
+  pids: [_t5pc]
+  mid: 5
+  fid: _79ep
+  name: "Trần Tôn"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: _juol
+  pids: [_ekob]
+  name: "Phan Cống"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: _gyk8
+  mid: _ekob
+  fid: _juol
+  name: "Phan Thị Nhỏ"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: _sl6p
+  mid: _ekob
+  fid: _juol
+  name: "Phan Ngọc Hoàng"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: _rmzm
+  mid: _ekob
+  fid: _juol
+  name: "Phan Thị Lệ"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: _aixb
+  pids: [_pjfj]
+  name: "Nguyễn Thị Ga"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: _hw05
+  pids: [_szlu]
+  mid: _pjfj
+  fid: _aixb
+  name: "Trần Huynh"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: _slwg
+  pids: [_d552]
+  mid: _pjfj
+  fid: _aixb
+  name: "Trần Chánh"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: _h4yt
+  mid: _pjfj
+  fid: _aixb
+  name: "Trần Thị Thuận"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: _t5pc
+  pids: [_3g9m]
+  name: "Lê Thị Lẫy"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: _gk38
+  mid: _3g9m
+  fid: _t5pc
+  name: "Trần Văn Cao"
+  role: "không có vợ"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: _l74i
+  mid: _3g9m
+  fid: _t5pc
+  name: "Trần Văn Thắm"
+  role: "không có vợ"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: _szlu
+  pids: [_hw05]
+  name: "???"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
