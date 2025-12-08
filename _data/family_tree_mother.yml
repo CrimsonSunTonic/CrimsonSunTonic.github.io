@@ -1,5 +1,5 @@
 # Family Tree Data
-# Generated: 20:25:23 8/12/2025
+# Generated: 20:30:40 8/12/2025
 
 - id: _jwwi
   name: "Trần Tu"
@@ -199,6 +199,7 @@
   gender: "male"
 
 - id: 6
+  pids: [_iz78]
   mid: 2
   fid: 1
   name: "Trần Thị Đà"
@@ -1089,6 +1090,23 @@
   mid: _udop
   fid: _rtk6
   name: "Lê Hoài Phương"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: _20c6
+  mid: 6
+  fid: _iz78
+  name: "Bác Tám Môn"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: _iz78
+  pids: [6]
+  name: "???"
   born: ""
   died: ""
   photo: "/assets/images/family/male.svg"
