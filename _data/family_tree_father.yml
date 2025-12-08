@@ -1,5 +1,5 @@
 # Family Tree Data
-# Generated: 19:57:39 7/12/2025
+# Generated: 19:21:47 8/12/2025
 
 - id: _2t4p
   pids: [_u1qi]
@@ -96,7 +96,7 @@
 - id: _h62n
   mid: _fzt5
   fid: _r3et
-  name: "Huỳnh ... (Bà Năm)"
+  name: "Huỳnh Thị Biền"
   born: ""
   died: ""
   photo: "/assets/images/family/female.svg"
@@ -105,7 +105,7 @@
 - id: _kf09
   mid: _fzt5
   fid: _r3et
-  name: "Huỳnh ...(Bà Sáu)"
+  name: "Huỳnh Thị Thạn"
   born: ""
   died: ""
   photo: "/assets/images/family/female.svg"
@@ -159,7 +159,7 @@
 - id: _ysvu
   mid: _fzt5
   fid: _r3et
-  name: "Huỳnh Khái Vinh"
+  name: "Huỳnh Định (Huỳnh Khái Vinh)"
   born: ""
   died: ""
   photo: "/assets/images/family/male.svg"
