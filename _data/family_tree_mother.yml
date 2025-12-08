@@ -1,5 +1,5 @@
 # Family Tree Data
-# Generated: 20:10:37 8/12/2025
+# Generated: 20:21:45 8/12/2025
 
 - id: _jwwi
   name: "Trần Tu"
@@ -308,6 +308,7 @@
   gender: "male"
 
 - id: _aahj
+  pids: [_nl52]
   mid: _r6v5
   fid: _cv0r
   name: "Nguyễn Gấm"
@@ -880,6 +881,7 @@
   mid: _r6v5
   fid: _cv0r
   name: "Nguyễn Thị Ghẹ"
+  role: "Chết Năm 7 tuổi"
   born: "DD-MM-19XX"
   died: "DD-MM-19XX"
   photo: "/assets/images/family/female.svg"
@@ -888,7 +890,7 @@
 - id: _6ug0
   mid: _r6v5
   fid: _cv0r
-  name: "Nguyễn .... ?"
+  name: "Nguyễn Vô Danh"
   born: ""
   died: ""
   photo: "/assets/images/family/male.svg"
@@ -907,6 +909,7 @@
 - id: _rd75
   pids: [_eie1]
   name: "Nguyễn Thị Phích"
+  role: "Bà Sáu"
   born: "DD-MM-1935"
   died: ""
   photo: "/assets/images/family/female.svg"
@@ -1015,6 +1018,68 @@
 - id: _dbnc
   pids: [_ihf8]
   name: "... Linh"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: _nl52
+  pids: [_aahj]
+  name: "Nguyễn Thị Xê"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: _5czv
+  pids: [_1l9e]
+  mid: _aahj
+  fid: _nl52
+  name: "Nguyễn Ri"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: _udop
+  pids: [_rtk6]
+  mid: _aahj
+  fid: _nl52
+  name: "Nguyễn Thị Bê"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: _1l9e
+  pids: [_5czv]
+  name: "Lê Thị Rim"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: _ywn5
+  mid: _5czv
+  fid: _1l9e
+  name: "Nguyễn Văn Dũng"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: _rtk6
+  pids: [_udop]
+  name: "Lê Hoài Phong"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: _6rfw
+  mid: _udop
+  fid: _rtk6
+  name: "Lê Hoài Phương"
   born: ""
   died: ""
   photo: "/assets/images/family/male.svg"
