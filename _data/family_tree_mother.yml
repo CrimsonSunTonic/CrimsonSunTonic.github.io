@@ -1,5 +1,5 @@
 # Family Tree Data
-# Generated: 20:04:25 6/12/2025
+# Generated: 20:10:37 8/12/2025
 
 - id: _jwwi
   name: "Trần Tu"
@@ -222,7 +222,7 @@
   name: "Bùi Thị Đồng"
   born: "DD-MM-18xx"
   died: "24-10-1972(18-09)"
-  photo: "/assets/images/family/female.svg"
+  photo: "/family/mother/buithidong.png"
   gender: "female"
 
 - id: 9
@@ -258,7 +258,7 @@
   name: "Lê Thị Loan"
   born: "DD-MM-19xx"
   died: "DD-MM-19xx"
-  photo: "/assets/images/family/female.svg"
+  photo: "/family/mother/lethiloan.png"
   gender: "female"
 
 - id: 13
@@ -304,7 +304,7 @@
   name: "Trần Đỉnh"
   born: "DD-04-1926"
   died: "09-08-1997(07-07)"
-  photo: "/assets/images/family/male.svg"
+  photo: "/family/mother/trandinh.png"
   gender: "male"
 
 - id: _aahj
@@ -323,7 +323,7 @@
   name: "Nguyễn Thị Ghé"
   born: "DD-MM-1925"
   died: "04-05-2008"
-  photo: "/assets/images/family/female.svg"
+  photo: "/family/mother/nguyenthighe.png"
   gender: "female"
 
 - id: 19
@@ -397,7 +397,7 @@
   name: "Trần An Thạch"
   born: "DD-MM-1947"
   died: ""
-  photo: "/assets/images/family/male.svg"
+  photo: "/family/mother/trananthach.png"
   gender: "male"
 
 - id: 27
