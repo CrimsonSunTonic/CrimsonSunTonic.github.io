@@ -1,5 +1,5 @@
 # Family Tree Data
-# Generated: 20:58:50 8/12/2025
+# Generated: 21:02:41 8/12/2025
 
 - id: _jwwi
   name: "Trần Tu"
@@ -154,6 +154,7 @@
   gender: "male"
 
 - id: 10
+  pids: [_9k4v]
   mid: 2
   fid: 1
   name: "Trần Bá"
@@ -1366,3 +1367,21 @@
   died: ""
   photo: "/assets/images/family/male.svg"
   gender: "male"
+
+- id: _jj6h
+  mid: _9k4v
+  fid: 10
+  name: "Trần Sự"
+  role: "chết khi chưa có vợ"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: _9k4v
+  pids: [10]
+  name: "???"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
