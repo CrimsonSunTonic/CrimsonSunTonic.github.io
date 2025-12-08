@@ -1,5 +1,5 @@
 # Family Tree Data
-# Generated: 20:21:45 8/12/2025
+# Generated: 20:25:23 8/12/2025
 
 - id: _jwwi
   name: "Trần Tu"
@@ -751,6 +751,15 @@
   died: ""
   photo: "/assets/images/family/male.svg"
   gender: "male"
+
+- id: _qq5a
+  mid: 24
+  fid: 25
+  name: "Lê Thị Tường Vy"
+  born: "1968"
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
 
 - id: 66
   mid: 24
