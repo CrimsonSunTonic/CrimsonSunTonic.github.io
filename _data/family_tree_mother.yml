@@ -1,5 +1,5 @@
 # Family Tree Data
-# Generated: 20:56:45 8/12/2025
+# Generated: 20:58:50 8/12/2025
 
 - id: _jwwi
   name: "Trần Tu"
@@ -1187,6 +1187,7 @@
   gender: "male"
 
 - id: _20c6
+  pids: [_6fjc]
   mid: 6
   fid: _iz78
   name: "Bác Tám Môn"
@@ -1349,3 +1350,19 @@
   photo: "/assets/images/family/female.svg"
   gender: "female"
 
+- id: _6fjc
+  pids: [_20c6]
+  name: "???"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: _cz9f
+  mid: _20c6
+  fid: _6fjc
+  name: "Dũng"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
