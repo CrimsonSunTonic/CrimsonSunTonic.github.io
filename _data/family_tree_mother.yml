@@ -1,5 +1,5 @@
 # Family Tree Data
-# Generated: 20:30:40 8/12/2025
+# Generated: 20:39:55 8/12/2025
 
 - id: _jwwi
   name: "Trần Tu"
@@ -78,109 +78,18 @@
   photo: "/assets/images/family/female.svg"
   gender: "female"
 
-- id: _n9hg
-  mid: _7jja
-  fid: _h245
-  name: "Trần Thị Thu Hà"
-  role: "Hiệu Trưởng Trường Hoàng Hoa Thám"
-  born: ""
-  died: ""
-  photo: "/assets/images/family/female.svg"
-  gender: "female"
-
-- id: _k0q6
-  mid: _7jja
-  fid: _h245
-  name: "Trần Thị Mỹ Lệ"
-  role: "Cô Lệ dạy trường Vạn Thắng, xin cho Nhật zô lớp 1/1 trường Vạn Thắng"
-  born: ""
-  died: ""
-  photo: "/assets/images/family/female.svg"
-  gender: "female"
-
-- id: _1z0u
-  mid: _7jja
-  fid: _h245
-  name: "Trần Ngọc Hoàng"
-  role: "Bị lũ lụt Diên Khánh 2025 chết"
+- id: _01a7
+  pids: [_h6cl]
+  mid: 4
+  fid: _2nbi
+  name: "Lê Thiện Tỉnh"
   born: ""
   died: ""
   photo: "/assets/images/family/male.svg"
   gender: "male"
-
-- id: _rn2x
-  mid: _7jja
-  fid: _h245
-  name: "Trần Thị Thu Phong"
-  born: ""
-  died: ""
-  photo: "/assets/images/family/female.svg"
-  gender: "female"
-
-- id: _hfyu
-  mid: _7jja
-  fid: _h245
-  name: "Trần Ngọc Hùng"
-  born: ""
-  died: ""
-  photo: "/assets/images/family/male.svg"
-  gender: "male"
-
-- id: _3pq6
-  mid: _7jja
-  fid: _h245
-  name: "Trần Ngọc Chí"
-  born: ""
-  died: ""
-  photo: "/assets/images/family/male.svg"
-  gender: "male"
-
-- id: _v8vu
-  mid: _7jja
-  fid: _h245
-  name: "Trần Trọng Nghĩa"
-  born: ""
-  died: ""
-  photo: "/assets/images/family/male.svg"
-  gender: "male"
-
-- id: _icr6
-  mid: _7jja
-  fid: _h245
-  name: "Trần Thị Thu Trang"
-  born: ""
-  died: ""
-  photo: "/assets/images/family/female.svg"
-  gender: "female"
-
-- id: _7fn1
-  mid: _7jja
-  fid: _h245
-  name: "Trần Thị Thu Thủy"
-  born: ""
-  died: ""
-  photo: "/assets/images/family/female.svg"
-  gender: "female"
-
-- id: _firh
-  mid: _7jja
-  fid: _h245
-  name: "Trần Trọng Ân"
-  born: ""
-  died: ""
-  photo: "/assets/images/family/male.svg"
-  gender: "male"
-
-- id: _3r6e
-  mid: _7jja
-  fid: _h245
-  name: "Trần Thị Mỹ Dung"
-  born: ""
-  died: ""
-  photo: "/assets/images/family/female.svg"
-  gender: "female"
 
 - id: 4
+  pids: [_2nbi]
   mid: 2
   fid: 1
   name: "Trần Thị Ngân"
@@ -188,6 +97,14 @@
   died: "DD-MM-18xx"
   photo: "/assets/images/family/female.svg"
   gender: "female"
+
+- id: _2nbi
+  pids: [4]
+  name: "Lê ???"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
 
 - id: 5
   mid: 2
@@ -373,6 +290,178 @@
   died: "DD-MM-19xx"
   photo: "/assets/images/family/female.svg"
   gender: "female"
+
+- id: _n9hg
+  mid: _7jja
+  fid: _h245
+  name: "Trần Thị Thu Hà"
+  role: "Hiệu Trưởng Trường Hoàng Hoa Thám"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: _k0q6
+  mid: _7jja
+  fid: _h245
+  name: "Trần Thị Mỹ Lệ"
+  role: "Cô Lệ dạy trường Vạn Thắng, xin cho Nhật zô lớp 1/1 trường Vạn Thắng"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: _1z0u
+  mid: _7jja
+  fid: _h245
+  name: "Trần Ngọc Hoàng"
+  role: "Bị lũ lụt Diên Khánh 2025 chết"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: _rn2x
+  mid: _7jja
+  fid: _h245
+  name: "Trần Thị Thu Phong"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: _hfyu
+  mid: _7jja
+  fid: _h245
+  name: "Trần Ngọc Hùng"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: _3pq6
+  mid: _7jja
+  fid: _h245
+  name: "Trần Ngọc Chí"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: _v8vu
+  mid: _7jja
+  fid: _h245
+  name: "Trần Trọng Nghĩa"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: _icr6
+  mid: _7jja
+  fid: _h245
+  name: "Trần Thị Thu Trang"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: _7fn1
+  mid: _7jja
+  fid: _h245
+  name: "Trần Thị Thu Thủy"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: _firh
+  mid: _7jja
+  fid: _h245
+  name: "Trần Trọng Ân"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: _3r6e
+  mid: _7jja
+  fid: _h245
+  name: "Trần Thị Mỹ Dung"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+- id: _h6cl
+  pids: [_01a7]
+  name: "Lê Thị Giỏi"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: _bn0i
+  mid: _01a7
+  fid: _h6cl
+  name: "Lê Thị Nga"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: _14kb
+  mid: _01a7
+  fid: _h6cl
+  name: "Lê Thiện Ái"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: _vbmn
+  mid: _01a7
+  fid: _h6cl
+  name: "Lê Thiện Tình"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: _0mxq
+  mid: _01a7
+  fid: _h6cl
+  name: "Lê Thiện Tính"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: _c69c
+  mid: _01a7
+  fid: _h6cl
+  name: "Lê Thiện Tịnh"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: _ywi7
+  mid: _01a7
+  fid: _h6cl
+  name: "Lê Thị Dầu"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: _42h0
+  mid: _01a7
+  fid: _h6cl
+  name: "Lê Thiện Hoẵng"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
 
 - id: 24
   pids: [25]
