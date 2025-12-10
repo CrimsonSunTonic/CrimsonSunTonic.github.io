@@ -1,5 +1,5 @@
 # Family Tree Data
-# Generated: 20:23:49 10/12/2025
+# Generated: 20:49:42 10/12/2025
 
 - id: _2t4p
   pids: [_u1qi]
@@ -67,13 +67,22 @@
   gender: "female"
 
 - id: _sxc4
+  pids: [_3pmm]
   mid: _fzt5
   fid: _r3et
-  name: "Huỳnh ... (Ông Hai)"
+  name: "Huỳnh Hoán"
   born: ""
   died: ""
   photo: "/assets/images/family/male.svg"
   gender: "male"
+
+- id: _3pmm
+  pids: [_sxc4]
+  name: "Nguyễn Thị Ngâm"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
 
 - id: _xnrw
   mid: _fzt5
@@ -160,6 +169,7 @@
   mid: _fzt5
   fid: _r3et
   name: "Huỳnh Định (Huỳnh Khái Vinh)"
+  role: "Huỳnh Khái Vinh là tên khi đi cách mạng, ông là giáo sư tiến sĩ khoa học, hiệu trưởng trường ĐH Văn Hóa Hà Nội kiêm hiệu trưởng Trường Viết Văn Nguyễn Du"
   born: ""
   died: ""
   photo: "/assets/images/family/male.svg"
@@ -182,15 +192,6 @@
   died: ""
   photo: "/assets/images/family/female.svg"
   gender: "female"
-
-- id: 3
-  mid: 2
-  fid: 1
-  name: "Huỳnh Trần Hồng Nhật"
-  born: "09-01-1997"
-  died: ""
-  photo: "/family/me.png"
-  gender: "male"
 
 - id: _n3y9
   pids: [_m3cv]
@@ -249,6 +250,177 @@
   photo: "/assets/images/family/male.svg"
   gender: "male"
 
+- id: _3ebz
+  pids: [_gywa]
+  name: "Hồ Thị Nhớ"
+  born: "1961"
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: _bek5
+  mid: _0hnu
+  fid: _iv34
+  name: "Huỳnh Thị Thanh Trúc"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: _uapu
+  mid: _vhyt
+  fid: _4hsg
+  name: "Huỳnh Thị Thoa"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: _3mz1
+  mid: _vhyt
+  fid: _4hsg
+  name: "Huỳnh Thị Thảo"
+  role: "chị Xem"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: _gysp
+  mid: _vhyt
+  fid: _4hsg
+  name: "Huỳnh Văn Truyền"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: _ocey
+  mid: _vhyt
+  fid: _4hsg
+  name: "Huỳnh Văn Giao"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: _9c7g
+  mid: _vhyt
+  fid: _4hsg
+  name: "Huỳnh Thị Anh Thư"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: _r0sj
+  mid: _tccy
+  fid: _g8mk
+  name: "Dương Thái Thanh"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: _r25v
+  mid: _tccy
+  fid: _g8mk
+  name: "Dương Thị Thái Hương"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: _rqmg
+  mid: _tccy
+  fid: _g8mk
+  name: "Dương Thị Thái Hoa"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: _kwaw
+  mid: _tccy
+  fid: _g8mk
+  name: "Dương Thái Thông"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: _nuo9
+  mid: _tccy
+  fid: _g8mk
+  name: "Dương Thị Thái Hồng"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: _nm5f
+  mid: _tccy
+  fid: _g8mk
+  name: "Dương Thái Bình"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: _77ua
+  mid: _tccy
+  fid: _g8mk
+  name: "Dương Thái Lâm"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: _duv5
+  mid: _tccy
+  fid: _g8mk
+  name: "Dương Thái Lương"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: _ou8o
+  mid: _tccy
+  fid: _g8mk
+  name: "Dương Thị Thái Sương"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: _h89u
+  mid: _tccy
+  fid: _g8mk
+  name: "Dương Thị Thái Liễu"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: _yetx
+  mid: _tccy
+  fid: _g8mk
+  name: "Dương Thị Thái Liên"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: 3
+  mid: 2
+  fid: 1
+  name: "Huỳnh Trần Hồng Nhật"
+  born: "09-01-1997"
+  died: ""
+  photo: "/family/me.png"
+  gender: "male"
+
 - id: _bxzt
   mid: _n3y9
   fid: _m3cv
@@ -263,14 +435,6 @@
   fid: _m3cv
   name: "Nguyễn Thị Phương Hoa"
   born: "1982"
-  died: ""
-  photo: "/assets/images/family/female.svg"
-  gender: "female"
-
-- id: _3ebz
-  pids: [_gywa]
-  name: "Hồ Thị Nhớ"
-  born: "1961"
   died: ""
   photo: "/assets/images/family/female.svg"
   gender: "female"
@@ -1053,6 +1217,90 @@
   died: ""
   photo: "/assets/images/family/female.svg"
   gender: "female"
+
+- id: _0hnu
+  pids: [_iv34]
+  mid: _sxc4
+  fid: _3pmm
+  name: "Huỳnh Trợ"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: _iv34
+  pids: [_0hnu]
+  name: "Trịnh Thị Hường"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: _vhyt
+  pids: [_4hsg]
+  mid: _sxc4
+  fid: _3pmm
+  name: "Huỳnh Giúp"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: _4hsg
+  pids: [_vhyt]
+  name: "Nguyễn Thị Tiết"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: _9kot
+  mid: _sxc4
+  fid: _3pmm
+  name: "Huỳnh Để"
+  role: "chết trẻ, không có con"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: _ig3n
+  mid: _sxc4
+  fid: _3pmm
+  name: "Huỳnh Nưng"
+  role: "chết trẻ, không có con"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: _2lyj
+  mid: _sxc4
+  fid: _3pmm
+  name: "Huỳnh Phú"
+  role: "bị xe tải tung chết, học tới đệ nhị"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: _tccy
+  pids: [_g8mk]
+  mid: _sxc4
+  fid: _3pmm
+  name: "Huỳnh Thị Lan"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: _g8mk
+  pids: [_tccy]
+  name: "Dương Thái Bảo"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
 
 - id: _bcm4
   pids: [_wn7t]
