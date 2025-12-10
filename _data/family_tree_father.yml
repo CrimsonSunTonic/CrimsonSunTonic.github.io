@@ -1,5 +1,5 @@
 # Family Tree Data
-# Generated: 20:49:42 10/12/2025
+# Generated: 20:58:14 10/12/2025
 
 - id: _2t4p
   pids: [_u1qi]
@@ -160,6 +160,7 @@
   mid: _fzt5
   fid: _r3et
   name: "Huỳnh Thị Hạng"
+  role: "chết hồi nhỏ"
   born: ""
   died: ""
   photo: "/assets/images/family/female.svg"
@@ -964,6 +965,14 @@
   photo: "/assets/images/family/male.svg"
   gender: "male"
 
+- id: _kxog
+  pids: [_zd1t]
+  name: "Nguyễn Lê Du Bích"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
 - id: _ffcs
   pids: [_rjyx]
   mid: _avcz
@@ -974,27 +983,9 @@
   photo: "/assets/images/family/male.svg"
   gender: "male"
 
-- id: _kxog
-  pids: [_zd1t]
-  name: "Nguyễn Lê Du Bích"
-  born: ""
-  died: ""
-  photo: "/assets/images/family/female.svg"
-  gender: "female"
-
-- id: _xs2z
-  mid: _zd1t
-  fid: _kxog
-  name: "Huỳnh Ngọc Kha"
-  born: ""
-  died: ""
-  photo: "/assets/images/family/male.svg"
-  gender: "male"
-
-- id: _vvrl
-  mid: _zd1t
-  fid: _kxog
-  name: "Huỳnh Ngọc Trâm"
+- id: _rjyx
+  pids: [_ffcs]
+  name: "Nguyễn Thị Thanh Thuỷ"
   born: ""
   died: ""
   photo: "/assets/images/family/female.svg"
@@ -1010,9 +1001,28 @@
   photo: "/assets/images/family/female.svg"
   gender: "female"
 
-- id: _rjyx
-  pids: [_ffcs]
-  name: "Nguyễn Thị Thanh Thuỷ"
+- id: _bp63
+  mid: _zd1t
+  fid: _kxog
+  name: "Huỳnh Vô Danh"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: _xs2z
+  mid: _zd1t
+  fid: _kxog
+  name: "Huỳnh Ngọc Kha"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: _vvrl
+  mid: _zd1t
+  fid: _kxog
+  name: "Huỳnh Ngọc Trâm"
   born: ""
   died: ""
   photo: "/assets/images/family/female.svg"
@@ -1328,3 +1338,4 @@
   died: ""
   photo: "/assets/images/family/female.svg"
   gender: "female"
+
