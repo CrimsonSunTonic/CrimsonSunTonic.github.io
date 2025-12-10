@@ -1,5 +1,5 @@
 # Family Tree Data
-# Generated: 20:58:14 10/12/2025
+# Generated: 21:33:44 10/12/2025
 
 - id: _2t4p
   pids: [_u1qi]
@@ -167,6 +167,7 @@
   gender: "female"
 
 - id: _ysvu
+  pids: [_rb3h]
   mid: _fzt5
   fid: _r3et
   name: "Huỳnh Định (Huỳnh Khái Vinh)"
@@ -1121,6 +1122,7 @@
   mid: _1uav
   fid: _ksvs
   name: "Huỳnh ..."
+  role: "Thứ 2"
   born: ""
   died: ""
   photo: "/assets/images/family/male.svg"
@@ -1339,3 +1341,75 @@
   photo: "/assets/images/family/female.svg"
   gender: "female"
 
+- id: _rb3h
+  pids: [_ysvu]
+  name: "Nguyễn Thị Nghiêm?"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: _h1w7
+  mid: _ysvu
+  fid: _rb3h
+  name: "Huỳnh Thị ... Hương"
+  role: "chuẩn bị đi Liên Xô học thì xe tung chết"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: _lr49
+  pids: [_hfn9]
+  mid: _ysvu
+  fid: _rb3h
+  name: "Huỳnh Văn Minh"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: _5kp4
+  mid: _hfn9
+  fid: _lr49
+  name: "???"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: _hfn9
+  pids: [_lr49]
+  name: "???"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: _fb97
+  pids: [_2cx5]
+  mid: _1uav
+  fid: _ksvs
+  name: "Huỳnh ..."
+  role: "Thứ 3"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: _3ym8
+  mid: _2cx5
+  fid: _fb97
+  name: "Huỳnh Đo"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: _2cx5
+  pids: [_fb97]
+  name: "???"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
