@@ -1,5 +1,5 @@
 # Family Tree Data
-# Generated: 19:21:47 8/12/2025
+# Generated: 20:23:49 10/12/2025
 
 - id: _2t4p
   pids: [_u1qi]
@@ -499,14 +499,23 @@
   gender: "male"
 
 - id: _aj9d
+  pids: [_dp4t]
   mid: _e9dt
   fid: _r7nk
-  name: "Huỳnh Thị ..."
+  name: "Huỳnh Thị Phải"
   role: "Thứ 2"
   born: ""
   died: ""
   photo: "/assets/images/family/female.svg"
   gender: "female"
+
+- id: _dp4t
+  pids: [_aj9d]
+  name: "Phù ???"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
 
 - id: _bqaq
   pids: [_eyd2, _88pt]
@@ -558,7 +567,7 @@
 - id: _7a0o
   mid: _e9dt
   fid: _r7nk
-  name: "Huỳnh Thị ..."
+  name: "Huỳnh Thị Phường"
   role: "Thứ 5"
   born: ""
   died: ""
@@ -578,6 +587,78 @@
 - id: _41c2
   pids: [_xe5e]
   name: "???"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: _fiaw
+  mid: _aj9d
+  fid: _dp4t
+  name: "Phù Thị Quý"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: _qkx2
+  mid: _aj9d
+  fid: _dp4t
+  name: "Phù Ngọc Ẩn"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: _r17k
+  mid: _aj9d
+  fid: _dp4t
+  name: "Phù Mậu"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: _nn9l
+  mid: _aj9d
+  fid: _dp4t
+  name: "Phù Thị Nhiễu"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: _ksdx
+  mid: _aj9d
+  fid: _dp4t
+  name: "Phù Gấm"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: _vb7k
+  mid: _aj9d
+  fid: _dp4t
+  name: "Phù Nỉ"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: _58jw
+  mid: _aj9d
+  fid: _dp4t
+  name: "Phù Thị Thêu"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: _p3az
+  mid: _aj9d
+  fid: _dp4t
+  name: "Phù Thị Kim Loan"
   born: ""
   died: ""
   photo: "/assets/images/family/female.svg"
