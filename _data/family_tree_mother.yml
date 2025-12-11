@@ -1,5 +1,5 @@
 # Family Tree Data
-# Generated: 21:02:41 8/12/2025
+# Generated: 20:29:50 11/12/2025
 
 - id: _jwwi
   name: "Trần Tu"
@@ -159,7 +159,7 @@
   fid: 1
   name: "Trần Bá"
   born: "DD-MM-18xx"
-  died: "DD-MM-18xx"
+  died: "DD-MM-18xx(08/02)"
   photo: "/assets/images/family/male.svg"
   gender: "male"
 
@@ -169,7 +169,7 @@
   fid: 7
   name: "Trần Tuần"
   born: "DD-MM-1918"
-  died: "DD-MM-1985"
+  died: "10-08-1985(24/6)"
   photo: "/family/mother/trantuan.jpg"
   gender: "male"
 
@@ -177,7 +177,7 @@
   pids: [11]
   name: "Lê Thị Loan"
   born: "DD-MM-19xx"
-  died: "DD-MM-19xx"
+  died: "DD-MM-19xx(22/09)"
   photo: "/family/mother/lethiloan.png"
   gender: "female"
 
@@ -205,7 +205,7 @@
   fid: 7
   name: "Trần Thị Tư"
   born: "DD-MM-1923?(Tý)"
-  died: "DD-MM-19xx"
+  died: "DD-MM-19xx(14/05)"
   photo: "/assets/images/family/female.svg"
   gender: "female"
 
@@ -243,7 +243,7 @@
   fid: _r6v5
   name: "Nguyễn Thị Ghé"
   born: "DD-MM-1925"
-  died: "04-05-2008"
+  died: "04-05-2008(29/03))"
   photo: "/family/mother/nguyenthighe.png"
   gender: "female"
 
