@@ -1,5 +1,5 @@
 # Family Tree Data
-# Generated: 20:29:50 11/12/2025
+# Generated: 19:34:33 13/12/2025
 
 - id: _jwwi
   name: "Trần Tu"
@@ -159,7 +159,7 @@
   fid: 1
   name: "Trần Bá"
   born: "DD-MM-18xx"
-  died: "DD-MM-18xx(08/02)"
+  died: "DD-MM-18xx"
   photo: "/assets/images/family/male.svg"
   gender: "male"
 
@@ -169,7 +169,7 @@
   fid: 7
   name: "Trần Tuần"
   born: "DD-MM-1918"
-  died: "10-08-1985(24/6)"
+  died: "DD-MM-1985"
   photo: "/family/mother/trantuan.jpg"
   gender: "male"
 
@@ -177,7 +177,7 @@
   pids: [11]
   name: "Lê Thị Loan"
   born: "DD-MM-19xx"
-  died: "DD-MM-19xx(22/09)"
+  died: "DD-MM-19xx"
   photo: "/family/mother/lethiloan.png"
   gender: "female"
 
@@ -205,7 +205,7 @@
   fid: 7
   name: "Trần Thị Tư"
   born: "DD-MM-1923?(Tý)"
-  died: "DD-MM-19xx(14/05)"
+  died: "DD-MM-19xx"
   photo: "/assets/images/family/female.svg"
   gender: "female"
 
@@ -243,7 +243,7 @@
   fid: _r6v5
   name: "Nguyễn Thị Ghé"
   born: "DD-MM-1925"
-  died: "04-05-2008(29/03))"
+  died: "04-05-2008"
   photo: "/family/mother/nguyenthighe.png"
   gender: "female"
 
@@ -1326,8 +1326,8 @@
 - id: _gk38
   mid: _3g9m
   fid: _t5pc
-  name: "Trần Văn Cao"
-  role: "không có vợ"
+  name: "Trần Văn Tâm"
+  role: "không có vợ , tên ở nhà là Cao"
   born: ""
   died: ""
   photo: "/assets/images/family/male.svg"
@@ -1337,7 +1337,7 @@
   mid: _3g9m
   fid: _t5pc
   name: "Trần Văn Thắm"
-  role: "không có vợ"
+  role: "không có vợ , đi bộ đội chiến tranh Cam bốt năm 1979 , bị què chưn trái"
   born: ""
   died: ""
   photo: "/assets/images/family/male.svg"
