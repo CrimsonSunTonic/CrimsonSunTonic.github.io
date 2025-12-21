@@ -1,5 +1,5 @@
 # Family Tree Data
-# Generated: 19:34:33 13/12/2025
+# Generated: 19:45:23 21/12/2025
 
 - id: _jwwi
   name: "Trần Tu"
@@ -973,7 +973,10 @@
 
 - id: _cv0r
   pids: [_r6v5]
+  mid: _7gsx
+  fid: _ea5c
   name: "Võ Thị Ngâu"
+  role: "thứ 2"
   born: "18XX?"
   died: "193X"
   photo: "/assets/images/family/female.svg"
@@ -1381,6 +1384,70 @@
 - id: _9k4v
   pids: [10]
   name: "???"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: _7gsx
+  pids: [_ea5c]
+  name: "Bà Cố Ngoại"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: _ea5c
+  pids: [_7gsx]
+  name: "Ông Cố Ngoại"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: _150v
+  pids: [_ctvs]
+  mid: _7gsx
+  fid: _ea5c
+  name: "Võ Thị ..."
+  role: "thứ 5"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: _ctvs
+  pids: [_150v]
+  name: "Huỳnh ..."
+  born: ""
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: _djyq
+  pids: [_y9uu]
+  mid: _150v
+  fid: _ctvs
+  name: "Huỳnh Xuân Quán"
+  role: "thứ 9"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/male.svg"
+  gender: "male"
+
+- id: _dys0
+  mid: _y9uu
+  fid: _djyq
+  name: "Huỳnh ... Thư"
+  role: "cô Thư dạy anh văn Lê Quý Đôn"
+  born: ""
+  died: ""
+  photo: "/assets/images/family/female.svg"
+  gender: "female"
+
+- id: _y9uu
+  pids: [_djyq]
+  name: "...."
   born: ""
   died: ""
   photo: "/assets/images/family/female.svg"
